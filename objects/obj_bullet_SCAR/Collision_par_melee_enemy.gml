@@ -1,0 +1,3 @@
+WeaponSystemProgram()
+other.enemy_hp -= damage;
+instance_destroy()
