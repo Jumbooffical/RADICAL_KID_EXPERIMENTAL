@@ -1,0 +1,12 @@
+function swap_nade(_key) {
+	var key = _key
+	if (keyboard_check_pressed(key)) || key == noone {
+		if selected_item == nade_quickslot {
+		selected_item = last_slot
+		quickslot_type = Slot.Gun
+		} else {
+		quickslot_type = Slot.Nade
+		selected_item = nade_quickslot
+		}
+	}
+}

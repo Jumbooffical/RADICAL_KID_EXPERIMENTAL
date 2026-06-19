@@ -1,0 +1,1 @@
+flash_duration = 3

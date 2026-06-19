@@ -1,0 +1,1 @@
+draw_text_transformed(x + rng, y + float, text, 3, 3, -15)

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"burst_blackjack",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"burst_blackjack",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Objects/Dumbass/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

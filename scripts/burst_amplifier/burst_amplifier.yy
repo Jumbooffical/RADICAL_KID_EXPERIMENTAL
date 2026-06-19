@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"burst_amplifier",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"burst_amplifier",
+  "parent":{
+    "name":"Attachment",
+    "path":"folders/Objects/Dumbass/Data/Attachment.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

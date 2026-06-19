@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"WeaponData",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"WeaponData",
+  "parent":{
+    "name":"Weapon",
+    "path":"folders/Objects/Dumbass/Data/Weapon.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_controls",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_controls",
+  "parent":{
+    "name":"Dumbass",
+    "path":"folders/Objects/Dumbass.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

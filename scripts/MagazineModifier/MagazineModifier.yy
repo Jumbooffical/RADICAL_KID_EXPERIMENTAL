@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MagazineModifier",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MagazineModifier",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Objects/Dumbass/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

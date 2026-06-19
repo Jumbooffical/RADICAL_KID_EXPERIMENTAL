@@ -1,3 +1,3 @@
-// Stops Flee and Continues Chase
-chase = true;
+// Stops Flee and Continues is_alerted
+is_alerted = true;
 justrun = false;

@@ -1,19 +1,17 @@
 {
   "$GMObject":"",
   "%Name":"obj_item_medkit",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_item_medkit",
   "overriddenProperties":[],
   "parent":{
-    "name":"Items",
-    "path":"folders/Objects/Items.yy",
+    "name":"Consumable",
+    "path":"folders/Rooms/Objects/Items/Consumable.yy",
   },
   "parentObjectId":{
-    "name":"par_item",
-    "path":"objects/par_item/par_item.yy",
+    "name":"par_item_consumable",
+    "path":"objects/par_item_consumable/par_item_consumable.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

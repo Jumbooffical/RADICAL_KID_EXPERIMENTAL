@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_m62_BOOM",
+  "audioGroupId":{
+    "name":"audiogroup_tinnitus_exclude",
+    "path":"audiogroups/audiogroup_tinnitus_exclude",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.7128118,
+  "exportDir":"",
+  "name":"snd_m62_BOOM",
+  "parent":{
+    "name":"Grenade",
+    "path":"folders/Sounds/Grenade.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_m62_BOOM.mp3",
+  "volume":1.0,
+}

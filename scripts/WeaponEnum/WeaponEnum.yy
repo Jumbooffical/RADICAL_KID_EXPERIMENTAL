@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"WeaponEnum",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"WeaponEnum",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Scripts/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

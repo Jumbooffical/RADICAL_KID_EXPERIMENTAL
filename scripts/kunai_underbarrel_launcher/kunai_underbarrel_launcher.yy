@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"kunai_underbarrel_launcher",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"kunai_underbarrel_launcher",
+  "parent":{
+    "name":"Attachment",
+    "path":"folders/Objects/Dumbass/Data/Attachment.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

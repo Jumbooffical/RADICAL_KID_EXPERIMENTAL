@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"enemy_inherited",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemy_inherited",
+  "parent":{
+    "name":"Normal",
+    "path":"folders/Objects/Enemy/Normal.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"swing_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"swing_animation",
+  "parent":{
+    "name":"Animation",
+    "path":"folders/Objects/Scripts/Animation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

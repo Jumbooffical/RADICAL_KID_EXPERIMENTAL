@@ -1,0 +1,5 @@
+if global.pathfinding_debug {
+	draw_set_alpha(0.4);
+    mp_grid_draw(global.grid);
+    draw_set_alpha(1);
+}

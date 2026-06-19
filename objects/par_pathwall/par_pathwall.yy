@@ -1,13 +1,17 @@
 {
   "$GMObject":"",
   "%Name":"par_pathwall",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"par_pathwall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Miscellaneous Parents",
-    "path":"folders/Objects/Miscellaneous Parents.yy",
+    "name":"Dumbass",
+    "path":"folders/Objects/Dumbass.yy",
   },
   "parentObjectId":null,
   "persistent":false,

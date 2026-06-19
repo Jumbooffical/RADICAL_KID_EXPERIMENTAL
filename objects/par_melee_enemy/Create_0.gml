@@ -1,3 +1,5 @@
+
+depth = 0
 // Enemy stat
 enemy_hp = 100;
 enemy_spd = 3;		// Movement speed
@@ -8,8 +10,10 @@ attack_rate2 = 60;	// Enemy attack interval, 60 = 1 sec
 path = path_add()
 
 // State
-chase = false;		// If true, chase the player
+is_alerted = false;		// If true, is_alerted the player
 justrun = false;	
+attack = false;
+
 attack_rate = 0;	// Initial attack rate to define atk rate logic
 
 dir = point_direction(other.x, other.y, x, y);

@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
   "%Name":"obj_scar",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_scar",
   "overriddenProperties":[],
   "parent":{
     "name":"Weapons",
-    "path":"folders/Objects/Weapons.yy",
+    "path":"folders/Objects/Dumbass/Data/Weapons.yy",
   },
   "parentObjectId":{
     "name":"par_gun",

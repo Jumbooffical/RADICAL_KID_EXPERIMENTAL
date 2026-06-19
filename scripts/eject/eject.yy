@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"eject",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"eject",
+  "parent":{
+    "name":"Animation",
+    "path":"folders/Objects/Scripts/Animation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

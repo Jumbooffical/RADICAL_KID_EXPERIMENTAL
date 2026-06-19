@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wall",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"7db403a0-1483-4337-aa1b-0fd922b8391d","name":"7db403a0-1483-4337-aa1b-0fd922b8391d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7db403a0-1483-4337-aa1b-0fd922b8391d","name":"7db403a0-1483-4337-aa1b-0fd922b8391d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Sprite",
+    "path":"folders/Rooms/Objects/Enviroment/Sprite.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

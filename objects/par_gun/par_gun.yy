@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Weapons",
-    "path":"folders/Objects/Weapons.yy",
+    "path":"folders/Objects/Dumbass/Data/Weapons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

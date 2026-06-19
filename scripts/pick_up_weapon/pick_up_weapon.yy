@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"pick_up_weapon",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Keybind",
+    "path":"folders/Objects/Dumbass/Player Scripts/Keybind.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

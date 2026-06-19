@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"next_room",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"next_room",
+  "parent":{
+    "name":"Controller",
+    "path":"folders/Objects/Dumbass/Controller.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

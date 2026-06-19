@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"teleport_to",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"teleport_to",
+  "parent":{
+    "name":"Script",
+    "path":"folders/Objects/Enemy/Script.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

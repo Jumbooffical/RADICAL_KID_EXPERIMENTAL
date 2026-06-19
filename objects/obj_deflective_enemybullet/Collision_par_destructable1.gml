@@ -1,0 +1,1 @@
+other.crate_hp -= damage

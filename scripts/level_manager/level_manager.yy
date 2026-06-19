@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"level_manager",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"level_manager",
+  "parent":{
+    "name":"Controller",
+    "path":"folders/Objects/Dumbass/Controller.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

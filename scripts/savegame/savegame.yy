@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"savegame",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"savegame",
+  "parent":{
+    "name":"Serialization",
+    "path":"folders/Objects/Dumbass/Controller/Serialization.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

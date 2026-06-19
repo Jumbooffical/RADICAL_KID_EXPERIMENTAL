@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_cursed_buildup",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":5.067687,
+  "exportDir":"",
+  "name":"snd_cursed_buildup",
+  "parent":{
+    "name":"Magazine Ready",
+    "path":"folders/Objects/Dumbass/Data/Weapon/Reloading/Magazine Ready.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_cursed_buildup.mp3",
+  "volume":1.0,
+}

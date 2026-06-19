@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_text_blend",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_text_blend",
+  "parent":{
+    "name":"Custom",
+    "path":"folders/Objects/Scripts/Custom.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

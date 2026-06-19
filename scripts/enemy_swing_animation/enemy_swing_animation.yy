@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"enemy_swing_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemy_swing_animation",
+  "parent":{
+    "name":"Animation",
+    "path":"folders/Objects/Scripts/Animation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

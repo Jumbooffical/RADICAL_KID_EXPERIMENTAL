@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"shuriken_printer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"shuriken_printer",
+  "parent":{
+    "name":"Attachment",
+    "path":"folders/Objects/Dumbass/Data/Attachment.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

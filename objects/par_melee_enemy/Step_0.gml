@@ -8,22 +8,22 @@ if justrun = true
 	path_start(path, enemy_spd, path_action_stop, true)
 }
 	
-// Trigger Chase Event
-if chase = false && distance_to_object(obj_player) < aggro_range/2 
+// Trigger is_alerted Event
+if is_alerted = false && distance_to_object(obj_player) < aggro_range/2 
 {
-	chase = true;
+	is_alerted = true;
 }
 
-// Trigger Chase Event when the player get too close
-if chase = true && distance_to_object(obj_player) < aggro_range
+// Trigger is_alerted Event when the player get too close
+if is_alerted = true && distance_to_object(obj_player) < aggro_range
 {
 	justrun = true;
 }
 
-// If player is more than 400 pixels away, stop Chase
-if chase = true && justrun = true && distance_to_object(obj_player) > aggro_range
+// If player is more than 400 pixels away, stop is_alerted
+if is_alerted = true && justrun = true && distance_to_object(obj_player) > aggro_range
 {
-	chase = false
+	is_alerted = false
 	justrun = false
 }
 
@@ -43,6 +43,19 @@ if (attack_rate <= 0) && distance_to_object(obj_player) < 25
     var _inst = instance_create_depth(obj_player.x, obj_player.y, depth, obj_claw);	// Draw the claw on top of the player
     _inst.image_angle = point_direction(x, y, obj_player.x, obj_player.y);						// Claw facing the player
     attack_rate = attack_rate2;
+	attack= true
+} else {
+	attack = false	
 }
 
+	if (path_exists(path)) && distance_to_object(obj_player) < 25 {
+        path_end(); path_finished = true;;		// Standing still when attack
+	}
+
 #endregion
+
+if enemy_hp <= 0
+{
+	instance_destroy(self);
+	instance_create_depth(x, y, depth, obj_dying_melee);
+} 

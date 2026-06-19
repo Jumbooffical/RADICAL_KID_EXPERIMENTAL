@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_airstrike_siren",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.2,
+  "exportDir":"",
+  "name":"snd_airstrike_siren",
+  "parent":{
+    "name":"Grenade",
+    "path":"folders/Sounds/Grenade.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_airstrike_siren.mp3",
+  "volume":1.0,
+}

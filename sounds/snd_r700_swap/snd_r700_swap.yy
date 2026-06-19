@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_r700_swap",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.05,
+  "exportDir":"",
+  "name":"snd_r700_swap",
+  "parent":{
+    "name":"Switching",
+    "path":"folders/Objects/Dumbass/Data/Weapon/Switching.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_r700_swap.mp3",
+  "volume":1.0,
+}

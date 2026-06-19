@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"macro_dump",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"macro_dump",
+  "parent":{
+    "name":"Dumbass",
+    "path":"folders/Objects/Dumbass.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

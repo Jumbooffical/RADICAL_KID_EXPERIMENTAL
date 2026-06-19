@@ -1,0 +1,1 @@
+//other.hp -= par_melee_enemy.enemy_dmg / 2

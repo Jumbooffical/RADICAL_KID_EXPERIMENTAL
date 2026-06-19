@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"enemy_throwing",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemy_throwing",
+  "parent":{
+    "name":"Thrower",
+    "path":"folders/Objects/Enemy/Normal/Thrower.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

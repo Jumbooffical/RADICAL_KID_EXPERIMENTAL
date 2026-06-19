@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"enemy_dodgeroll",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemy_dodgeroll",
+  "parent":{
+    "name":"Melee",
+    "path":"folders/Objects/Enemy/Normal/Melee.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

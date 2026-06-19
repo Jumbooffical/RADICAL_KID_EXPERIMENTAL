@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"enemy_shank",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemy_shank",
+  "parent":{
+    "name":"Melee",
+    "path":"folders/Objects/Enemy/Normal/Melee.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

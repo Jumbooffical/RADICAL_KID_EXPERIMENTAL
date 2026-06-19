@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"enemy_knockback",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"enemy_knockback",
+  "parent":{
+    "name":"Script",
+    "path":"folders/Objects/Enemy/Script.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

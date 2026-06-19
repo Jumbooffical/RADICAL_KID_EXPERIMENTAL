@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"pick_items",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"pick_items",
+  "parent":{
+    "name":"Shop",
+    "path":"folders/Rooms/Objects/Enviroment/Shop.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

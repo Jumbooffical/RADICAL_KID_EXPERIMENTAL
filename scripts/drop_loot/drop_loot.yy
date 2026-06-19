@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"drop_loot",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drop_loot",
+  "parent":{
+    "name":"Lootboxes",
+    "path":"folders/Rooms/Objects/Enviroment/Lootboxes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

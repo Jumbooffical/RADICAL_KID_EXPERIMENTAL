@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_tinnitus",
+  "audioGroupId":{
+    "name":"audiogroup_tinnitus_exclude",
+    "path":"audiogroups/audiogroup_tinnitus_exclude",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":20.04,
+  "exportDir":"",
+  "name":"snd_tinnitus",
+  "parent":{
+    "name":"Impact",
+    "path":"folders/Sounds/Impact.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_tinnitus.mp3",
+  "volume":1.0,
+}

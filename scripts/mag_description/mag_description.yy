@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mag_description",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mag_description",
+  "parent":{
+    "name":"Data",
+    "path":"folders/Objects/Dumbass/Data.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

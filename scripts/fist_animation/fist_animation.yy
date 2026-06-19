@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fist_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fist_animation",
+  "parent":{
+    "name":"Animation",
+    "path":"folders/Objects/Scripts/Animation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

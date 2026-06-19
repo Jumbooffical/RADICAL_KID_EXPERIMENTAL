@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"shooting",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Player Scripts",
+    "path":"folders/Objects/Dumbass/Player Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

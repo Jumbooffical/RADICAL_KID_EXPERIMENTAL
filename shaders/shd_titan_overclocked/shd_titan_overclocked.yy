@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_titan_overclocked",
+  "name":"shd_titan_overclocked",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

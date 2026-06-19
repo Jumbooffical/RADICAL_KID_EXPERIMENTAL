@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_overlocked",
+  "audioGroupId":{
+    "name":"audiogroup_tinnitus_exclude",
+    "path":"audiogroups/audiogroup_tinnitus_exclude",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.8760091,
+  "exportDir":"",
+  "name":"snd_overlocked",
+  "parent":{
+    "name":"Magazine Ready",
+    "path":"folders/Objects/Dumbass/Data/Weapon/Reloading/Magazine Ready.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_overlocked.wav",
+  "volume":1.0,
+}

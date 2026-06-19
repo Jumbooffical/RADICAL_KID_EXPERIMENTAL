@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_m870_re",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.12322,
+  "exportDir":"",
+  "name":"snd_m870_re",
+  "parent":{
+    "name":"Reloading",
+    "path":"folders/Objects/Dumbass/Data/Weapon/Reloading.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_m870_re.wav",
+  "volume":1.0,
+}

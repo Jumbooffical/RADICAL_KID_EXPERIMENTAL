@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"burnerscripttocopypaste",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"burnerscripttocopypaste",
+  "parent":{
+    "name":"Weapon",
+    "path":"folders/Objects/Dumbass/Data/Weapon.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

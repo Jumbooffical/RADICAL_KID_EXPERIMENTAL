@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_sawnoff_re",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.4256916,
+  "exportDir":"",
+  "name":"snd_sawnoff_re",
+  "parent":{
+    "name":"Reloading",
+    "path":"folders/Objects/Dumbass/Data/Weapon/Reloading.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_sawnoff_re.mp3",
+  "volume":1.0,
+}

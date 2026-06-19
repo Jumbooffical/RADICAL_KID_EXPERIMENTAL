@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"drop_money",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drop_money",
+  "parent":{
+    "name":"Script",
+    "path":"folders/Objects/Enemy/Script.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

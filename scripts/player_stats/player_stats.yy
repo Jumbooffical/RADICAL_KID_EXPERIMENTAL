@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"player_stats",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"player_stats",
+  "parent":{
+    "name":"Dumbass",
+    "path":"folders/Objects/Dumbass.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
