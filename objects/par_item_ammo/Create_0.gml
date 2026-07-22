@@ -10,3 +10,4 @@ switch (sprite_index) {
 }
 
 loot_alarm = 60
+magnet = false
