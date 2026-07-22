@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"bayonet_mount",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bayonet_mount",
+  "parent":{
+    "name":"Script",
+    "path":"folders/Items/Attachment/Script.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

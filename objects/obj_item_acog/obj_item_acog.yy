@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Optic",
-    "path":"folders/Rooms/Objects/Items/Attachment/Optic.yy",
+    "path":"folders/Items/Attachment/Optic.yy",
   },
   "parentObjectId":{
     "name":"par_item_attachment",

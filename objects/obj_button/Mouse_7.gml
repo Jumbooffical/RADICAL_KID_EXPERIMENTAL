@@ -42,4 +42,22 @@ switch (button_id)
 	case 7: // Reset to Default
 		loadsettings()
 	break;
+	
+	case 8: // Mail
+		layer_set_visible("PauseLayer", false)
+		layer_set_visible("MailLayer", true)
+	break;
+	
+	case 9: // Mail > Back
+		layer_set_visible("PauseLayer", true)
+		layer_set_visible("MailLayer", false)
+	break;
+	
+	case 10: // Bugs report
+		 url_open("https://forms.gle/ddfp7qmBx7YCQT97A")
+	break;
+	
+	case 11: // Feedback
+		url_open("https://forms.gle/cgkMohfnYcYs7Rn97")
+	break;
 }

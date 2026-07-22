@@ -1,3 +1,3 @@
-layer_script_end("MainBackground", function() {
+layer_script_end("Background", function() {
     shader_reset();
 });

@@ -18,6 +18,6 @@ function enemy_exerted() {
 		var aim = direction
 		
 		part_type_direction(mi.pt_gun_smoke, aim - 50, aim + 50, 0, 0);
-		part_particles_create(mi.sys_gun_smoke, x + 10, y - 50, mi.pt_gun_smoke, irandom_range(2, 3))
+		part_particles_create(mi.sys_gun_smoke, x + 10, y - 50, mi.pt_gun_smoke, irandom_range(12, 13))
 	}
 }

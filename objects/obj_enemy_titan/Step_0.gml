@@ -13,7 +13,7 @@ alarm_interval = 120
 stamina = clamp(stamina, -100, 100)
 
 if speed_buff {
-	base_spd = 8
+	base_spd = 6.5
 	img_spd = 2
 	recovery_rate = 1.7
 	alarm_interval = 30
@@ -23,7 +23,6 @@ if speed_buff {
 
 image_speed = img_spd
 enemy_spd = base_spd
-
 #region AI
 if my_state != STATE.BLINDED
 && my_state != STATE.TELEPORT {
@@ -39,7 +38,6 @@ if collision_circle(x, y, aggro_range, mi, false, true) {
 		if obj_player.blind_str > 0 {
 			my_state = STATE.HOLD
 		} else {
-			aggro_range = base_aggro * 2
 			my_state = STATE.ATTACK
 		}
 	}

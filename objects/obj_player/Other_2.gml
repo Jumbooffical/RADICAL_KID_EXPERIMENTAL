@@ -1,3 +1,16 @@
+all_mutations = array_shuffle(all_mutations)
+	
+var pos = pick_items(obj_player.all_mutations, 1, U_RARITY.COMMON)
+var neg = pick_items(obj_player.all_mutations, 1, U_RARITY.DEFECT)
+apply_mutation(pos[0])
+apply_mutation(neg[0])
+
+all_enemy_mutations = array_shuffle(all_enemy_mutations)
+enemy_starting_mutation = 1
+for (var i = 0; i < enemy_starting_mutation; i++) {
+	apply_enemy_mutation(all_enemy_mutations[0])
+}
+
 pt_gun_smoke = part_type_create();
 sys_gun_smoke = part_system_create();
 
@@ -5,7 +18,7 @@ part_type_shape(pt_gun_smoke, pt_shape_cloud);
 part_type_size(pt_gun_smoke, 0.3, weapon[wID, GUN.RECOIL] / 2, 0, 0);
 part_type_speed(pt_gun_smoke, 0.5, 1.5, 0, 0);
 part_type_life(pt_gun_smoke, 15, 160);
-part_type_alpha2(pt_gun_smoke, 0.5, 0);
+part_type_alpha2(pt_gun_smoke, 0.25, 0);
 part_type_orientation(pt_gun_smoke, 0, 360, 1, 0, false)
 part_system_depth(sys_gun_smoke, -99)
 

@@ -1,3 +1,3 @@
-depth=80;
-index=1; 
+
+index=thr.smoke_nade; 
 event_inherited()

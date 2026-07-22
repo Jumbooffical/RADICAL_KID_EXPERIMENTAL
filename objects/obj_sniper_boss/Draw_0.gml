@@ -47,12 +47,14 @@ if (my_state == STATE.IDLE) {
 }
 
 if (my_state == STATE.RETREAT) {
-	dir = point_direction(obj_player.x, obj_player.y, x, y); 
+	dir = point_direction(x, y, obj_retreat_zone.x, obj_retreat_zone.y);
 }
 
 if (my_state == STATE.ATTACK) {
 	dir = point_direction(x, y, obj_player.x, obj_player.y)
 }
+
+
 
 if sprite_index == run_spr {
 	gun_bob_time += gun_bob_speed * 2;
@@ -64,8 +66,8 @@ if sprite_index == run_spr {
 	smooth_arm_inertia = lerp(smooth_arm_inertia, target, 0.15) / 2;
 }
 
-gun_x = x + smooth_recoil_x
-gun_y = y + smooth_arm_inertia + smooth_recoil_y
+var gun_x = x + smooth_recoil_x
+var gun_y = y + smooth_arm_inertia + smooth_recoil_y
 
 if gun_type == WeaponType.Pistol && my_state != STATE.RETREAT {
 var amt = 44

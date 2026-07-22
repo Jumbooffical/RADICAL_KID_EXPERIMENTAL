@@ -6,7 +6,7 @@
   "name":"WeaponData",
   "parent":{
     "name":"Weapon",
-    "path":"folders/Objects/Dumbass/Data/Weapon.yy",
+    "path":"folders/Items/Weapon.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

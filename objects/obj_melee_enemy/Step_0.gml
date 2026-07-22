@@ -1,3 +1,5 @@
+raise = false
+
 hands_count = melee[ewID, MELEE.HANDED]
 attack_style = melee[ewID, MELEE.STYLE]
 attack_range = melee[ewID, MELEE.RANGE];
@@ -20,7 +22,7 @@ if collision_circle(x, y, aggro_range, mi, false, true) {
 	} else {
 		aggro_range = base_aggro * 2
 		my_state = STATE.ALERT
-		if distance_to_object(obj_player) < attack_range * 5 {
+		if distance_to_object(obj_player) < 300 {
 			raise = true
 		}
 		
@@ -50,6 +52,7 @@ if collision_circle(x, y, aggro_range, mi, false, true) {
 			if path_alarm == 1 {	
 				mp_grid_path(global.grid, path, x, y, obj_player.x, obj_player.y, true);
 				path_start(path, enemy_spd, path_action_stop, false);
+				mp_grid_add_instances(global.grid, par_pathwall, false);
 			}
 			sprite_index = run_spr
 	    break;

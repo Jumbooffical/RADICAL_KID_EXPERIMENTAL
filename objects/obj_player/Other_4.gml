@@ -23,5 +23,7 @@ if (spawned) {
 
 // Entering new room may randomly use default scar indexes instead of current gun
 // This should ensure gun index to sync properly
+if selected_item == melee_quickslot exit;
+if selected_item == nade_quickslot exit;
 drop_weapon(noone, selected_item)
 pick_up_weapon(noone)

@@ -1,29 +1,28 @@
-if instance_exists(obj_enemy_magnetizer) {
 instance_create_depth(x, y, depth, obj_titan_magnetfield)
-}
 
-ewID = wp.pkm
+global.titan_pool = [wp.pkm, wp.aa12, wp.m249]
+ewID = random_array(global.titan_pool)
 
 name = obj_enemy_titan
-idle_spr = spr_tankboss_idle
-walk_spr = spr_tankboss_running_noarm
-run_spr = spr_tankboss_running_noarm
-death_spr = spr_tankboss_death
+idle_spr = spr_titan_idle
+walk_spr = spr_titan_walking
+run_spr = spr_titan_walking
+death_spr = spr_titan_death
 
 // Enemy stat
-enemy_hp = 1500;
+enemy_hp = 3000;
 armor_tier = 0
 
-base_spd = 1.5;
+base_spd = 1;
 
-base_aggro = 900
+base_aggro = 600
 
 base_react_time = 15
 alarm_interval = 60
 
 stamina = 100
 recovery_rate = 0.5
-drain_rate = 0.2
+drain_rate = 0.15
 exhausted = false
 
 speed_buff = false
@@ -33,7 +32,7 @@ img_spd = 0.3
 step = false
 
 event_inherited()
-mask_index = sprite_index
+mask_index = giant_hitbox
 my_state = STATE.IDLE
 
 fall = 0
@@ -45,3 +44,5 @@ zspd = -9;
 
 state_delay = 60
 is_deployed = true
+
+stun_immune = true

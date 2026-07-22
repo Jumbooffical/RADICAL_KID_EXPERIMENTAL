@@ -15,7 +15,7 @@
   "name":"snd_m870_1",
   "parent":{
     "name":"unused",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Shooting/unused.yy",
+    "path":"folders/Items/Weapon/Shooting/unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

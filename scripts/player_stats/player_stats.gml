@@ -1,11 +1,58 @@
 function player_default_stats(){
+	
+	
+	#region BASE PLAYER STAT
+	maxhp = base.maxhp
+	my_spd = 8;
+
+	global.combo1_milestone = 3;
+	global.max_combo_cd = 300;
+
+	base.roll_cd = 30;
+
+	base.reload_mult = 1;
+	base.recoil_penalty = 1;
+	base.deviation = 1;
+	base.react_mult = 1;
+
+	heat_mult = 1;
+
+	uncommon_chance = 30;
+	rare_chance = 12;
+	epic_chance = 3;
+	curse_chance = 1 * (gun_heat * 3)
+
+	obj_camera.zoom = 2;
+	#endregion
+	apply_mutation_rework()
+	apply_enemy_mutation_rework()
+	
+	nadeIndex = quickslot[selected_item, QSlot.Nade]
+	if selected_item == melee_quickslot {
+		meleeIndex = quickslot[selected_item, QSlot.Melee]
+	}
+	
+	if hp < prev_hp {
+	pain += (prev_hp - hp) * 0.01
+	}
+	prev_hp = hp
+	pain = clamp(pain, 0, 1)
+	pain_decay = 1
+	heal_mult = base.heal_mult
+	
+	hp = clamp(hp, 0, maxhp)
 
 	image_speed = spd_mult 
 	image_angle = 0
+	visible = true
+	
 	current_spd = my_spd * spd_mult
-	spd_mult = 2
+	spd_mult = 1
 
-	wID = par_gun.weaponIndex
+	if quickslot[selected_item, QSlot.Gun] != noone {
+		wID = quickslot[selected_item, QSlot.Gun]
+	}
+	
 	melee_quickslot = 0
 	nade_quickslot = 6
 
@@ -20,31 +67,29 @@ function player_default_stats(){
 
 	noise = 1
 	gun_pitch = 1
+	gun_gain = 1
 
-	gun_heat = quickslot[selected_item, QSlot.Heat]	
-	stat.base_accuracy = weapon[wID, GUN.DEVIATION] / deviation
+	stat.base_accuracy = weapon[wID, GUN.DEVIATION] * deviation
 	current_accuracy = stat.base_accuracy * (gun_heat * heat_penalty)
 	inaccuracy = random_range(-current_accuracy, current_accuracy);
-	deviation = 1
+	deviation = base.deviation
 	
 	magnify = 1
 	obj_reticle.sprite_index = spr_void
 
-	reload_mult = 1
+	reload_mult = base.reload_mult
 	recoil = weapon[wID, GUN.RECOIL]
 	
-	stat.recoil = recoil * recoil_control * recoil_penalty
-	recoil_penalty = 1
+	stat.recoil = (recoil * recoil_penalty) / recoil_control 
+	recoil_penalty = base.recoil_penalty
 	recoil_control = 1
-
 	
 	aiming_damage_mult = 1
-	mult_react_time = 1
+	mult_react_time = base.react_mult
 
 	bullet_type = par_bullet_SCAR
 	gun_type = weapon[wID, GUN.TYPE]
-	
-	optic_shape = obj_dot
+
 	stat.ads_speed = weapon[wID, GUN.CAM_TO_RETICLE_SPD]
 
 	have_laser = false
@@ -56,10 +101,17 @@ function player_default_stats(){
 	is_aiming = false
 	is_shooting = false
 	
-	allow_optic = weapon[wID, GUN.OPTIC]
-	allow_mount = weapon[wID, GUN.MOUNT]
-	allow_grip = weapon[wID, GUN.GRIP]
-	allow_barrel = weapon[wID, GUN.BARREL]
+	allow_optic = weapon[wID, GUN.ALLOW_OPTIC]
+	allow_mount = weapon[wID, GUN.ALLOW_MOUNT]
+	allow_grip = weapon[wID, GUN.ALLOW_GRIP]
+	allow_barrel = weapon[wID, GUN.ALLOW_BARREL]
+	
+	if !player_armed {
+		allow_optic = false
+		allow_mount = false
+		allow_grip = false
+		allow_barrel = false
+	}
 	AttachmentModifier()
 
 	apply_blinding()
@@ -72,25 +124,14 @@ function player_default_stats(){
 
 	MagazineModifier()
 
-	if immobilize_timer > 0 {
-	immobilize_timer--
-	spd_mult = spd_mult / 1.8
-	}
-
-	if kunai > 100 {
-	kunai = 100
-	}
-
-	if shuriken > 100 {
-	shuriken = 100
-	}
+	kunai = clamp(kunai, 0, 100)
+	shuriken = clamp(shuriken, 0, 100)
 
 	if gore > 0 {
 	gore -= 0.003
 	}
 	
 	aiming_offsetx = 15
-	
 
 	if quickslot[selected_item, QSlot.Gun] != noone {		
 		switch (gun_type) {
@@ -126,18 +167,6 @@ function player_default_stats(){
 	cooldown--
 	}
 	
-	if hp >= maxhp {
-	hp = max(0, maxhp)		// Prevent hp overflow when heal above maxhp
-}
-
-	if quickslot[selected_item, QSlot.Heat] > 0 {
-	quickslot[selected_item, QSlot.Heat] -= 0.003
-	}
-
-	if quickslot[selected_item, QSlot.Heat] > 1 {
-	quickslot[selected_item, QSlot.Heat] = 1
-	}
-
 	rolling_timer--;	
 	if (rolling_timer <= 0) {
 	my_state = state.idle
@@ -158,9 +187,11 @@ function player_default_stats(){
 		image_xscale = -1
 	}
 
-	if mouse_input && (!player_armed) 
-	&& (quickslot_type == Slot.Gun) && (selected_item != nade_quickslot) {
-	swap_melee(noone)
+	if mouse_input && (!player_armed) && !open_inventory {
+		if (quickslot_type == Slot.Gun)
+		|| (nadeIndex == noone) && (selected_item == nade_quickslot) {
+		swap_melee(noone)
+		}
 	}
 	
 	if global.earthquake < 0 {
@@ -170,9 +201,14 @@ function player_default_stats(){
 		my_state = state.lost_balance
 	}
 	
-	if global.dev_mode {
-		spd_mult = 1
-	}
-	
 	combo_mechanic()
+	cancer_system()
+	apply_status()
+	
+	if room == Tutorial {
+		uncommon_chance = 0
+		rare_chance = 0
+		epic_chance = 0
+		curse_chance = 0
+	}
 }

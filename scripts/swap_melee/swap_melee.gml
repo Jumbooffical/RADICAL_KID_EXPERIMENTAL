@@ -2,7 +2,7 @@ function swap_melee(_key) {
 	var key = _key
 	if (keyboard_check_pressed(key)) || key == noone {
 		if quickslot_type == Slot.Melee {
-		selected_item = last_slot
+		selected_item = 1
 		quickslot_type = Slot.Gun
 		} else {
 		quickslot_type = Slot.Melee

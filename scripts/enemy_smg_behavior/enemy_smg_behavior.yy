@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"enemy_smg_behavior",
   "parent":{
-    "name":"Script",
-    "path":"folders/Objects/Enemy/Script.yy",
+    "name":"Enemy",
+    "path":"folders/Scripts/Enemy.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

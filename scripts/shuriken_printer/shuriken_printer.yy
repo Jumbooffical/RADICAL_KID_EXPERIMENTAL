@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"shuriken_printer",
   "parent":{
-    "name":"Attachment",
-    "path":"folders/Objects/Dumbass/Data/Attachment.yy",
+    "name":"Script",
+    "path":"folders/Items/Attachment/Script.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

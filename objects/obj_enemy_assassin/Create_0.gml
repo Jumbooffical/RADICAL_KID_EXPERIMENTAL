@@ -3,30 +3,27 @@ ml.assassin_blade
 
 name = obj_enemy_assassin
 idle_spr = spr_goon_idle_noarm
-walk_spr = spr_goon_walk_noarm
-run_spr = spr_goon_running_noarm
+walk_spr = spr_assassin_running
+run_spr = spr_assassin_running
 death_spr = spr_goon_death
+roll_spr = spr_assassin_dodgeroll
 
 // Enemy stat
-enemy_hp = 200;
+enemy_hp = 150;
 armor_tier = 0
 
 base_spd = 10;
 
-base_aggro = 600
+base_aggro = 900
 
 base_react_time = 15
-alarm_interval = 25
-
-is_rolling = false
-will_dodge = false
-
-roll_spd = 24
-roll_dir = 0
-
-smoke_attached = true
-if smoke_attached {
-blind_immune = true
-}
+alarm_interval = 5
 
 event_inherited()
+
+smoke_attached = false
+
+var t = global.tier
+if rng < (5 * t) {
+	smoke_attached = true
+}

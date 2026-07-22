@@ -3,13 +3,14 @@
   "%Name":"par_item_attachment",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"par_item_attachment",
   "overriddenProperties":[],
   "parent":{
     "name":"Attachment",
-    "path":"folders/Rooms/Objects/Items/Attachment.yy",
+    "path":"folders/Items/Attachment.yy",
   },
   "parentObjectId":{
     "name":"par_item",

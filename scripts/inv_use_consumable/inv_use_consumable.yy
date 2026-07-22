@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"inv_use_consumable",
   "parent":{
-    "name":"Inventory Behavior",
-    "path":"folders/Objects/Dumbass/Player Scripts/Inventory Behavior.yy",
+    "name":"Consumable",
+    "path":"folders/Items/Consumable.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

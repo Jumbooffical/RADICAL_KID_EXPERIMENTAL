@@ -3,9 +3,8 @@ varying vec4 v_vColour;
 
 uniform vec3 fog_color;
 uniform float fog_strength;
-uniform float time;   // animate clouds
+uniform float time;
 
-// Simple 2D noise
 float hash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
 }
@@ -30,11 +29,8 @@ void main() {
 
     vec2 center = vec2(0.5, 0.5);
     float dist = distance(v_vTexcoord, center);
-
-    // Cloud noise
     float n = noise(v_vTexcoord * 8.0 + time * 0.05);
 
-    // Warp distance with noise
     dist += (n - 0.5) * 0.12;
 
     float fog = smoothstep(0.15, 0.6, dist * fog_strength);

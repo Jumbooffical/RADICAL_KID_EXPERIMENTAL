@@ -59,7 +59,7 @@ switch (other.sprite_index) {
 		
 		case spr_rubber_jacket:
 			desc = "Full Rubber Jacket"
-			desc2 = "Ricochet twice, shot now ricochet all surface \n-50% base damage, +100% ricochet accuracy \nAfter ricochet, bullet deal 150% damage instead"
+			desc2 = "-50% base damage, +100% ricochet accuracy \nAfter ricochet, bullet deal 150% damage instead"
 		break;
 		
 		case spr_corrosive_mag:
@@ -108,12 +108,19 @@ switch (other.sprite_index) {
 		break;
 	}
 	
-	draw_text(x + 50, y - 30, desc)
-	draw_text(x + 50, y, desc2)
+	if object_index == obj_store_mag {
+		draw_text(x + 170, y - 30, desc)
+		draw_text(x + 170, y, desc2)
+	} else {
+		draw_text(x + 50, y - 30, desc)
+		draw_text(x + 50, y, desc2)
+	}
 	
 	if obj_player.quickslot[obj_player.selected_item, QSlot.Buff_Overclocked] > 0 {
-	draw_text_colour(x + 50, y + 20, "!!!OVERCLOCKED!!!", c_red, c_red, c_red, c_red, irandom_range(0.5, 1))
+	draw_text_colour(x + 50, y + 40, "!!!OVERCLOCKED!!!", c_red, c_red, c_red, c_red, irandom_range(0.5, 1))
 	}
+	
+	mag_tooltip()
 	
 	var scale = 1.2
 	image_xscale = scale

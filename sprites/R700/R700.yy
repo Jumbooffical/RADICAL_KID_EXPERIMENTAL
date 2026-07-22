@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"Bolt Action",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Gun Sprites/Bolt Action.yy",
+    "path":"folders/Items/Weapon/Gun Sprites/Bolt Action.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

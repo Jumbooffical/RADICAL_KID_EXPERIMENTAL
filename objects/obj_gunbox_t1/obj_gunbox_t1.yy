@@ -10,11 +10,11 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Lootboxes",
-    "path":"folders/Rooms/Objects/Enviroment/Lootboxes.yy",
+    "path":"folders/Rooms/Objects/Lootboxes.yy",
   },
   "parentObjectId":{
-    "name":"obj_box",
-    "path":"objects/obj_box/obj_box.yy",
+    "name":"par_box",
+    "path":"objects/par_box/par_box.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

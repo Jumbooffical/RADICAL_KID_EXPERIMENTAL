@@ -15,3 +15,6 @@ smooth_arm_inertia = 0;
 play_sound = true
 
 cash = 5
+magnet = false
+
+loot_delay = 60

@@ -41,7 +41,7 @@ function enemy_smg_behavior(){
 
 	
 	if distance_to_object(mi) < aggro_range/4 && (attack) && (is_alerted) {
-		path_end(); path_finished = true;	
+		path_end()	
 	} else {
 		//recalc_path_to(mi.x, mi.y, enemy_spd);
 	}}

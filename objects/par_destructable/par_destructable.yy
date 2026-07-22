@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Lootboxes",
-    "path":"folders/Rooms/Objects/Enviroment/Lootboxes.yy",
+    "path":"folders/Rooms/Objects/Lootboxes.yy",
   },
   "parentObjectId":{
     "name":"par_pathwall",

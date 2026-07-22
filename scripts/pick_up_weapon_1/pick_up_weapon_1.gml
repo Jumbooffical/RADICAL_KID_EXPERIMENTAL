@@ -103,7 +103,7 @@ function pick_up_weapon1(_key) {
 			nade[nearest_nade.index, NADE.DESCRIPTION],
 			nade[nearest_nade.index, NADE.SPRITE],
 			nearest_nade.index,
-			type.CONSUMABLE
+			type.NADE
 			)
 		
 			with (nearest_nade) {

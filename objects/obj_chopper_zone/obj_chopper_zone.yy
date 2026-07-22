@@ -3,14 +3,13 @@
   "%Name":"obj_chopper_zone",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_chopper_zone",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Rooms/Objects.yy",
+    "name":"Spawn",
+    "path":"folders/Rooms/Objects/Spawn.yy",
   },
   "parentObjectId":null,
   "persistent":false,

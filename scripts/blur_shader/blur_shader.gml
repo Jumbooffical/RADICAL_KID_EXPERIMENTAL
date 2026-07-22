@@ -14,6 +14,4 @@ shader_set_uniform_f(
 
 draw_surface(application_surface, 0, 0);
 shader_reset();
-
-audio_group_set_gain(audiogroup_default, 1 - global.ringing)
 }

@@ -32,7 +32,6 @@ function pick_up_weapon(_key) {
 			cash -= pickup_target.price 
 			pickup_target.in_shop = false
 			audio_play_sound(snd_purchased, 1, 0)
-			exit;
 		} else {
 			text_shake_alarm = 30
 			exit;
@@ -42,8 +41,8 @@ function pick_up_weapon(_key) {
 	switch (object_get_parent(pickup_target.object_index)) {
 		case par_item_weapon:
 			// Drop the selected weapon first
-			if (quickslot_type == Slot.Melee || selected_item >= nade_quickslot) {
-				selected_item = last_slot;
+			if (selected_item == melee_quickslot || selected_item >= nade_quickslot) {
+				selected_item = 1;
 				quickslot_type = Slot.Gun;
 			}
 
@@ -78,13 +77,9 @@ function pick_up_weapon(_key) {
 			full_auto = pickup_target.full_auto;
 
 			var select = quickslot[selected_item, QSlot.Gun];
-			alarm[0] = weapon[select, 9];
-
 			player_armed = true;
-			par_gun.weaponIndex = pickup_target.index;
-
 			audio_play_sound(
-				weapon[par_gun.weaponIndex, GUN.SFX_SWAPPING],
+				weapon[select, GUN.SFX_SWAPPING],
 				10, false, 1, 0, 0.7
 			);
 
@@ -128,9 +123,9 @@ function pick_up_weapon(_key) {
 					nade[pickup_target.index, NADE.DESCRIPTION],
 					nade[pickup_target.index, NADE.SPRITE],
 					pickup_target.index,
-					type.CONSUMABLE
+					type.NADE,
+					pickup_target.object_index
 				);
-
 				with (pickup_target)
 				{
 					instance_destroy();
@@ -148,7 +143,29 @@ function pick_up_weapon(_key) {
 					pickup_target.description,
 					pickup_target.sprite_index,
 					pickup_target.index,
-					type.ATTACHMENT
+					type.ATTACHMENT,
+					pickup_target.object_index
+				);
+
+				with (pickup_target)
+				{
+					instance_destroy();
+				}
+			}
+
+		break;
+		
+		case par_item_consumable:
+
+			if (array_length(obj_inventory.inv._inventory) < obj_inventory.inv._max_inventory_slots) {
+
+				obj_inventory.inv.add(
+					pickup_target.name,
+					pickup_target.description,
+					pickup_target.sprite_index,
+					0,					
+					type.CONSUMABLE,
+					pickup_target.object_index
 				);
 
 				with (pickup_target)

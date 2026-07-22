@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"grab_nade_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"grab_nade_animation",
+  "parent":{
+    "name":"Animation",
+    "path":"folders/Scripts/Animation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

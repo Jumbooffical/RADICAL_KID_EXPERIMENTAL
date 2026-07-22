@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
   "%Name":"par_item_consumable",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"par_item_consumable",
   "overriddenProperties":[],
   "parent":{
     "name":"Consumable",
-    "path":"folders/Rooms/Objects/Items/Consumable.yy",
+    "path":"folders/Items/Consumable.yy",
   },
   "parentObjectId":{
     "name":"par_item",

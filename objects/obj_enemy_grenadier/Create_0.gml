@@ -15,7 +15,7 @@ run_spr = spr_goon_running
 death_spr = spr_goon_death
 
 // Enemy stat
-enemy_hp = 100;
+maxhp = 70 enemy_hp = maxhp
 armor_tier = 0
 
 base_spd = 6;
@@ -25,7 +25,6 @@ base_aggro = 900
 aggro_range = base_aggro;
 
 base_react_time = 15
-mult_react_time = 1
 reaction_time = 0
 
 nade_ready = true

@@ -3,7 +3,7 @@ function enemy_dying() {
 	image_speed = 0.3
 	}
 	
-	with instance_create_depth(x, y, depth, obj_entity_dying) {
+	with instance_create_layer(x, y, "Enemies", obj_entity_dying) {
 	sprite_index = other.death_spr
 	image_xscale = other.image_xscale
 	image_speed = other.image_speed
@@ -13,6 +13,7 @@ function enemy_dying() {
 		}
 		
 	maxhp = other.maxhp
+	minion = other.sniper_minion
 	}
 	path_end()
 	instance_destroy()

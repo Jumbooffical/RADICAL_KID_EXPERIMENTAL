@@ -18,7 +18,7 @@ aiming_shd_str += 0.02
 
 if (obj_player.pain > 0) && !obj_player.is_reloading {
     shader_state = shd_state.hurt
-	obj_player.pain -= 0.005
+	obj_player.pain -= 0.005 * obj_player.pain_decay
 }
 
 if global.ringing > 0 {

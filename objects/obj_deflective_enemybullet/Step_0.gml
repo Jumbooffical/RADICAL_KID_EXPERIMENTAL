@@ -10,3 +10,5 @@ event_inherited()
 for (var i = 0; i < ricochet_count; i++) {
 damage = damage * (1 - (i * 0.25))
 }
+
+sprite_index = spr_bouncing_bullet

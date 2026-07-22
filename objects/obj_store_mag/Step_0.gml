@@ -14,7 +14,7 @@ if position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id) {
 	}
 }
 	
-visible = !visible
+visible = true
 if !obj_player.is_reloading {
 	if sprite_index == spr_rngmag && selected_pocket {
 		with instance_create_depth(x, y, -11, gui_afterimage) {
@@ -28,6 +28,8 @@ if !obj_player.is_reloading {
 	}
 	
 	visible = false
-} else {
-	visible = true
+}
+
+if obj_player.gun_type == WeaponType.Shotgun {
+	visible = false
 }

@@ -6,13 +6,11 @@ function rolling() {
 	var hsp = lengthdir_x(roll_spd, dir);
 	var vsp = lengthdir_y(roll_spd, dir);
         
-	// Split movement into smaller steps to avoid skipping through walls
-	var steps = ceil(max(abs(hsp), abs(vsp))); // number of sub-steps
+	var steps = ceil(max(abs(hsp), abs(vsp)));
 	var move_x = hsp / steps;
 	var move_y = vsp / steps;
 
 	for (var i = 0; i < steps; i++) {
-	    // Stop rolling if a wall is ahead
 	    if (!place_meeting(x + move_x, y + move_y, par_pathwall)) {
 	        x += move_x;
 	        y += move_y;
@@ -20,6 +18,5 @@ function rolling() {
 	        break;
 	    }
 	}
-	// Gradually slow down rolling
 	roll_spd *= 0.95
 }

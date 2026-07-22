@@ -24,6 +24,15 @@ obj_player.cash += cash
 instance_destroy()
 }
 
+gun_bob_time += gun_bob_speed / 6;
+var target = sin(gun_bob_time) * gun_bob_amount;
+smooth_arm_inertia = lerp(smooth_arm_inertia, target, 0.15) / 6;
+
+y = y + smooth_arm_inertia
+
+loot_delay--
+if loot_delay > 0 exit;
+
 if place_meeting(x, y, obj_player) {
 collected = true
 	if play_sound {
@@ -32,8 +41,12 @@ collected = true
 	}
 }
 
-gun_bob_time += gun_bob_speed / 6;
-var target = sin(gun_bob_time) * gun_bob_amount;
-smooth_arm_inertia = lerp(smooth_arm_inertia, target, 0.15) / 6;
+if distance_to_object(obj_player) < 250 {
+	magnet = true
+}
 
-y = y + smooth_arm_inertia
+if magnet {
+	var dir = point_direction(x, y, obj_player.x, obj_player.y)
+	x += lengthdir_x(12, dir)
+	y += lengthdir_y(12, dir)
+}

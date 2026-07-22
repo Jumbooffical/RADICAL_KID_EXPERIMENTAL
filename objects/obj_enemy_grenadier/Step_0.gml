@@ -116,7 +116,11 @@ enemy_knockback()
 			raise = true
 			state_name = "alerted"
 			enemy_spd = base_spd
-			recalc_path_to(obj_player.x, obj_player.y, enemy_spd)
+			if path_alarm == 1 {		
+				mp_grid_path(global.grid, path, x, y, obj_player.x, obj_player.y, true);
+				path_start(path, enemy_spd, path_action_stop, false);
+				mp_grid_add_instances(global.grid, par_pathwall, false);
+			}
 			sprite_index = run_spr
 	    break;
 		

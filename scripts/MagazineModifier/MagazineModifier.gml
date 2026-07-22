@@ -86,7 +86,7 @@ function MagazineModifier() {
 			if !is_reloading {
 				quickslot[selected_item, QSlot.Buff_Smart] = 1
 			}
-			velocity = velocity / 2
+			velocity = velocity / 1.5
 		break;
 		
 		case spr_heatseekmag:
@@ -129,7 +129,6 @@ function MagazineModifier() {
 		case spr_blackjack_mag:
 			burst_blackjack()
 			firerate = firerate * 1.25
-			mag_size = infinity
 		break;
 	}
 	

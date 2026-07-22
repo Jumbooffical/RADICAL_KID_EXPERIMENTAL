@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Grip",
-    "path":"folders/Rooms/Objects/Items/Attachment/Grip.yy",
+    "path":"folders/Items/Attachment/Grip.yy",
   },
   "parentObjectId":{
     "name":"par_item_attachment",

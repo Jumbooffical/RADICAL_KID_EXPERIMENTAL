@@ -1,11 +1,11 @@
 if (path_position >= 1) {
 path_end() path_finished = true	
 }
+if name == obj_enemy_titan exit;
 
 if path_finished {
 sprite_index = idle_spr
 }
-if name == obj_enemy_titan exit;
 
 if sprite_index == walk_spr {
 image_speed = 1.5
@@ -45,7 +45,7 @@ if last_seen_player {
 	last_seen_player = false
 }
 
-if distance_to_object(obj_m62_unpin) < base_aggro {
+if distance_to_object(obj_m62_unpin) < base_aggro / 2 {
 	my_state = STATE.RETREAT
 	spotted = true
 }
@@ -54,4 +54,3 @@ enemy_knockback()
 for (var i = 0; i < dot_received; i++) {
 	damage_taken = 5 * i
 }
-

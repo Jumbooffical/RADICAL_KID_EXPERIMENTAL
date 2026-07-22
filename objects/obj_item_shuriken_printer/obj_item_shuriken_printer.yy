@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Mount",
-    "path":"folders/Rooms/Objects/Items/Attachment/Mount.yy",
+    "path":"folders/Items/Attachment/Mount.yy",
   },
   "parentObjectId":{
     "name":"par_item_attachment",

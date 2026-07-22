@@ -1,0 +1,1 @@
+audio_play_sound(snd_mag, 1, 0, 2)

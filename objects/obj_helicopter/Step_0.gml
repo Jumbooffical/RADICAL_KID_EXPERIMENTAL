@@ -1,10 +1,23 @@
+
 var mi = obj_player
-image_alpha = 0.5
+
 steering_spd = 0.007
 reset_alarm--
 
+if mystate == HELI_STATE.RETREAT {
+var in = 0.001
+image_alpha -= in
+image_xscale -= in
+image_yscale -= in
+
+	if image_alpha <= 0 {
+		instance_destroy()
+	}
+} else {
+image_alpha = 0.5
 image_xscale = scale
 image_yscale = scale
+}
 
 var dir = point_direction(obj_player.x, obj_player.y, x, y); 
 
@@ -48,10 +61,10 @@ retreat_alarm--
 switch (mystate) {
 	case HELI_STATE.STOP:
 		attack_interval--
-		dir = point_direction(x, y, obj_player.x, obj_player.y);
+		dir = point_direction(obj_player.x, obj_player.y, x, y);
 		stop_zone = 750 * 1.5
 		state_name = "stop"
-		velocity = lerp(velocity, 0, 0.02)
+		velocity = lerp(velocity, 0, 0.03)
 	break;
 	
 	case HELI_STATE.CHASE:
@@ -73,7 +86,7 @@ switch (mystate) {
 	case HELI_STATE.RETREAT:
 		state_name = "RUN SON!"
 		dir = image_angle
-		velocity = lerp(velocity, 20, 0.03)
+		//velocity = lerp(velocity, 20, 0.03)
 	break;
 	
 	case HELI_STATE.ORBIT:
@@ -92,12 +105,12 @@ switch (mystate) {
 		attack_interval--
 		state_name = "attack"
 		var acc = 7
-		var dmg = 50
+		var dmg = 200
 		var spread = irandom_range(-acc, acc)
 		
 		dir = point_direction(obj_player.x, obj_player.y, x, y); 
 		velocity = lerp(velocity, 6, 0.03)
-		steering_spd = 0.075
+		steering_spd = 0.05
 		
 		with instance_create_depth(x, y + 85, depth, par_enemybullet_SCAR) {
 			image_angle = other.image_angle + spread

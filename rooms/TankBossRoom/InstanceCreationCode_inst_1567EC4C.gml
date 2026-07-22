@@ -1,0 +1,1 @@
+audio_play_sound(snd_tankboss_intro, 1, 0, 2)

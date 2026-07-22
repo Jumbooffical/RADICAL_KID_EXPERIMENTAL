@@ -4,11 +4,13 @@ function burst_blackjack(){
 	if !burst_failure {
 		if mouse_check_button_released(mb_left) && start_shooting {
 			if burst_fired != 21 {
+				quickslot[selected_item, QSlot.LoadedAmmo] = infinity
 				burst_failure = true;
 			} else {
-				audio_play_sound(snd_succeed, 1, 0, 10, 0, 1)
+				cursed = false
+				quickslot[selected_item, QSlot.LoadedAmmo] = 0
+				audio_play_sound(snd_succeed, 1, 0, 7, 0, 1)
 				global.green_glow = 0.25
-				curse = false
 				quickslot[selected_item, QSlot.Mag] = spr_mag
 			}
 		}
@@ -19,7 +21,7 @@ function burst_blackjack(){
 	}	
 
 	if burst_failure {
-		hp -= 50	
+		hp -= 50
 		burst_fired = 0
 		burst_failure = false
 		audio_play_sound(snd_dead, 1, 0, 1, 0, 1)

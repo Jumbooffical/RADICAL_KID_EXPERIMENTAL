@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"Reticle",
-    "path":"folders/Sprites/Attachment/Optic/Reticle.yy",
+    "path":"folders/Items/Attachment/Sprite/Optic/Reticle.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

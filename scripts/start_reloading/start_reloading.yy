@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"start_reloading",
   "parent":{
-    "name":"Player Scripts",
-    "path":"folders/Objects/Dumbass/Player Scripts.yy",
+    "name":"Reloading Mechanic",
+    "path":"folders/Objects/Dumbass/Player Scripts/Reloading Mechanic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

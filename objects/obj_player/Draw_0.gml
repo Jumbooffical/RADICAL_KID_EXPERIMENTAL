@@ -2,9 +2,10 @@
 image_blend = c_white
 if pride_month rainbow_shader;
 
-if my_state == state.death {
-draw_text(x, y - 30, "Press esc to restart")
-} if death exit;
+if death draw_text(x, y - 30, "Press esc to restart")
+if death exit;
+
+flash_duration--;
 if (flash_duration > 0) {
 
     var white_amt = 0.5;
@@ -50,7 +51,7 @@ lerp_str = 0.07
 smooth_recoil_x = lerp(smooth_recoil_x, 0, lerp_str)
 smooth_recoil_y = lerp(smooth_recoil_y, 0, lerp_str)
 
-pistol_recoil_angle = lerp(pistol_recoil_angle, 0, lerp_str)
+pistol_recoil_angle = lerp(pistol_recoil_angle, 0, lerp_str*2)
 	
 var gun_dir = par_gun.image_angle + inaccuracy
 if !is_shooting {
@@ -73,6 +74,7 @@ if (quickslot[selected_item, QSlot.Gun] != noone) && (player_armed) && (!is_roll
 		obj_laser.image_angle = gun_dir
 	}
 	
+	// Flashlight
 	instance_deactivate_object(obj_player_flashlight)
 	if (have_flashlight) {
 		instance_activate_object(obj_player_flashlight)
@@ -86,7 +88,12 @@ if (quickslot[selected_item, QSlot.Gun] != noone) && (player_armed) && (!is_roll
 		is_ejecting = false
 	}
 	
-	
+if (flash_duration > 0) {
+    var white_amt = 0.5;
+    shader_set(shd_muzzle);
+    shader_set_uniform_f(shader_get_uniform(shd_muzzle, "u_white"), white_amt);	
+}	
+
 	// Draw gun
 	draw_sprite_ext(
 	    weapon[quickslot[selected_item, QSlot.Gun], GUN.PLAYER_SPRITE],
@@ -102,8 +109,10 @@ if (quickslot[selected_item, QSlot.Gun] != noone) && (player_armed) && (!is_roll
         gun_frame,
         gun_x,
         gun_y,
-        1, flip, gun_dir - pistol_recoil_angle, c_white, quickslot[selected_item, QSlot.Heat]
+        1, flip, gun_dir - pistol_recoil_angle, c_white, gun_heat
     );
+	
+	shader_reset()
 }
 
 //Draw melee
@@ -134,6 +143,7 @@ if (quickslot[selected_item, QSlot.Melee] != noone) && (!player_armed)  && (!is_
 
 // Draw nade
 if (quickslot[selected_item, QSlot.Nade] != noone) && (!player_armed) {
-	draw_sprite_ext(nade[quickslot[selected_item, QSlot.Nade], NADE.SPRITE], 
-	image_index, x, y, 1, flip, point_direction(x, y, mouse_x, mouse_y), c_white, 1);
+	grab_nade_animation()
+	idle_spr = spr_player_idle
+	run_spr = spr_player_running_onearm
 }

@@ -1,4 +1,5 @@
 function savegame() {
+	
     var _saveData = array_create(0);
 
     with (obj_player) {
@@ -26,15 +27,39 @@ function savegame() {
                 Barrel : quickslot[i, QSlot.Barrel]
             };
         }
+		
+		var mags = [];
+
+		with (obj_store_mag)
+		{
+		    array_push(mags, {
+				sprite : sprite_index,
+			}
+		)}
 
         var _savePlayer = {
             x : x,
             y : y,
+			
+			all_rooms : global.all_rooms,
 			room : room,
+			
 			level : global.level,
+			tier : global.tier,
+			maxhp : base.maxhp,
 			hp : hp,
+			cursed : cursed,
             spd_mult : spd_mult,
             wID : wID,
+			
+			magslot : magslot,
+			max_pocket : max_pocket,
+			mags : mags,
+			
+			CLAR_stim_count : CLAR_stim_count,
+			EPIK_stim_count : EPIK_stim_count,
+			DRUM_stim_count : DRUM_stim_count,
+			HEX_stim_count : HEX_stim_count,
 
             Medium : current_magazine[Caliber.Medium],
             Light : current_magazine[Caliber.Light],
@@ -44,10 +69,18 @@ function savegame() {
 
             quickslots : _quickslots,
 			inventory : obj_inventory.inv._inventory,
+			nadeIndex : nadeIndex,
+			
+			mutation : applied_mutation,
+			all_mutations : all_mutations,
+			enemy_mutation : applied_enemy_mutation,
+			all_enemy_mutation : all_enemy_mutations,
+			
+			cancer_phase : cancer_phase,
+			cancer_timer : cancer_timer,
 			
 			cash : cash
         };
-
         array_push(_saveData, _savePlayer);
     }
 	
@@ -56,4 +89,6 @@ function savegame() {
 	buffer_write(_buffer, buffer_string, _string);
 	buffer_save(_buffer, "radicalkid.sav");
 	buffer_delete(_buffer);
+	
+	show_debug_message("Saved!")
 }

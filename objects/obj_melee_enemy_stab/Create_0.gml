@@ -14,7 +14,7 @@ flashlight = false
 blinding_flashlight = false
 
 // Enemy stat
-enemy_hp = 200;
+maxhp = 350 enemy_hp = maxhp
 base_spd = 7;
 enemy_spd = base_spd;		// Movement speed
 
@@ -27,8 +27,6 @@ aggro_range = base_aggro;
 reaction_time = 30
 cooldown = 20
 gore = 0
-
-rng = 0
 
 cell_size = 64;
 global.grid = mp_grid_create(
@@ -70,7 +68,7 @@ to_me = point_direction(obj_player.x, obj_player.y, x, y);
 to_wall = point_direction(par_indestructable.x, par_indestructable.y, x, y);
 
 gun_dir = direction;
-rng = irandom_range(0, 100)
+
 starting_dir = choose(0, 180)
 
 flash_duration = 0

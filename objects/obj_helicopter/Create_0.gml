@@ -1,5 +1,5 @@
 randomize()
-hull_hp = 30
+hull_hp = 50
 
 velocity = 5
 timer = 120
@@ -41,11 +41,13 @@ has_sniper = false
 has_titan = false
 start_attacking = false
 
-rng = irandom_range(0, 100)
-if rng < 25 {
-has_sniper = true
-} else if rng < 10 {
-has_titan = true
+var t = global.tier
+if t > 0 {
+	if rng < 25 + (t * 5) {
+	//has_sniper = true
+	} else if rng < 10 + (t * 2.5) {
+	has_titan = true
+	}
 }
 
 if has_sniper {
@@ -59,3 +61,4 @@ if has_sniper {
 
 dot_received = 1
 reset_alarm = 0
+flash_alarm = 2

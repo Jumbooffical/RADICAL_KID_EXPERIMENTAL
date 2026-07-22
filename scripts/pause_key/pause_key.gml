@@ -1,5 +1,6 @@
 function pause_key(_key){
-	if keyboard_check_pressed(_key) {
+	if keyboard_check_pressed(_key) 
+	|| _key == noone {
 		obj_pause_manager.paused = !obj_pause_manager.paused
 		obj_pause_manager.update_pause()
 	}

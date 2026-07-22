@@ -1,4 +1,3 @@
-velocity = 15
 image_index = 1;
 text_float++
 image_alpha = 1

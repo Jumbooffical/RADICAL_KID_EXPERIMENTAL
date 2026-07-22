@@ -8,7 +8,7 @@ function enemy_inherited() {
 	&& my_state != STATE.TELEPORT {
 	aggro_range = infinity
 	spotted = true
-	base_reaction_time = 1
+	base_react_time = 1
 	blind_immune = true
 	}
 	
@@ -19,9 +19,7 @@ function enemy_inherited() {
 	
 	if instance_exists(obj_titan_magnetfield) {
 		if magnet_imbued {
-			obj_titan_magnetfield.scale = 5
-		} else {
-			obj_titan_magnetfield.scale = 0
+			obj_titan_magnetfield.scale = 4
 		}
 	}
 	
@@ -90,7 +88,6 @@ function enemy_inherited() {
 
 	cooldown--
 	hurt--
-	obj_player.mult_react_time = 1
 
 	if spotted {
 	reaction_time = base_react_time * obj_player.mult_react_time

@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Consumable",
-    "path":"folders/Rooms/Objects/Items/Consumable.yy",
+    "path":"folders/Items/Consumable.yy",
   },
   "parentObjectId":{
     "name":"par_item_consumable",

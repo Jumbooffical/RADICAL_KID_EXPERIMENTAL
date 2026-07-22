@@ -35,5 +35,5 @@
     "path":"sprites/spr_titan_support/spr_titan_support.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

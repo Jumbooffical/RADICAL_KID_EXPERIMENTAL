@@ -18,7 +18,7 @@ apply_buff = true
 if instance_exists(obj_enemy_titan) {
 	if apply_buff {
 	obj_enemy_titan.speed_buff = true
-	audio_play_sound(snd_adrenaline, 1, 0, 7)
+	audio_play_sound(snd_adrenaline, 1, 0, 3)
 	apply_buff = false
 	}
 		

@@ -1,6 +1,14 @@
 function next_slot(slot1, slot2, slot3, slot4, slot5, slotnade) {
+	slot_input_delay--
+	if slot_input_delay > 0 exit;
+	if selected_item != last_slot {
+		last_slot = selected_item
+		slot_input_delay = 15
+	}
+
 	if cursed exit;
 	if is_reloading exit;
+	if melee_cd > 0 exit;
 
 	if !bolt_cycle {
 		if (keyboard_check_pressed(slot1)) {set_current_weapon(1); 		quickslot_type = Slot.Gun}
@@ -16,6 +24,7 @@ function next_slot(slot1, slot2, slot3, slot4, slot5, slotnade) {
 				} else {
 					set_current_weapon(1);
 				}
+				slot_input_delay = 15
 			} else if (mouse_wheel_down()) {
 				quickslot_type = Slot.Gun
 				if (selected_item > 1) {
@@ -23,6 +32,7 @@ function next_slot(slot1, slot2, slot3, slot4, slot5, slotnade) {
 				} else {
 					set_current_weapon(extra_quickslot_amount);
 				}
+				slot_input_delay = 15
 			}
 		
 	}

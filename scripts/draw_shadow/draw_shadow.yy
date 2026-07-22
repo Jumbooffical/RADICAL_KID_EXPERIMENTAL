@@ -6,7 +6,7 @@
   "name":"draw_shadow",
   "parent":{
     "name":"Animation",
-    "path":"folders/Objects/Scripts/Animation.yy",
+    "path":"folders/Scripts/Animation.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

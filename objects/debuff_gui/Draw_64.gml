@@ -1,12 +1,10 @@
 var mi = obj_player;
-var mx = device_mouse_x_to_gui(0);
-var my = device_mouse_y_to_gui(0);
 debuff_list = [];
 debuff_description()
 
 for (var i = 0; i < array_length(debuff_list); i++) {
 	var d = debuff_list[i];
-	var spacing = 45;
+	var spacing = 55;
 	
 	var draw_x = x - i * spacing;
 	var draw_y = y;
@@ -67,6 +65,13 @@ for (var i = 0; i < array_length(debuff_list); i++) {
 			scale,
 			0
 		);
+		
+		var new_item = array_length(debuff_list) > prev_item;
+		if (new_item) {
+			var inst = instance_create_depth(draw_x, draw_y, depth, gui_afterimage);
+			inst.sprite_index = d.sprite;
+			new_item = false;
+		}
 	} else {
 	//draw_text(right, bottom, d.duration);
 	draw_text_ext_transformed(left, bottom, d.duration, -1, 120, 0.75, 0.75, 0)

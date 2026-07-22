@@ -6,7 +6,7 @@
   "name":"uls_set_blur_intensity",
   "parent":{
     "name":"General Settings",
-    "path":"folders/Objects/Scripts/Ultimate Light System/Scripts/General Settings.yy",
+    "path":"folders/Scripts/Ultimate Light System/Scripts/General Settings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

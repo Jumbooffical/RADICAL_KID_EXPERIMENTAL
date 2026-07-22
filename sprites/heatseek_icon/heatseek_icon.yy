@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Buff",
-    "path":"folders/Objects/Dumbass/Controller/UI/Player Status/Icons/Buff.yy",
+    "path":"folders/Items/Consumable/Player Status/Icons/Buff.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

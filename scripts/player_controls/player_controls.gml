@@ -9,7 +9,7 @@ key_right = ord("D")
 key_rolling = vk_space
 
 key_aim = mb_right
-key_firing_mode = ord("B")
+key_firing_mode = ord("C")
 key_reloading = ord("R")
 
 key_swapping = ord("Q")
@@ -30,8 +30,11 @@ key_gun_to_inv = ord("F")
 pause_key(key_pause)
 inventory_key(key_inventory)
 next_slot(key_slot1, key_slot2, key_slot3, key_slot4, key_slot5, key_slotnade)
+
+if !is_reloading && !cursed {
 swap_melee(key_swapping)
 swap_nade(key_nading)
+}
 
 if (!open_inventory) && (!is_rolling) { 
 movement_key(key_up, key_down, key_left, key_right)

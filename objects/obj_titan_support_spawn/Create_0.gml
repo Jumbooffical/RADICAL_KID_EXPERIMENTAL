@@ -2,7 +2,7 @@ randomize()
 spawn = true
 support_num = 2
 
-global.titan_pool = 
+global.titan_support_pool = 
 	[
 	obj_enemy_lieutenant, 
 	obj_enemy_magnetizer, 

@@ -10,7 +10,7 @@ function eject(_sprite, _dir) {
 	var world_y = gun_y + lengthdir_y(dist_y, dir);
 	
 	if image_xscale = 1 {
-	world_x = x - lengthdir_x(dist_x, dir);
+	world_x = x - lengthdir_x(dist_x, dir)/1.5;
 	}
 	
 	with instance_create_depth(world_x, world_y, depth, obj_casing) {

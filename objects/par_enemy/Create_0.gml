@@ -2,6 +2,7 @@ randomize()
 WeaponData()
 MeleeData()
 
+apply_buff = true
 // Special
 flashlight = false
 
@@ -11,6 +12,7 @@ martyr_airstrike = false
 overclocked = false
 magnet_imbued = false
 heli_mounted = false
+can_teleport = false
 
 // Immunity
 blind_immune = false
@@ -19,6 +21,7 @@ stun_immune = false
 
 maxhp = enemy_hp
 
+turning_spd = 0
 enemy_acc = weapon[ewID, GUN.DEVIATION]
 bullet_type = par_enemybullet_SCAR
 
@@ -27,10 +30,10 @@ firerate = 0
 
 current_mag = weapon[ewID, GUN.MAG_SIZE]
 reload_timer = 0
+loop = 0
 retreat_timer = 0
-rng = 0
 prev_hp = 0
-mult_react_time = 1
+
 aggro_range = base_aggro;
 enemy_spd = base_spd;
 
@@ -85,7 +88,7 @@ to_me = point_direction(obj_player.x, obj_player.y, x, y);
 to_wall = point_direction(par_indestructable.x, par_indestructable.y, x, y);
 
 gun_dir = direction;
-rng = irandom_range(0, 100)
+
 starting_dir = choose(0, 180)
 
 flash_duration = 0
@@ -93,6 +96,7 @@ flash_duration = 0
 gun_x = 0
 gun_y = 0
 
+gun_scale = 1
 gun_frame = 0
 gun_bob_time = 0;
 gun_bob_amount = enemy_spd * 2;     // how strong the wave is
@@ -126,6 +130,15 @@ left_punch = 0
 right_punch = 0
 left = false
 
+is_rolling = false
+will_dodge = false
+
+gun_dir = 0
+dir = 0
+
+roll_spd = 0
+roll_dir = 0
+
 spin = 0
 stab = 0
 swing = 0
@@ -154,3 +167,11 @@ _section = 0.5;
 _saturation = 1;
 _brightness = 1.5;
 _mix = 0.5;
+
+snd_death = true
+
+painbar = 150
+hpbar_w = 0
+hpbar_h = 0
+hpbar_x = 0
+hpbar_y = 0;

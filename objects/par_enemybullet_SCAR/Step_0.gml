@@ -1,7 +1,7 @@
 timer--
 damage = weapon[wID, GUN.DAMAGE];
 if fire_trail {
-	damage = weapon[wID, GUN.DAMAGE] / 5
+	damage = weapon[wID, GUN.DAMAGE] / 4.5
 }
 
 image_index = 1;
@@ -31,4 +31,9 @@ visible = false
 
 if fire_trail {
 part_particles_create(mi.sys_fire_gui, x, y, mi.pt_bullet_trail, irandom_range(3, 5))
+}
+
+sprite_index = BULLET_medium
+if velocity > 55 {
+	sprite_index = BULLET_long
 }

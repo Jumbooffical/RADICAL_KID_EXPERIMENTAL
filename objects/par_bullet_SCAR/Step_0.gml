@@ -1,4 +1,3 @@
-
 //velocity = weapon[wID, GUN.VELOCITY]
 image_index = 1;
 text_float++
@@ -8,10 +7,6 @@ my_state = bullet_state.NORMAL
 
 if soulbinded {
 my_state = bullet_state.SOULBINDED
-}
-
-if my_state != bullet_state.SMART {
-image_alpha = 1
 }
 
 var mi = obj_player
@@ -34,7 +29,7 @@ if place_meeting(x, y, par_indestructable)
 	my_state = bullet_state.DESTROYED
 }
 
-if distance_to_object(par_gun) > weaponLength / 5
+if distance_to_object(par_gun) > weaponLength / 8
 && obj_player.selected_item != obj_player.melee_quickslot {
 visible = true	
 }
@@ -116,6 +111,11 @@ switch (my_state) {
 		} else {
 			instance_destroy()
 		}
+		
+		image_alpha -= 0.01
+		if image_alpha < 0 {
+		instance_destroy()
+		}
 	break;
 	
 	
@@ -146,10 +146,16 @@ switch (my_state) {
 	case bullet_state.TRACKLESS:
 		image_angle = point_direction(x, y, px, py);
 		if instance_exists(obj_ranged_enemy) {
+			target = instance_find(obj_ranged_enemy, irandom(instance_number(obj_ranged_enemy) - 1));
 			mp_potential_path_object(path, target.x, target.y, velocity, 3, par_indestructable)
 			path_start(path, velocity, path_action_stop, true)
 		} else {
 			instance_destroy()
+		}
+		
+		image_alpha -= 0.01
+		if image_alpha < 0 {
+		instance_destroy()
 		}
 	break;
 }
@@ -163,4 +169,12 @@ with (obj_player) {
 			break;
 		}
 	}
+}
+
+if velocity > 55 {
+	sprite_index = BULLET_long
+}
+
+if is_melee {
+visible = false
 }

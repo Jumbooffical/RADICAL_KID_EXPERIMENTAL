@@ -12,8 +12,8 @@
   "name":"obj_enemy_soulbinder",
   "overriddenProperties":[],
   "parent":{
-    "name":"Melee",
-    "path":"folders/Objects/Enemy/Normal/Melee.yy",
+    "name":"Titan Squad",
+    "path":"folders/Objects/Enemy/Normal/Titan Squad.yy",
   },
   "parentObjectId":{
     "name":"par_enemy",

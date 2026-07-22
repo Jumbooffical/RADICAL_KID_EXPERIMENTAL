@@ -15,7 +15,7 @@
   "name":"snd_cursed0",
   "parent":{
     "name":"Magazine Ready",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Reloading/Magazine Ready.yy",
+    "path":"folders/Items/Weapon/Reloading/Magazine Ready.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"weapon_pool",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"weapon_pool",
+  "parent":{
+    "name":"Lootboxes",
+    "path":"folders/Rooms/Objects/Lootboxes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

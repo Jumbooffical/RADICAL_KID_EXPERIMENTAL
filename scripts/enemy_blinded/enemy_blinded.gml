@@ -5,6 +5,5 @@ function enemy_blinded(){
 		enemy_patrol()
 	} else {
 		recalc_path_to(furthest.x, furthest.y, base_spd);
-		rng -= 0.1
 	}
 }

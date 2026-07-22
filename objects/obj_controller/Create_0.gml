@@ -1,17 +1,21 @@
+loot_pool()
+global.level = 1
+global.tier = 0
+
 // DEBUG
 global.pathfinding_debug = false
 global.dev_mode = true
 
 randomize()
-global.easy_rooms = [EasyRoom, EasyRoom2, EasyRoom3, EasyRoom4, EasyRoom5]
+
+global.easy_rooms = [EasyRoom, EasyRoom2, EasyRoom3, EasyRoom4, EasyRoom5, EasyRoom6]
 global.hard_rooms = [HardRoom, HardRoom2, HardRoom3]
 global.boss_rooms = [TankBossRoom, SniperBossRoomDay, HMBossRoom]
 
-//global.easy_rooms = array_shuffle(global.easy_rooms)
+global.easy_rooms = array_shuffle(global.easy_rooms)
 global.boss_rooms = array_shuffle(global.boss_rooms)
 global.all_rooms = []
 
-global.level = 1
 global.easy_room_amount = 3
 
 for (var i = 0; i < global.easy_room_amount; i++) {
@@ -22,7 +26,6 @@ for (var i = 0; i < 3; i++) {
 	array_push(global.all_rooms, global.hard_rooms[i])
 	array_push(global.all_rooms, global.boss_rooms[i])
 }
-
 
 if (!variable_global_exists("ewID")) {
     randomize();
@@ -86,6 +89,8 @@ state_name = ""
 aiming_shd_str = 0
 
 audio_group_load(audiogroup_tinnitus_exclude)
+
+global.boss_vanquished_snd = [snd_boss_vanquished, snd_boss_vanquished2, snd_boss_vanquished3]
 global.deflect_snd = [snd_deflecting1, snd_deflecting2, snd_deflecting3]
 global.deflect_snd_gain = 3
 global.firework_snd = [snd_firework1, snd_firework2, snd_firework3]
@@ -116,4 +121,4 @@ global._brightness = 0.8;
 global._mix = 0.5;
 
 global.sniper_revive = 2
-global.sniper_room = [SniperBossRoomDay, SniperBossRoomNight, SniperBossRoomSunset]
+global.sniper_room = [SniperBossVanquished, SniperBossRoomNight, SniperBossRoomSunset, SniperBossRoomDay]

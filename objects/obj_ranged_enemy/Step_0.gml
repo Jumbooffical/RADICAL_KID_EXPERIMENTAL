@@ -5,6 +5,7 @@ firerate = weapon[ewID, GUN.FIRE_DELAY]
 #region AI Movement Logic
 var mi = obj_player
 var nearest = instance_nearest(x, y, obj_ranged_enemy)
+var reset_alarm = true
 
 if my_state != STATE.BLINDED
 && my_state != STATE.TELEPORT
@@ -31,7 +32,7 @@ if collision_circle(x, y, aggro_range, mi, false, true) {
 			break;
 			
 			case WeaponType.Pistol:
-				base_spd = 7;
+				base_spd = 6;
 				if distance_to_object(obj_player) < aggro_range/1.5 {
 				my_state = STATE.ATTACK
 				}
@@ -43,8 +44,10 @@ if collision_circle(x, y, aggro_range, mi, false, true) {
 				break;
 			
 			case WeaponType.SMG:
-				if distance_to_object(obj_player) < aggro_range {
-				my_state = STATE.ATTACK
+				base_spd = 7
+				alarm_interval = 30
+				if distance_to_object(obj_player) < aggro_range / 3 {
+					my_state = STATE.ATTACK
 				}
 			break;
 			
@@ -115,7 +118,9 @@ enemy_reloading()
 if reload == true {
 	my_state = STATE.RETREAT
 }
+
 #endregion
+event_inherited()
 
 #region State Machine
 	switch (my_state) {
@@ -160,4 +165,3 @@ if reload == true {
 	    break;
 	}
 #endregion
-event_inherited()

@@ -1,12 +1,12 @@
 event_inherited()
 name = obj_enemy_magnetizer
 idle_spr = spr_magnetizer_idle
-walk_spr = spr_magnetizer_running
+walk_spr = spr_magnetizer_walking
 run_spr = spr_magnetizer_running
 death_spr = spr_goon_death
 
 // Enemy stat
-enemy_hp = 500;
+maxhp = 350 enemy_hp = maxhp
 armor_tier = 0
 
 base_spd = 6;

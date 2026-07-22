@@ -1,1 +1,1 @@
-draw_text_transformed(x + rng, y + float, text, 3, 3, -15)
+draw_text_transformed(x + X_rng, y - float, round(text), 3, 3, -15)

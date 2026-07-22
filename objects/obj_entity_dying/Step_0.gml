@@ -1,3 +1,4 @@
+
 if image_speed > 1 {
 	image_speed = 1
 }
@@ -6,10 +7,9 @@ if (image_index >= image_number - 1) {
 	image_index = image_number - 1
 	drop_alarm--
 	
-	if drop_alarm == 0 {
-		var rng = irandom_range(0, 100)
-		var rare_chance = 5
-		var uncommon_chance = 15
+	if drop_alarm == 0 && !minion {
+		var rare_chance = 3
+		var uncommon_chance = 7
 		
 		if rng <= rare_chance {
 			drop_money(obj_stack_of_cash, 1)
@@ -25,9 +25,10 @@ if (image_index >= image_number - 1) {
 			drop_money(obj_cash, 1)
 		}
 	}
+	exit;
 }
 
-if sprite_index == spr_tankboss_death {
+if sprite_index == spr_titan_death {
 	if floor(image_index) == 17 {
 		obj_camera.shake_str += 7
 		
@@ -48,8 +49,13 @@ if sprite_index == spr_tankboss_death {
 }
 
 if lifesteal {
-	obj_player.hp += maxhp/3
+	heal_player(maxhp/3)
 	lifesteal = false
+}
+
+if reduce_nade_cd {
+	obj_player.nade_launcher_cd -= 5
+	reduce_nade_cd = false
 }
 
 timer--
@@ -57,7 +63,8 @@ if timer <= 0 {
 instance_destroy()
 }
 
-if obj_player.gun_type == WeaponType.Shotgun {
+if obj_player.gun_type == WeaponType.Shotgun
+&& sprite_index != spr_titan_death {
 	sprite_index = spr_player_shotgun_death
 	image_speed = 0.6
 	

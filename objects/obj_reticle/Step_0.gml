@@ -2,16 +2,28 @@
 var px = obj_player.x;
 var py = obj_player.y;
 
-var mx = device_mouse_x(0);
-var my = device_mouse_y(0);
+var _mx = device_mouse_x(0);
+var _my = device_mouse_y(0);
 
-var radius = point_distance(px, py, mx, my);
-var dir = point_direction(px, py, mx, my);
+var radius = point_distance(px, py, _mx, _my);
+var dir = point_direction(px, py, _mx, _my);
 
-dir = point_direction(px, py, mx, my);
+dir = point_direction(px, py, _mx, _my);
 
 shake_angle *= shake_decay;
-var offset = random_range(-shake_angle, shake_angle) * ((recoil_penalty) - (obj_player.stat.ads_speed * 100));
+
+var angle = 0
+angle = random_range(-shake_angle, shake_angle) / (obj_player.recoil_control)
+
+shake_decay = 0.85
+if obj_player.gun_type == WeaponType.Pistol {
+shake_decay = 0.6
+angle = -shake_angle
+if obj_player.image_xscale == 1 {
+	angle = shake_angle
+}}
+
+offset = (angle * (obj_player.stat.recoil - 3))
 var final_dir = dir + offset;
 
 //x = px + lengthdir_x(radius, final_dir);

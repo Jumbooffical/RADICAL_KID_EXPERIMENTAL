@@ -1,8 +1,11 @@
+
+
 #macro cam0 view_camera[0]
 #macro cx camera_get_view_x(cam0)
 #macro cy camera_get_view_y(cam0)
-#macro cw camera_get_view_width(cam0) * 1.15
-#macro ch camera_get_view_height(cam0) * 1.15
+
+#macro cw camera_get_view_width(cam0) * 1.75
+#macro ch camera_get_view_height(cam0) * 1.75
 
 #macro outside_cam (x < cx || x > cx + cw || y < cy || y > cy + ch)
 
@@ -19,3 +22,8 @@
 	shader_set_uniform_f(global._uniSection, global._section);\
 	shader_set_uniform_f(global._uniMix, global._mix);\
 }
+
+#macro rng irandom(100)
+
+#macro mx device_mouse_x_to_gui(0)
+#macro my device_mouse_y_to_gui(0)

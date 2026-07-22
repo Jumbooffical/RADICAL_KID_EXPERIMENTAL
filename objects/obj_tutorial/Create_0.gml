@@ -1,0 +1,16 @@
+enum TUT {
+	WELCOME,
+	SHOOTING,
+	EXPLAIN_RELOAD,
+	EXPLAIN_DEVIATION,
+	AIMING,
+	EXPLAIN_RECOIL,
+	DODGE,
+	COMBO,
+	CONCLUSION
+}
+
+radius = 0
+phase = 0
+name = ""
+desc = ""

@@ -63,17 +63,3 @@ if (is_alerted && !instance_exists(obj_retreat_zone)) {
 	enemy_reloading()
 
 #endregion
-
-#region Specific Weapon Behavior
-
-	switch (gun_type) {
-	    case WeaponType.AR:
-			enemy_ar_behavior()
-	    break;
-		
-	    case WeaponType.SMG:
-			enemy_smg_behavior()
-	    break;
-	}
-
-#endregion

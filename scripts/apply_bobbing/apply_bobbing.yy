@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"apply_bobbing",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"apply_bobbing",
+  "parent":{
+    "name":"Animation",
+    "path":"folders/Scripts/Animation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

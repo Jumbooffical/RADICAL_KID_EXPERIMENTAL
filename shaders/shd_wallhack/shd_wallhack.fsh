@@ -22,15 +22,11 @@ void main()
 
     line += step(grid.x, u_thickness);
     line += step(grid.y, u_thickness);
-
     line = clamp(line, 0.0, 1.0);
 
     vec3 base = tex.rgb * 0.03;
-
     vec3 glow = u_rgb * line;
-
 	vec3 xray = base + glow;
-
 	vec3 finalCol = mix(tex.rgb, xray, u_strength);
 	gl_FragColor = vec4(finalCol, tex.a);
 }

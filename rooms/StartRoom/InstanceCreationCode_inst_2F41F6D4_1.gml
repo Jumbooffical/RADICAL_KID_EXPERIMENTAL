@@ -1,0 +1,1 @@
+to_bossroom = true

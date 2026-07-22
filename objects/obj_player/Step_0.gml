@@ -1,18 +1,20 @@
-if my_state == state.death {
-player_dying()
-}
-if (death) exit;
+if death player_dying()
+
+if death exit;
 player_default_stats()
 
+gun_heat = quickslot[selected_item, QSlot.Heat]
+if quickslot[selected_item, QSlot.Heat] > 0 {
+	quickslot[selected_item, QSlot.Heat] -= 0.003
+}
+quickslot[selected_item, QSlot.Heat] = clamp(quickslot[selected_item, QSlot.Heat], 0, 1)
 
-if (instance_exists(gun_inst) && player_armed)
-{
+if (instance_exists(gun_inst) && player_armed) {
     gun_inst.x = x;
     gun_inst.y = y;
     gun_inst.visible = true;
 }
-else if (instance_exists(gun_inst))
-{
+else if (instance_exists(gun_inst)) {
     gun_inst.visible = false;
 }
 
@@ -52,10 +54,9 @@ if (is_rolling) {
 }
 
 #endregion
-flash_duration--;
 
-// When hp reaches 0, game over
-if (hp <= 0) {
+var UNDY = obj_inventory.inv.findItemById(spr_stim_UNDY);
+if (hp <= 0) && UNDY_stim_timer <= 0 && (UNDY = -1) {
 my_state = state.death
 }
 
@@ -95,4 +96,22 @@ switch (my_state) {
 	state_name = "death"
 	death = true
 	break;
+}
+
+// Serialization syncing
+if save_alarm > 0 {
+	save_alarm--
+}
+if save_alarm == 1 {
+	savegame()
+}
+if curse_alarm > 0 {
+	curse_alarm--
+}
+if curse_alarm == 1 {
+	cursed = true
+}
+
+if keyboard_check_pressed(ord("N")) {
+	hp = 0
 }

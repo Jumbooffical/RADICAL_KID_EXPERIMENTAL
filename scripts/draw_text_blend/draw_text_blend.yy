@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"draw_text_blend",
   "parent":{
-    "name":"Custom",
-    "path":"folders/Objects/Scripts/Custom.yy",
+    "name":"Custom Functions",
+    "path":"folders/Scripts/Custom Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

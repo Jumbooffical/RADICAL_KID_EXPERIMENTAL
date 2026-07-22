@@ -15,7 +15,7 @@
   "name":"snd_model19_re",
   "parent":{
     "name":"Reloading",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Reloading.yy",
+    "path":"folders/Items/Weapon/Reloading.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -1,6 +1,7 @@
+image_alpha = 1
 depth = 0
 WeaponData()
-wID = par_gun.weaponIndex
+wID = obj_player.wID
 damage = obj_player.stat.damage_output
 stun = 0
 velocity = weapon[wID, GUN.VELOCITY]
@@ -31,6 +32,7 @@ TRACKLESS
 }
 
 var mi = obj_player
+target = noone
 if mi.quickslot[mi.selected_item, QSlot.Mag] == spr_trackless_mag {
 	if (instance_number(obj_ranged_enemy) > 0) {
 	target = instance_find(obj_ranged_enemy, irandom(instance_number(obj_ranged_enemy) - 1));
@@ -39,4 +41,7 @@ if mi.quickslot[mi.selected_item, QSlot.Mag] == spr_trackless_mag {
 	}
 }
 
-shotgun = false
+apply_falloff = false
+has_aimed = false
+is_melee = false
+meleeIndex = 0

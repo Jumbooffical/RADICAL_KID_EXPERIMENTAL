@@ -30,7 +30,7 @@
   "origin":9,
   "parent":{
     "name":"AR",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Gun Sprites/AR.yy",
+    "path":"folders/Items/Weapon/Gun Sprites/AR.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

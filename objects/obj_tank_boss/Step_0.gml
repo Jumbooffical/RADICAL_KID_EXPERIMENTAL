@@ -3,8 +3,12 @@ enemy_spd = base_spd
 bullet_type = obj_deflective_enemybullet
 
 if death {
-instance_create_depth(x, y, depth, obj_exit)
+	if snd_death {
+		audio_play_sound(random_array(global.boss_vanquished_snd), 1, 0, 1)
+		snd_death = false
+	}
 }
+
 enemy_inherited()
 #region AI Movement Logic
 var mi = obj_player

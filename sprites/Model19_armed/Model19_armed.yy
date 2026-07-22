@@ -27,7 +27,7 @@
   "origin":9,
   "parent":{
     "name":"Pistol",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Gun Sprites/Pistol.yy",
+    "path":"folders/Items/Weapon/Gun Sprites/Pistol.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

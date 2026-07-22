@@ -40,12 +40,4 @@ function enemy_chase(){
 		path_start(path, enemy_spd, path_action_stop, false);
 		mp_grid_add_instances(global.grid, par_pathwall, false);
 	}
-
-	// Suppressed
-	if distance_to_object(par_bullet_SCAR) < 40
-	&& (collision_line(x, y, mi.x, mi.y, par_pathwall, true, true))
-	&& mi.quickslot[mi.selected_item, QSlot.Mag] == !spr_stasis_mag
-	{
-	path_end(); path_finished = true;
-	}
 }

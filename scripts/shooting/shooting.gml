@@ -10,37 +10,38 @@ is_shooting = true
     var _wID = quickslot[selected_item, QSlot.Gun];
 	
 	#region FAIL SAFEGUARD
-    if (hp <= 0) exit;
     if (is_reloading) exit;
 
     if (selected_item < 0) exit;
-    if (quickslot[selected_item, QSlot.Gun] < 0) exit;
 
     if (_wID >= array_length(weapon)) exit;
 	#endregion
 
     var aim = point_direction(x, y, mouse_x, mouse_y);
-	var weaponLength = sprite_get_bbox_right(weapon[_wID, GUN.PLAYER_SPRITE]) - sprite_get_xoffset(weapon[_wID, GUN.PLAYER_SPRITE])
+	var weaponLength = sprite_get_bbox_right(weapon[_wID, GUN.PLAYER_SPRITE]) + sprite_get_bbox_top(weapon[_wID, GUN.PLAYER_SPRITE])
 
 	var xOffset = lengthdir_x(weaponLength, aim) + player_offset;
     var yOffset = lengthdir_y(weaponLength, aim) - aiming_offsety;
+	var pistol_offset = 2.5
+	pistol_offset = 1
 	
-	var smg_offset = 3
-	smg_offset = 3
-	if (gun_type == WeaponType.SMG) 
-	|| (gun_type == WeaponType.Pistol) {
-		smg_offset = 1
-	} 
+	if gun_type == WeaponType.Pistol {
+		pistol_offset = 2.5
+		if image_xscale == -1 {
+		pistol_offset = 3.5
+		}
+	}
 	
 	start_shooting = true
     if (cooldown < 0)
-	//&& (quickslot[selected_item, QSlot.LoadedAmmo] > 0) 
+	&& (quickslot[selected_item, QSlot.LoadedAmmo] > 0) 
 	{
 		cooldown = firerate;
 		part_type_direction(pt_gun_smoke, aim - 50, aim + 50, 0, 0);
-		part_particles_create(sys_gun_smoke, x + xOffset * 1.5, y + yOffset * 1.5, pt_gun_smoke, irandom_range(3, 5))
+		part_particles_create(sys_gun_smoke, x + xOffset * pistol_offset, y + yOffset * pistol_offset, pt_gun_smoke, irandom_range(3, 5))
 		
 		if quickslot[selected_item, QSlot.Buff_Overclocked] > 0 {
+			gun_gain = 0.5
 			full_auto = true
 			part_particles_create(sys_fire_gui, x + xOffset, y + yOffset, pt_fire_gui, irandom_range(3, 5))
 			
@@ -55,18 +56,17 @@ is_shooting = true
 			full_auto = false
 		}
 		
-		
 		burst_fired++
         quickslot[selected_item, QSlot.LoadedAmmo]--;
 
         audio_play_sound(weapon[_wID, GUN.SFX_SHOOTING], 10, false,
-            (2 * noise), 0, (random_range(0.9, 1)) * (2 - noise) * gun_pitch);
+            (gun_gain * noise), 0, (random_range(0.9, 1)) * (2 - noise) * gun_pitch);
 			
 		if (is_aiming) {
 			obj_camera.shake_str += recoil / 6; // screenshake recoil
 			
 			if !obj_reticle.blocked {
-			instance_create_depth(obj_reticle.x, obj_reticle.y, depth, optic_shape)
+			instance_create_depth(obj_reticle.x, obj_reticle.y, depth, obj_dot)
 			}
 			
 			aim = point_direction(x, y, obj_reticle.x, obj_reticle.y + 5);
@@ -82,17 +82,22 @@ is_shooting = true
 				shotgun_rng = random_range(0.9, 1.1)
 			}
 
-	        with instance_create_depth(x + xOffset / smg_offset, y + yOffset / 3, depth, obj_player.bullet_type) {
+	        with instance_create_depth(x + xOffset / 3, y + yOffset / 3, depth, obj_player.bullet_type) {
 				wID = other.wID
 	            direction = aim + obj_player.inaccuracy - obj_player.pistol_recoil_angle
 				if i > 1 {
 					var acc = weapon[_wID, GUN.DEVIATION]
-					direction = aim + random_range(-acc, acc)
+					direction = aim + random_range(-acc, acc) - obj_player.pistol_recoil_angle
 					shotgun = true
+					apply_falloff = true
 				}
 				
 	            image_angle = direction;
 				velocity = other.velocity * shotgun_rng
+				
+				if other.is_aiming {
+					has_aimed = true
+				}
 	        }
 		}
 		
@@ -119,7 +124,7 @@ is_shooting = true
 			}
 		}
 		
-		quickslot[selected_item, QSlot.Heat] += 0.01 * weapon[_wID, GUN.RECOIL]
+		quickslot[selected_item, QSlot.Heat] += (0.01 * weapon[_wID, GUN.RECOIL]) * heat_mult
 		
 		var knockback = weapon[_wID, GUN.RECOIL]
 		var mouse_dir = point_direction(x, y, mouse_x, mouse_y) - 180;

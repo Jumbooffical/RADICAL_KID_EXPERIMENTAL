@@ -35,5 +35,5 @@
     "path":"sprites/spr_blindfire/spr_blindfire.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

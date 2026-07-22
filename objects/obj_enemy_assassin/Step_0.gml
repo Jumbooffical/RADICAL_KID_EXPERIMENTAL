@@ -1,3 +1,10 @@
+name = obj_enemy_assassin
+idle_spr = spr_goon_idle_noarm
+walk_spr = spr_assassin_running
+run_spr = spr_assassin_running
+death_spr = spr_goon_death
+roll_spr = spr_assassin_dodgeroll
+
 hands_count = melee[ewID, MELEE.HANDED]
 attack_style = melee[ewID, MELEE.STYLE]
 attack_range = melee[ewID, MELEE.RANGE];
@@ -66,9 +73,11 @@ if is_rolling {
 		case STATE.ALERT:
 			state_name = "alerted"
 			enemy_spd = base_spd
+			base_spd += 0.005
 			if path_alarm == 1 {	
 				mp_grid_path(global.grid, path, x, y, obj_player.x, obj_player.y, true);
 				path_start(path, enemy_spd, path_action_stop, false);
+				mp_grid_add_instances(global.grid, par_pathwall, false);
 			}
 			sprite_index = run_spr
 			
@@ -88,6 +97,7 @@ if is_rolling {
 		case STATE.DODGE:
 			state_name = "dodging"
 			enemy_dodgeroll()
+			base_spd = 10
 	    break;
 		
 		case STATE.RETREAT:
@@ -103,3 +113,13 @@ if is_rolling {
 #endregion
 
 event_inherited()
+
+if spotted {
+	afterimage(x, y, 3)
+}
+
+if smoke_attached {
+blind_immune = true
+base_spd = 10;
+alarm_interval = 5
+}

@@ -1,6 +1,5 @@
-instance_create_depth(x, y, depth, obj_camera)
-instance_create_depth(x, y, depth, obj_inventory)
 instance_create_depth(x, y, depth, obj_controller)
+instance_create_depth(x, y, depth, obj_inventory)
 instance_create_depth(x, y, depth, obj_pause_manager)
 instance_create_depth(x, y, depth, obj_quickslot_gui)
 
@@ -15,7 +14,7 @@ for (var i = 0; i < obj_player.max_pocket; i++) {
 instance_create_depth(832, 525 + spacing * i, 0, obj_store_mag)
 }
 
-instance_create_depth(50, 200, depth, current_mag_gui)
+instance_create_depth(940, obj_player.hpbar_y, depth, current_mag_gui)
 instance_create_depth(x, y, depth, obj_optic_GUI)
 instance_create_depth(x, y, depth, obj_grip_GUI)
 instance_create_depth(x, y, depth, obj_mount_GUI)
@@ -27,3 +26,5 @@ instance_create_depth(1330, 80, depth, debuff_gui)
 
 layer_set_visible("SettingsLayer", true)
 loadsettings()
+
+instance_create_depth(x, y, depth, obj_gmlive)

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"nade_launcher",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"nade_launcher",
+  "parent":{
+    "name":"Script",
+    "path":"folders/Items/Attachment/Script.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -14,7 +14,7 @@ function MeleeFrontEnd(){
 	
 	
 		
-	melee[ml.knife, MELEE.NAME] = "Knife"			
+	melee[ml.knife, MELEE.NAME] = "KNIFE"			
 	melee[ml.knife, MELEE.SPRITE] = knife				
 	melee[ml.knife, MELEE.ARMED_SPR] = knife_armed
 	melee[ml.knife, MELEE.ARMED_SPR_BLOODY] = knife_armed_bloody

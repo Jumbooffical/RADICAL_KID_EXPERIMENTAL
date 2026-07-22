@@ -1,7 +1,5 @@
-depth = 0
-WeaponData()
-wID = par_gun.weaponIndex
-damage = 8
+event_inherited()
+damage = 12
 velocity = 0
 
 weaponLength = sprite_get_bbox_right(weapon[wID, GUN.PLAYER_SPRITE]) - sprite_get_xoffset(weapon[wID, GUN.PLAYER_SPRITE])

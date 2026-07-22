@@ -3,15 +3,17 @@ if !visible && !heli_mounted exit;
 if image_alpha < 1 && !heli_mounted exit;
 	
 var mi = obj_player
-var aim = point_direction(x, y, mi.x, mi.y) // Pointing the gun at the player
+var aim = other.dir
 var weaponLength = sprite_get_bbox_right(weapon[ewID, GUN.SPRITE]) - sprite_get_xoffset(weapon[ewID, GUN.SPRITE])
-var xOffset = lengthdir_x(weaponLength, aim)
-var yOffset = lengthdir_y(weaponLength, aim)
+var xOffset = lengthdir_x(weaponLength * gun_scale, aim)
+var yOffset = lengthdir_y(weaponLength * gun_scale, aim)
 var acc = enemy_acc * 1.3
+var firerate_mult = 1
 
 // Reaction time
 if !react {
 cooldown = reaction_time
+base_react_time = 15 * obj_player.mult_react_time
 react = true
 }
 
@@ -19,10 +21,30 @@ if gun_type == WeaponType.Bolt ||
 	gun_type == WeaponType.DMR {
 		aggro_range = base_aggro * 2.5
 	}
-	
+
+if gun_type == WeaponType.Bolt {
+	firerate_mult = 2
+}
+
 if gun_type == WeaponType.Shotgun {
+firerate_mult = 1.5	
 recalc_path_to(mi.x, mi.y, enemy_spd)
 sprite_index = run_spr
+}
+
+if distance_to_object(mi) < aggro_range / 4
+&& gun_type == WeaponType.SMG {
+	path_end(); path_finished = true;
+} else {
+	recalc_path_to(mi.x, mi.y, enemy_spd)
+	sprite_index = run_spr
+}
+
+if gun_type == WeaponType.Pistol {
+	enemy_spd = base_spd / 3
+	firerate_mult = 1.5
+	recalc_path_to(mi.x, mi.y, enemy_spd)
+	sprite_index = walk_spr
 }
 
 if heli_mounted {
@@ -32,18 +54,26 @@ acc = 0
 // Firing
 	if cooldown < 0 && current_mag > 0 {	
 		current_mag--;
-		cooldown = weapon[ewID, GUN.FIRE_DELAY]
+		cooldown = weapon[ewID, GUN.FIRE_DELAY] * firerate_mult
+		
+		var gain = random_range(0.6, 0.7)
+		gain = random_range(0.6, 0.7)
+		if overclocked {
+			gain = 0.4
+		}
 		
 		audio_play_sound(weapon[ewID, GUN.SFX_SHOOTING], 1, 0, 
-		random_range(0.6, 0.7), 0, random_range(0.8, 1))
+		gain, 0, random_range(0.8, 1))
 		
 		for (var i = 0; i < weapon[ewID, GUN.BULLET_COUNT]; i++) {
 			var shotgun_rng = 1
 			if i > 1 {
 				shotgun_rng = random_range(0.7, 1.2)
+				apply_falloff = true
 			}
 			with instance_create_depth(x, y, depth - 1, bullet_type) {	
 				wID = other.ewID;
+				gun_type = other.gun_type
 				direction = aim + random_range(-acc, acc)	
 				image_angle = direction
 				velocity = weapon[other.ewID, GUN.VELOCITY] * shotgun_rng
@@ -92,21 +122,20 @@ acc = 0
 		eject(weapon[ewID, GUN.PLAYER_SPRITE], aim)
 		}
 	}
-	reaction_time = mult_react_time
 	
 	switch (name) {
 		case obj_ranged_enemy:
 			if !heli_mounted {
-			if distance_to_object(mi) < aggro_range / 4
-			&& gun_type == WeaponType.SMG {
-				path_end(); path_finished = true;
-			}
 	
 			if gun_type == WeaponType.AR
 			|| gun_type == WeaponType.Bolt
 			|| gun_type == WeaponType.DMR {
 				path_end(); path_finished = true;
 			}}
+					
+			if path_finished {
+			sprite_index = idle_spr
+			}
 		break;
 		
 		case obj_tank_boss:
@@ -128,12 +157,13 @@ acc = 0
 		break;
 		
 		case obj_enemy_titan:
-			aggro_range = base_aggro * 2
+			aggro_range = base_aggro * 1.5
 			if distance_to_object(mi) < aggro_range / 4 {
 				path_end(); path_finished = true;
+				sprite_index = idle_spr
 			} else {
-			recalc_path_to(mi.x, mi.y, enemy_spd)
-			sprite_index = run_spr
+				recalc_path_to(mi.x, mi.y, enemy_spd)
+				sprite_index = run_spr
 			}
 		
 			if exhausted {

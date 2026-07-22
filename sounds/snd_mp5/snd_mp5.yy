@@ -15,7 +15,7 @@
   "name":"snd_mp5",
   "parent":{
     "name":"Shooting",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Shooting.yy",
+    "path":"folders/Items/Weapon/Shooting.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

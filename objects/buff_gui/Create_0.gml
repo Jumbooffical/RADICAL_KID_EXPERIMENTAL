@@ -9,3 +9,4 @@ smooth_arm_inertia = 0;
 
 prev_item = 0
 afterimg = false
+array_pushed = false

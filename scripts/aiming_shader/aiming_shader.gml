@@ -2,12 +2,12 @@ function aiming_shader() {
     shader_set(shd_aim);
 
     // Mouse UV
-    var mx = device_mouse_x_to_gui(0) / display_get_gui_width();
-    var my = device_mouse_y_to_gui(0) / display_get_gui_height();
+    var _mx = device_mouse_x_to_gui(0) / display_get_gui_width();
+    var _my = device_mouse_y_to_gui(0) / display_get_gui_height();
 
     shader_set_uniform_f_array(
         shader_get_uniform(shd_aim, "mouse_uv"),
-        [mx, my]
+        [_mx, _my]
     );
 	
 	shader_set_uniform_f(

@@ -19,3 +19,9 @@ dot_received = 2
 } else {
 dot_received = 1
 }
+
+if dot_received > 1 {
+	nearest.damage_taken = 50
+} else {
+	nearest.damage_taken = 1
+}

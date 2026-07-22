@@ -15,7 +15,12 @@ r700,
 m870,
 m1911,
 model19,
-mp5
+mp5,
+aa12,
+mini_uzi,
+db,
+akm_scrap,
+m249
 }
 
 	enum WeaponType {
@@ -53,10 +58,10 @@ enum GUN {
     SFX_SWAPPING,
     SFX_RELOADING,
 	
-	OPTIC,
-	MOUNT,
-	GRIP,
-	BARREL,
+	ALLOW_OPTIC,
+	ALLOW_MOUNT,
+	ALLOW_GRIP,
+	ALLOW_BARREL,
 
     DAMAGE,
     VELOCITY,
@@ -77,12 +82,12 @@ enum GUN {
 
 	#region SCAR	
 	weapon[wp.scar, GUN.DAMAGE] = 20
-	weapon[wp.scar, GUN.VELOCITY] = 40
+	weapon[wp.scar, GUN.VELOCITY] = 45
 	weapon[wp.scar, GUN.BULLET_COUNT] = 1
 	weapon[wp.scar, GUN.FIRE_DELAY] = 5
 	
 	weapon[wp.scar, GUN.DEVIATION] = 7
-	weapon[wp.scar, GUN.CAM_TO_RETICLE_SPD] = 0.03
+	weapon[wp.scar, GUN.CAM_TO_RETICLE_SPD] = 0.06
 	weapon[wp.scar, GUN.RECOIL] = 5
 
 	weapon[wp.scar, GUN.MAG_SIZE] = 30
@@ -92,12 +97,12 @@ enum GUN {
 	#endregion	
 	
 	#region UZI
-	weapon[wp.uzi, GUN.DAMAGE] = 10
+	weapon[wp.uzi, GUN.DAMAGE] = 8
 	weapon[wp.uzi, GUN.VELOCITY] = 35
 	weapon[wp.uzi, GUN.BULLET_COUNT] = 1
 	weapon[wp.uzi, GUN.FIRE_DELAY] = 2
 
-	weapon[wp.uzi, GUN.DEVIATION] = 15
+	weapon[wp.uzi, GUN.DEVIATION] = 10
 	weapon[wp.uzi, GUN.CAM_TO_RETICLE_SPD] = 0.08
 	weapon[wp.uzi, GUN.RECOIL] = 4
 
@@ -109,12 +114,12 @@ enum GUN {
 
 	#region FAL
 	weapon[wp.fal, GUN.DAMAGE] = 30
-	weapon[wp.fal, GUN.VELOCITY] = 54
+	weapon[wp.fal, GUN.VELOCITY] = 55
 	weapon[wp.fal, GUN.BULLET_COUNT] = 1
 	weapon[wp.fal, GUN.FIRE_DELAY] = 6
 
 	weapon[wp.fal, GUN.DEVIATION] = 5
-	weapon[wp.fal, GUN.CAM_TO_RETICLE_SPD] = 0.03
+	weapon[wp.fal, GUN.CAM_TO_RETICLE_SPD] = 0.07
 	weapon[wp.fal, GUN.RECOIL] = 7
 
 	weapon[wp.fal, GUN.MAG_SIZE] = 22
@@ -124,10 +129,10 @@ enum GUN {
 	#endregion
 
 	#region SAWNOFF
-	weapon[wp.sawnoff, GUN.DAMAGE] = 10
-	weapon[wp.sawnoff, GUN.VELOCITY] = 33
+	weapon[wp.sawnoff, GUN.DAMAGE] = 8
+	weapon[wp.sawnoff, GUN.VELOCITY] = 35
 	weapon[wp.sawnoff, GUN.BULLET_COUNT] = 10
-	weapon[wp.sawnoff, GUN.FIRE_DELAY] = 30
+	weapon[wp.sawnoff, GUN.FIRE_DELAY] = 15
 
 	weapon[wp.sawnoff, GUN.DEVIATION] = 10
 	weapon[wp.sawnoff, GUN.CAM_TO_RETICLE_SPD] = 0.1
@@ -135,13 +140,13 @@ enum GUN {
 
 	weapon[wp.sawnoff, GUN.MAG_SIZE] = 2
 	weapon[wp.sawnoff, GUN.MAG_SLOT] = 2	
-	weapon[wp.sawnoff, GUN.RELOAD_DELAY] = 210
+	weapon[wp.sawnoff, GUN.RELOAD_DELAY] = 200
 	weapon[wp.sawnoff, GUN.SPD_MULT_PENALTY] = 0.7
 	#endregion
 	
 	#region SS2
-	weapon[wp.ss2, GUN.DAMAGE] = 15
-	weapon[wp.ss2, GUN.VELOCITY] = 43
+	weapon[wp.ss2, GUN.DAMAGE] = 20
+	weapon[wp.ss2, GUN.VELOCITY] = 45
 	weapon[wp.ss2, GUN.BULLET_COUNT] = 1
 	weapon[wp.ss2, GUN.FIRE_DELAY] = 5
 
@@ -171,7 +176,7 @@ enum GUN {
 	#endregion
 	
 	#region SVD
-	weapon[wp.svd, GUN.DAMAGE] = 49
+	weapon[wp.svd, GUN.DAMAGE] = 70
 	weapon[wp.svd, GUN.VELOCITY] = 70
 	weapon[wp.svd, GUN.BULLET_COUNT] = 1
 	weapon[wp.svd, GUN.FIRE_DELAY] = 14
@@ -187,13 +192,13 @@ enum GUN {
 	#endregion
 	
 	#region AK
-	weapon[wp.ak, GUN.DAMAGE] = 25
+	weapon[wp.ak, GUN.DAMAGE] = 22
 	weapon[wp.ak, GUN.VELOCITY] = 45
 	weapon[wp.ak, GUN.BULLET_COUNT] = 1
 	weapon[wp.ak, GUN.FIRE_DELAY] = 5.5
 	
 	weapon[wp.ak, GUN.DEVIATION] = 7.5
-	weapon[wp.ak, GUN.CAM_TO_RETICLE_SPD] = 0.02
+	weapon[wp.ak, GUN.CAM_TO_RETICLE_SPD] = 0.05
 	weapon[wp.ak, GUN.RECOIL] = 6
 
 	weapon[wp.ak, GUN.MAG_SIZE] = 30
@@ -203,10 +208,10 @@ enum GUN {
 	#endregion
 	
 	#region Deagle
-	weapon[wp.deagle, GUN.DAMAGE] = 35
-	weapon[wp.deagle, GUN.VELOCITY] = 50
+	weapon[wp.deagle, GUN.DAMAGE] = 45
+	weapon[wp.deagle, GUN.VELOCITY] = 60
 	weapon[wp.deagle, GUN.BULLET_COUNT] = 1
-	weapon[wp.deagle, GUN.FIRE_DELAY] = 7
+	weapon[wp.deagle, GUN.FIRE_DELAY] = 9
 
 	weapon[wp.deagle, GUN.DEVIATION] = 8
 	weapon[wp.deagle, GUN.CAM_TO_RETICLE_SPD] = 0.1
@@ -219,13 +224,13 @@ enum GUN {
 	#endregion
 	
 	#region R700
-	weapon[wp.r700, GUN.DAMAGE] = 49
+	weapon[wp.r700, GUN.DAMAGE] = 80
 	weapon[wp.r700, GUN.VELOCITY] = 90
 	weapon[wp.r700, GUN.BULLET_COUNT] = 1
 	weapon[wp.r700, GUN.FIRE_DELAY] = 45
 
 	weapon[wp.r700, GUN.DEVIATION] = 1.4
-	weapon[wp.r700, GUN.CAM_TO_RETICLE_SPD] = 0.04
+	weapon[wp.r700, GUN.CAM_TO_RETICLE_SPD] = 0.06
 	weapon[wp.r700, GUN.RECOIL] = 25.5
 
 	weapon[wp.r700, GUN.MAG_SIZE] = 5
@@ -235,7 +240,7 @@ enum GUN {
 	#endregion
 	
 	#region m870
-	weapon[wp.m870, GUN.DAMAGE] = 8
+	weapon[wp.m870, GUN.DAMAGE] = 7
 	weapon[wp.m870, GUN.VELOCITY] = 50
 	weapon[wp.m870, GUN.BULLET_COUNT] = 12
 	weapon[wp.m870, GUN.FIRE_DELAY] = 35
@@ -246,15 +251,15 @@ enum GUN {
 
 	weapon[wp.m870, GUN.MAG_SIZE] = 6
 	weapon[wp.m870, GUN.MAG_SLOT] = 1
-	weapon[wp.m870, GUN.RELOAD_DELAY] = 180
+	weapon[wp.m870, GUN.RELOAD_DELAY] = 30
 	weapon[wp.m870, GUN.SPD_MULT_PENALTY] = 0.12
 	#endregion
 
-	#region m1911	
-	weapon[wp.m1911, GUN.DAMAGE] = 17
+	#region m1911
+	weapon[wp.m1911, GUN.DAMAGE] = 13
 	weapon[wp.m1911, GUN.VELOCITY] = 35
 	weapon[wp.m1911, GUN.BULLET_COUNT] = 1
-	weapon[wp.m1911, GUN.FIRE_DELAY] = 11
+	weapon[wp.m1911, GUN.FIRE_DELAY] = 9
 
 	weapon[wp.m1911, GUN.DEVIATION] = 7
 	weapon[wp.m1911, GUN.CAM_TO_RETICLE_SPD] = 0.1
@@ -283,7 +288,7 @@ enum GUN {
 	#endregion
 	
 	#region mp5	
-	weapon[wp.mp5, GUN.DAMAGE] = 13
+	weapon[wp.mp5, GUN.DAMAGE] = 9
 	weapon[wp.mp5, GUN.VELOCITY] = 35
 	weapon[wp.mp5, GUN.BULLET_COUNT] = 1
 	weapon[wp.mp5, GUN.FIRE_DELAY] = 4
@@ -296,5 +301,84 @@ enum GUN {
 	weapon[wp.mp5, GUN.MAG_SLOT] = 3	
 	weapon[wp.mp5, GUN.RELOAD_DELAY] = 165
 	weapon[wp.mp5, GUN.SPD_MULT_PENALTY] = 0.4
+	#endregion	
+	
+	#region aa12
+	weapon[wp.aa12, GUN.DAMAGE] = 5
+	weapon[wp.aa12, GUN.VELOCITY] = 50
+	weapon[wp.aa12, GUN.BULLET_COUNT] = 9
+	weapon[wp.aa12, GUN.FIRE_DELAY] = 9
+
+	weapon[wp.aa12, GUN.DEVIATION] = 4.2
+	weapon[wp.aa12, GUN.CAM_TO_RETICLE_SPD] = 0.03
+	weapon[wp.aa12, GUN.RECOIL] = 17.5
+
+	weapon[wp.aa12, GUN.MAG_SIZE] = 20
+	weapon[wp.aa12, GUN.MAG_SLOT] = 3
+	weapon[wp.aa12, GUN.RELOAD_DELAY] = 30
+	weapon[wp.aa12, GUN.SPD_MULT_PENALTY] = 0.15
+	#endregion
+	
+	#region MINI UZI
+	weapon[wp.mini_uzi, GUN.DAMAGE] = 7
+	weapon[wp.mini_uzi, GUN.VELOCITY] = 35
+	weapon[wp.mini_uzi, GUN.BULLET_COUNT] = 1
+	weapon[wp.mini_uzi, GUN.FIRE_DELAY] = 1.5
+
+	weapon[wp.mini_uzi, GUN.DEVIATION] = 15
+	weapon[wp.mini_uzi, GUN.CAM_TO_RETICLE_SPD] = 0.12
+	weapon[wp.mini_uzi, GUN.RECOIL] = 2
+
+	weapon[wp.mini_uzi, GUN.MAG_SIZE] = 32
+	weapon[wp.mini_uzi, GUN.MAG_SLOT] = 3	
+	weapon[wp.mini_uzi, GUN.RELOAD_DELAY] = 100
+	weapon[wp.mini_uzi, GUN.SPD_MULT_PENALTY] = 0.8
+	#endregion	
+	
+	#region DB
+	weapon[wp.db, GUN.DAMAGE] = 9
+	weapon[wp.db, GUN.VELOCITY] = 35
+	weapon[wp.db, GUN.BULLET_COUNT] = 10
+	weapon[wp.db, GUN.FIRE_DELAY] = 15
+
+	weapon[wp.db, GUN.DEVIATION] = 8
+	weapon[wp.db, GUN.CAM_TO_RETICLE_SPD] = 0.06
+	weapon[wp.db, GUN.RECOIL] = 26
+
+	weapon[wp.db, GUN.MAG_SIZE] = 2
+	weapon[wp.db, GUN.MAG_SLOT] = 2
+	weapon[wp.db, GUN.RELOAD_DELAY] = 210
+	weapon[wp.db, GUN.SPD_MULT_PENALTY] = 0.4
+	#endregion	
+	
+	#region AKM Scrap
+	weapon[wp.akm_scrap, GUN.DAMAGE] = 28
+	weapon[wp.akm_scrap, GUN.VELOCITY] = 45
+	weapon[wp.akm_scrap, GUN.BULLET_COUNT] = 1
+	weapon[wp.akm_scrap, GUN.FIRE_DELAY] = 6.5
+	
+	weapon[wp.akm_scrap, GUN.DEVIATION] = 8.5
+	weapon[wp.akm_scrap, GUN.CAM_TO_RETICLE_SPD] = 0.07
+	weapon[wp.akm_scrap, GUN.RECOIL] = 8
+
+	weapon[wp.akm_scrap, GUN.MAG_SIZE] = 30
+	weapon[wp.akm_scrap, GUN.MAG_SLOT] = 3	
+	weapon[wp.akm_scrap, GUN.RELOAD_DELAY] = 155
+	weapon[wp.akm_scrap, GUN.SPD_MULT_PENALTY] = 0.4
+	#endregion		
+	
+	#region M249
+	weapon[wp.m249, GUN.DAMAGE] = 18
+	weapon[wp.m249, GUN.VELOCITY] = 45
+	weapon[wp.m249, GUN.BULLET_COUNT] = 1
+	weapon[wp.m249, GUN.FIRE_DELAY] = 4
+
+	weapon[wp.m249, GUN.DEVIATION] = 3.5
+	weapon[wp.m249, GUN.CAM_TO_RETICLE_SPD] = 0.08
+	weapon[wp.m249, GUN.RECOIL] = 10
+
+	weapon[wp.m249, GUN.MAG_SIZE] = 100
+	weapon[wp.m249, GUN.RELOAD_DELAY] = 395
+	weapon[wp.m249, GUN.SPD_MULT_PENALTY] = 0.8
 	#endregion	
 }

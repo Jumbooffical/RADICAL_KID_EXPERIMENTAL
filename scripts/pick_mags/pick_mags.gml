@@ -36,7 +36,6 @@ function get_compatible_magazine() {
 }
 
 function get_random_quality() {
-	var rng = random_range(0, 100)
 	
 	if rng <= epic_chance {
     return RARITY.EPIC

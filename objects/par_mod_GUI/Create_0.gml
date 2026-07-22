@@ -1,5 +1,6 @@
 name = ""
 description = ""
+object = 0
 
 disable_name = ""
 disable_text = ""

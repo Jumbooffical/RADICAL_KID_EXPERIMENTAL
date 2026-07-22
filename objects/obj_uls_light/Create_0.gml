@@ -13,7 +13,7 @@
 	light_radius = light_initial_radius;
 	
 	//Creating Surface
-	var circle_di = light_radius*2;
+	var circle_di = light_radius*5;
 	light_surf = surface_create( circle_di*1.25, circle_di*1.25);
 	
 	//Check if this one is a sprited light

@@ -1,4 +1,5 @@
 function loadgame() {
+	
     if (!file_exists("radicalkid.sav")) {
         show_debug_message("Save file not found!");
         return;
@@ -14,23 +15,41 @@ function loadgame() {
 
         var _loadPlayer = array_pop(_loadData);
 
-        var _player = instance_create_layer(
-            0,
-            0,
-            "Instances",
-            obj_player
-        );
+        var _player = instance_create_layer(0, 0, "Instances", obj_player);
+		
+		with (obj_store_mag) {
+		    instance_destroy();
+		}
 
         with (obj_player) {
+			global.ringing = 0
+			selected_item = 1
+			quickslot_type = Slot.Gun
+			
+			death = false
 			x = _loadPlayer.x
 			y = _loadPlayer.y
 			
-			room_goto(_loadPlayer.room)
+			CLAR_stim_count = _loadPlayer.CLAR_stim_count
+			EPIK_stim_count = _loadPlayer.EPIK_stim_count
+			DRUM_stim_count = _loadPlayer.DRUM_stim_count
+			HEX_stim_count = _loadPlayer.HEX_stim_count
+			
+			global.all_rooms = _loadPlayer.all_rooms
+			room = _loadPlayer.room
+			
 			global.level = _loadPlayer.level
+			global.tier = _loadPlayer.tier
+			base.maxhp = _loadPlayer.maxhp
             hp = _loadPlayer.hp
             spd_mult = _loadPlayer.spd_mult;
             wID = _loadPlayer.wID;
 			cash = _loadPlayer.cash;
+			
+			cursed = false
+			if _loadPlayer.cursed {
+				curse_alarm = 30
+			}
 
             current_magazine[Caliber.Medium] = _loadPlayer.Medium;
             current_magazine[Caliber.Light] = _loadPlayer.Light;
@@ -39,7 +58,6 @@ function loadgame() {
             current_magazine[Caliber.Shell] = _loadPlayer.Shell;
 
             for (var i = 0; i <= max_quickslot; i++) {
-
                 var q = _loadPlayer.quickslots[i];
 
                 quickslot[i, QSlot.Gun] = q.Gun;
@@ -60,7 +78,30 @@ function loadgame() {
                 quickslot[i, QSlot.Grip] = q.Grip;
                 quickslot[i, QSlot.Barrel] = q.Barrel;
 			}
+			
+			magslot = _loadPlayer.magslot
+			max_pocket = _loadPlayer.max_pocket
+			for (var i = 0; i < array_length(_loadPlayer.mags); i++) {
+			    var m = _loadPlayer.mags[i];
+
+			    var inst = instance_create_layer(0, 0, "Instances", obj_store_mag);
+			    inst.sprite_index = m.sprite;
+			}	
+				
 			obj_inventory.inv._inventory = _loadPlayer.inventory
+			nadeIndex = _loadPlayer.nadeIndex
+			
+			applied_mutation = []
+			for (var i = 0; i < array_length(_loadPlayer.mutation); i++) {
+				apply_mutation(_loadPlayer.mutation[i])
+			}
+			all_mutations = _loadPlayer.all_mutations
+			
+			applied_enemy_mutations = _loadPlayer.enemy_mutation
+			
+			cancer_phase = _loadPlayer.cancer_phase
+			cancer_timer = _loadPlayer.cancer_timer
         }
+		global.sniper_revive = 2
     }
 }

@@ -6,7 +6,7 @@
   "name":"magazines",
   "parent":{
     "name":"Unique Magazine System",
-    "path":"folders/Objects/Dumbass/Player Scripts/Reloading Mechanic/Unique Magazine System.yy",
+    "path":"folders/Scripts/Reloading Mechanic/Unique Magazine System.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"unused",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Items/unused.yy",
+    "path":"folders/Items/Weapon/Items/unused.yy",
   },
   "parentObjectId":{
     "name":"par_item_weapon",

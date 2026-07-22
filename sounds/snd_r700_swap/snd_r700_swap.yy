@@ -15,7 +15,7 @@
   "name":"snd_r700_swap",
   "parent":{
     "name":"Switching",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Switching.yy",
+    "path":"folders/Items/Weapon/Switching.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

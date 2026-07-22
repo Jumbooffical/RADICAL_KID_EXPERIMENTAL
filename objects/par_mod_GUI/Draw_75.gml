@@ -1,3 +1,5 @@
+attachment_description()
+
 if !obj_player.is_aiming && sprite_index != 0 {
 draw_self()
 
@@ -39,7 +41,7 @@ switch (index) {
 }
 
 if (position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)) {
-draw_set_alpha(random_range(0.5, 0.7))
+draw_set_alpha(random_range(0.8, 1))
 draw_set_colour(c_green);
 if disable draw_set_colour(c_red);
 draw_rectangle(x, y + 50, x + 360, 330, false);
@@ -60,6 +62,12 @@ draw_text_ext_transformed(x + 20, y + 95, description + "\n\n" + disable_text,
 		disable_text = ""
 		disable_name = ""
 	}
+	
+
+if obj_player.open_inventory {
+	draw_sprite(RMB, 0, mx + 30, my)
+	draw_text(mx + 45, my, ":Detach Mod")
+}	
 }
 
 if disable {

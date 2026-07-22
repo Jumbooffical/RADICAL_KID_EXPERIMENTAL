@@ -12,7 +12,7 @@ var nearest = instance_nearest(x, y, obj_enemy_titan)
 var dir = point_direction(mi.x, mi.y, x, y)
 
 if place_meeting(x, y, mi) && !mi.is_rolling {
-	pull = 0.25
+	pull = 0.1
 }
 
 mi.smooth_knockback_x += lengthdir_x(pull, dir)

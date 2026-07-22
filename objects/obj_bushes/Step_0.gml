@@ -1,14 +1,12 @@
 if outside_cam exit;
-//depth = obj_player.depth - 1
-//if obj_player.y > y || place_meeting(x, y, obj_smoke_discharge) {
 depth = obj_player.depth - 1
-//}
 
-if place_meeting(x, y, obj_reticle) && obj_player.is_aiming {
-	image_alpha -= 0.02
+if place_meeting(x, y, obj_reticle) && obj_player.is_aiming
+|| place_meeting(x, y, obj_player){
+	image_alpha -= 0.05
 } else {
 	if global.sniper_revive == 0 {
-	image_alpha = 1
+	image_alpha += 0.006
 	}
 	
 	if global.sniper_revive == 1 {

@@ -1,5 +1,3 @@
-var mx = device_mouse_x_to_gui(0);
-var my = device_mouse_y_to_gui(0);
 var mi = obj_player
 image_alpha = 0.7
 visible = true	
@@ -7,9 +5,14 @@ visible = true
 if (obj_player.open_inventory) {
 	context_open = false
     var cols = max_column;
-    var sprite_width_padding = 64;
-    var xx = display_get_gui_width() / 2 - (sprite_width_padding * floor(inv._max_inventory_slots / 2));
-    var yy = display_get_gui_height() / 2;
+    var sprite_width_padding = 69;
+	
+	var width_half  = display_get_gui_width() / 2;
+    var height_half = display_get_gui_height() / 2;
+	var grid_width = (cols - 1) * sprite_width_padding;
+	
+	var xx = width_half - grid_width / 2;
+	var yy = height_half - grid_width / 2;
 
     var _items = inv.getAll();
     var slot_size = 64;

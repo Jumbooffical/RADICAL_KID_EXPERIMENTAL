@@ -27,7 +27,7 @@
   "origin":4,
   "parent":{
     "name":"Optic",
-    "path":"folders/Sprites/Attachment/Optic.yy",
+    "path":"folders/Items/Attachment/Sprite/Optic.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

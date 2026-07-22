@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Attachment GUI",
-    "path":"folders/Objects/Dumbass/Controller/UI/Attachment GUI.yy",
+    "path":"folders/Items/Attachment/Attachment GUI.yy",
   },
   "parentObjectId":{
     "name":"par_mod_GUI",

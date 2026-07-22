@@ -6,7 +6,7 @@
   "name":"scr_initialize_particle_system",
   "parent":{
     "name":"Customizable",
-    "path":"folders/Objects/Scripts/Ultimate Light System/_internal/Customizable.yy",
+    "path":"folders/Scripts/Ultimate Light System/_internal/Customizable.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

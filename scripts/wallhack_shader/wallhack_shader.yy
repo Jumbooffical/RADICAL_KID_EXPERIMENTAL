@@ -6,7 +6,7 @@
   "name":"wallhack_shader",
   "parent":{
     "name":"Screen Shaders",
-    "path":"folders/Objects/Scripts/Screen Shaders.yy",
+    "path":"folders/Scripts/Screen Shaders.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

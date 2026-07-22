@@ -15,7 +15,7 @@ switch (button_id)
 	break;
 	
 	case 2: // Master Volume
-		default_option = 7
+		default_option = 5
 	break;
 }
 option = default_option

@@ -1,11 +1,6 @@
 image_index = 0
 color = c_white
 
-//var mx = device_mouse_x_to_gui(0);
-//var my = device_mouse_y_to_gui(0);
-var mx = mouse_x;
-var my = mouse_y;
-
 var rx = x
 var ry = y
 var rxx = x + 33
@@ -16,7 +11,7 @@ var ry1 = y
 var rxx1 = x + 323
 var ryy1 = y + 50
 
-if (point_in_rectangle(mx, my, rx, ry, rxx, ryy)) {	// LEFT
+if (point_in_rectangle(mouse_x, mouse_y, rx, ry, rxx, ryy)) {	// LEFT
 	image_index = 1
 	if mouse_check_button_released(mb_left) {
 		if (option > 0) {
@@ -26,7 +21,7 @@ if (point_in_rectangle(mx, my, rx, ry, rxx, ryy)) {	// LEFT
 		}
 	}
 }
-if (point_in_rectangle(mx, my, rx1, ry1, rxx1, ryy1)) {	// RIGHT
+if (point_in_rectangle(mouse_x, mouse_y, rx1, ry1, rxx1, ryy1)) {	// RIGHT
 	image_index = 2
 	if mouse_check_button_released(mb_left) {
 		if (option < max_option) {

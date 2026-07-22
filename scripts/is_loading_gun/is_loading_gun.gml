@@ -1,6 +1,5 @@
 function is_loading_gun(){
     reload_timer--;
-	
     reroll_magazine();
 	
 	if cursed { 
@@ -17,8 +16,6 @@ function is_loading_gun(){
 				sprite_index = obj_player.quickslot[obj_player.selected_item, QSlot.Mag]
 			}
 			
-			var rng = irandom_range(0, 100)
-			
 			if rng < 50 {
 			audio_play_sound(snd_cursed0, 1, 0)
 			} else {
@@ -30,8 +27,16 @@ function is_loading_gun(){
 		cooldown = 30
 		
         // Finish reload
-		reload_amount = mag_size
-        quickslot[selected_item, QSlot.LoadedAmmo] += reload_amount;
+		if gun_type == WeaponType.Shotgun {
+			if quickslot[selected_item, QSlot.LoadedAmmo] < mag_size {
+				quickslot[selected_item, QSlot.LoadedAmmo]++
+				start_reloading()
+				exit;
+			}
+		} else {
+			reload_amount = mag_size
+	        quickslot[selected_item, QSlot.LoadedAmmo] += reload_amount;
+		}
 		
 		if !free_mag {
 			current_magazine[reload_caliber]--;
@@ -64,7 +69,7 @@ function is_loading_gun(){
 		
 		if quickslot[selected_item, QSlot.Mag] == spr_smartmag
 		|| quickslot[selected_item, QSlot.Buff_Smart] > 0 {
-			audio_play_sound(snd_smartmag, 1, 0, 5, 0, 1, 1)
+			audio_play_sound(snd_smartmag, 1, 0, 2, 0, 1, 1)
 			obj_controller.glow = 0.5
 		}
 		

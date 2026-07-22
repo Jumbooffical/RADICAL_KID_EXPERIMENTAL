@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Items",
-    "path":"folders/Rooms/Objects/Items.yy",
+    "path":"folders/Items.yy",
   },
   "parentObjectId":null,
   "persistent":false,

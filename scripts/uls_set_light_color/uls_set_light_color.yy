@@ -6,7 +6,7 @@
   "name":"uls_set_light_color",
   "parent":{
     "name":"Set Light",
-    "path":"folders/Objects/Scripts/Ultimate Light System/Scripts/Set Light.yy",
+    "path":"folders/Scripts/Ultimate Light System/Scripts/Set Light.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

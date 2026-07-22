@@ -3,7 +3,7 @@ randomize()
 ewID = irandom(4)	
 depth = 0
 // Enemy stat
-enemy_hp = 200;
+maxhp = 350 enemy_hp = maxhp
 base_spd = 3;
 enemy_spd = base_spd;		// Movement speed
 aggro_range = 600;

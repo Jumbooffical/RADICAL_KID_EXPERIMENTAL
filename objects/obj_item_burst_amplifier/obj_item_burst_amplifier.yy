@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Barrel",
-    "path":"folders/Rooms/Objects/Items/Attachment/Barrel.yy",
+    "path":"folders/Items/Attachment/Barrel.yy",
   },
   "parentObjectId":{
     "name":"par_item_attachment",

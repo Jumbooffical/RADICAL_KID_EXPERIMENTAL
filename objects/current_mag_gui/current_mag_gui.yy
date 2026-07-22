@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"UI",
-    "path":"folders/Objects/Dumbass/Controller/UI.yy",
+    "path":"folders/Objects/Dumbass/UI.yy",
   },
   "parentObjectId":null,
   "persistent":true,

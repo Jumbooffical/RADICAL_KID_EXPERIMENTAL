@@ -1,9 +1,13 @@
-function combo_mechanic(){
+function combo_mechanic() {
 	global.afterimg_timer++
+	
+	if !is_reloading {
 	global.combo_cd--
+	}
+	
 	global.combo_cd = clamp(global.combo_cd, 0, global.max_combo_cd)
-	global.bloodlust = clamp(global.bloodlust, 1, 3.5)
-	global.bloodlust = lerp(global.bloodlust, 1, 0.0035)
+	global.bloodlust = clamp(global.bloodlust, 1, 2)
+	global.bloodlust = lerp(global.bloodlust, 1, 0.0065)
 	
 	spd_mult = spd_mult * global.bloodlust
 	

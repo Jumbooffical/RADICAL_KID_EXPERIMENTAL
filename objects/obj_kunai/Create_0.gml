@@ -1,6 +1,4 @@
-depth = 0
-WeaponData()
-wID = par_gun.weaponIndex
+event_inherited()
 damage = 10
 velocity = 0
 

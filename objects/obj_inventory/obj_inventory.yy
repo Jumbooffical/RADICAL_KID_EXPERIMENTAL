@@ -11,8 +11,8 @@
   "name":"obj_inventory",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controller",
-    "path":"folders/Objects/Dumbass/Controller.yy",
+    "name":"Inventory Behavior",
+    "path":"folders/Objects/Dumbass/Player Scripts/Inventory Behavior.yy",
   },
   "parentObjectId":null,
   "persistent":true,

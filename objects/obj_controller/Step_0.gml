@@ -19,9 +19,7 @@ if (global.grid_dirty) {
 	mp_grid_add_instances(global.grid, par_pathwall, false);
 }
 
-if global.ringing > 1 {
-global.ringing = 1
-}
+global.ringing = clamp(global.ringing, 0, 1)
 
 if global.ringing > 0 {
 global.ringing -= 0.0015
@@ -54,30 +52,26 @@ if global.earthquake > 0 {
 }
 
 if room == SniperBossRoomDay
-|| room == SniperBossRoomSunset {
-	if global.sniper_revive > 0 && instance_number(obj_sniper_boss) == 0 {
+|| room == SniperBossRoomSunset
+|| room == SniperBossRoomNight {
+	if global.sniper_revive > -1 && instance_number(obj_sniper_boss) == 0 {
 		global.green_glow = 0.45
-		audio_play_sound(snd_sniper_revive, 1, 0, 5)
-		
+		obj_player.cooldown = 180
 		room_goto(global.sniper_room[global.sniper_revive])
 		
-		with (obj_player) {
-		drop_weapon(noone, selected_item)
+		if global.sniper_revive > 0 {
+			audio_play_sound(snd_sniper_revive, 1, 0, 5)
+		} else {
+			audio_play_sound(random_array(global.boss_vanquished_snd), 1, 0, 1)
 		}
+		
 		global.sniper_revive--
 		exit;
 	}
 }
 
-if keyboard_check_released(ord("N")) {
-	savegame()
-}
-if keyboard_check_released(ord("M")) {
-	loadgame()
-}
-
-audio_set_master_gain(audiogroup_default, 1 * global.master_volume)
-global.deflect_snd_gain = 3
+audio_set_master_gain(audiogroup_default, (1 - global.ringing) * global.master_volume)
+global.deflect_snd_gain = 1
 if obj_player.gun_type == WeaponType.Shotgun {
-	global.deflect_snd_gain = 1
+	global.deflect_snd_gain = 0.5
 }

@@ -15,10 +15,10 @@ function WeaponFrontEnd() {
 	weapon[wp.scar, GUN.SFX_SWAPPING] = snd_scar_swap
 	weapon[wp.scar, GUN.SFX_RELOADING] = snd_scar_re
 	
-	weapon[wp.scar, GUN.OPTIC] = true
-	weapon[wp.scar, GUN.MOUNT] = true
-	weapon[wp.scar, GUN.GRIP] = true
-	weapon[wp.scar, GUN.BARREL] = true
+	weapon[wp.scar, GUN.ALLOW_OPTIC] = true
+	weapon[wp.scar, GUN.ALLOW_MOUNT] = true
+	weapon[wp.scar, GUN.ALLOW_GRIP] = true
+	weapon[wp.scar, GUN.ALLOW_BARREL] = true
 	
 	
 	weapon[wp.uzi, GUN.NAME] = "UZI"
@@ -37,10 +37,10 @@ function WeaponFrontEnd() {
 	weapon[wp.uzi, GUN.SFX_SWAPPING] = snd_uzi_swap
 	weapon[wp.uzi, GUN.SFX_RELOADING] = snd_uzi_re
 	
-	weapon[wp.uzi, GUN.OPTIC] = true
-	weapon[wp.uzi, GUN.MOUNT] = true
-	weapon[wp.uzi, GUN.GRIP] = false
-	weapon[wp.uzi, GUN.BARREL] = true
+	weapon[wp.uzi, GUN.ALLOW_OPTIC] = true
+	weapon[wp.uzi, GUN.ALLOW_MOUNT] = true
+	weapon[wp.uzi, GUN.ALLOW_GRIP] = false
+	weapon[wp.uzi, GUN.ALLOW_BARREL] = true
 	
 	
 	weapon[wp.fal, GUN.NAME] = "FAL"
@@ -53,16 +53,16 @@ function WeaponFrontEnd() {
 	weapon[wp.fal, GUN.OBJECT] = obj_fal
 	weapon[wp.fal, GUN.ITEM_OBJECT] = obj_item_fal
 	weapon[wp.fal, GUN.PLAYER_AMMO] = par_bullet_SCAR
-	weapon[wp.fal, GUN.CALIBER_ID] = Caliber.Medium
+	weapon[wp.fal, GUN.CALIBER_ID] = Caliber.Heavy
 
 	weapon[wp.fal, GUN.SFX_SHOOTING] = snd_fal
 	weapon[wp.fal, GUN.SFX_SWAPPING] = snd_fal_swap
 	weapon[wp.fal, GUN.SFX_RELOADING] = snd_fal_re
 	
-	weapon[wp.fal, GUN.OPTIC] = true
-	weapon[wp.fal, GUN.MOUNT] = true
-	weapon[wp.fal, GUN.GRIP] = true
-	weapon[wp.fal, GUN.BARREL] = true
+	weapon[wp.fal, GUN.ALLOW_OPTIC] = true
+	weapon[wp.fal, GUN.ALLOW_MOUNT] = true
+	weapon[wp.fal, GUN.ALLOW_GRIP] = true
+	weapon[wp.fal, GUN.ALLOW_BARREL] = true
 	
 	
 	weapon[wp.sawnoff, GUN.NAME] = "SAWN OFF"
@@ -81,10 +81,10 @@ function WeaponFrontEnd() {
 	weapon[wp.sawnoff, GUN.SFX_SWAPPING] = snd_sawnoff_swap
 	weapon[wp.sawnoff, GUN.SFX_RELOADING] = snd_sawnoff_re
 	
-	weapon[wp.sawnoff, GUN.OPTIC] = false
-	weapon[wp.sawnoff, GUN.MOUNT] = false
-	weapon[wp.sawnoff, GUN.GRIP] = false
-	weapon[wp.sawnoff, GUN.BARREL] = false
+	weapon[wp.sawnoff, GUN.ALLOW_OPTIC] = false
+	weapon[wp.sawnoff, GUN.ALLOW_MOUNT] = false
+	weapon[wp.sawnoff, GUN.ALLOW_GRIP] = false
+	weapon[wp.sawnoff, GUN.ALLOW_BARREL] = false
 	
 	
 	weapon[wp.deagle, GUN.NAME] = "DEAGLE"
@@ -97,16 +97,16 @@ function WeaponFrontEnd() {
 	weapon[wp.deagle, GUN.OBJECT] = obj_deagle
 	weapon[wp.deagle, GUN.ITEM_OBJECT] = obj_item_deagle
 	weapon[wp.deagle, GUN.PLAYER_AMMO] = par_bullet_SCAR
-	weapon[wp.deagle, GUN.CALIBER_ID] = Caliber.Shell
+	weapon[wp.deagle, GUN.CALIBER_ID] = Caliber.Heavy
 
 	weapon[wp.deagle, GUN.SFX_SHOOTING] = snd_deagle
 	weapon[wp.deagle, GUN.SFX_SWAPPING] = snd_deagle_swap
 	weapon[wp.deagle, GUN.SFX_RELOADING] = snd_deagle_re
 	
-	weapon[wp.deagle, GUN.OPTIC] = true
-	weapon[wp.deagle, GUN.MOUNT] = false
-	weapon[wp.deagle, GUN.GRIP] = false
-	weapon[wp.deagle, GUN.BARREL] = false
+	weapon[wp.deagle, GUN.ALLOW_OPTIC] = true
+	weapon[wp.deagle, GUN.ALLOW_MOUNT] = false
+	weapon[wp.deagle, GUN.ALLOW_GRIP] = false
+	weapon[wp.deagle, GUN.ALLOW_BARREL] = false
 	
 	
 	weapon[wp.ss2, GUN.NAME] = "SS2"
@@ -125,10 +125,10 @@ function WeaponFrontEnd() {
 	weapon[wp.ss2, GUN.SFX_SWAPPING] = snd_ss2_swap
 	weapon[wp.ss2, GUN.SFX_RELOADING] = snd_ss2_re
 	
-	weapon[wp.ss2, GUN.OPTIC] = true
-	weapon[wp.ss2, GUN.MOUNT] = true
-	weapon[wp.ss2, GUN.GRIP] = true
-	weapon[wp.ss2, GUN.BARREL] = true
+	weapon[wp.ss2, GUN.ALLOW_OPTIC] = true
+	weapon[wp.ss2, GUN.ALLOW_MOUNT] = true
+	weapon[wp.ss2, GUN.ALLOW_GRIP] = true
+	weapon[wp.ss2, GUN.ALLOW_BARREL] = true
 	
 	
 	weapon[wp.pkm, GUN.NAME] = "PKM"
@@ -141,16 +141,16 @@ function WeaponFrontEnd() {
 	weapon[wp.pkm, GUN.OBJECT] = obj_PKM
 	weapon[wp.pkm, GUN.ITEM_OBJECT] = obj_item_PKM
 	weapon[wp.pkm, GUN.PLAYER_AMMO] = par_bullet_SCAR
-	weapon[wp.pkm, GUN.CALIBER_ID] = Caliber.Medium
+	weapon[wp.pkm, GUN.CALIBER_ID] = Caliber.Heavy
 
 	weapon[wp.pkm, GUN.SFX_SHOOTING] = snd_PKM
 	weapon[wp.pkm, GUN.SFX_SWAPPING] = snd_PKM_swap
 	weapon[wp.pkm, GUN.SFX_RELOADING] = snd_PKM_re
 	
-	weapon[wp.pkm, GUN.OPTIC] = true
-	weapon[wp.pkm, GUN.MOUNT] = true
-	weapon[wp.pkm, GUN.GRIP] = false
-	weapon[wp.pkm, GUN.BARREL] = false
+	weapon[wp.pkm, GUN.ALLOW_OPTIC] = true
+	weapon[wp.pkm, GUN.ALLOW_MOUNT] = true
+	weapon[wp.pkm, GUN.ALLOW_GRIP] = false
+	weapon[wp.pkm, GUN.ALLOW_BARREL] = false
 	
 	
 	
@@ -164,20 +164,20 @@ function WeaponFrontEnd() {
 	weapon[wp.svd, GUN.OBJECT] = obj_svd
 	weapon[wp.svd, GUN.ITEM_OBJECT] = obj_item_SVD
 	weapon[wp.svd, GUN.PLAYER_AMMO] = par_bullet_SCAR
-	weapon[wp.svd, GUN.CALIBER_ID] = Caliber.Medium
+	weapon[wp.svd, GUN.CALIBER_ID] = Caliber.Long
 
 	weapon[wp.svd, GUN.SFX_SHOOTING] = snd_SVD
 	weapon[wp.svd, GUN.SFX_SWAPPING] = snd_SVD_swap
 	weapon[wp.svd, GUN.SFX_RELOADING] = snd_SVD_re
 	
-	weapon[wp.svd, GUN.OPTIC] = true
-	weapon[wp.svd, GUN.MOUNT] = true
-	weapon[wp.svd, GUN.GRIP] = false
-	weapon[wp.svd, GUN.BARREL] = true
+	weapon[wp.svd, GUN.ALLOW_OPTIC] = true
+	weapon[wp.svd, GUN.ALLOW_MOUNT] = true
+	weapon[wp.svd, GUN.ALLOW_GRIP] = false
+	weapon[wp.svd, GUN.ALLOW_BARREL] = true
 	
 	
-	weapon[wp.ak, GUN.NAME] = "ak"
-	weapon[wp.ak, GUN.DESCRIPTION] = "ak Camo"	
+	weapon[wp.ak, GUN.NAME] = "AK"
+	weapon[wp.ak, GUN.DESCRIPTION] = "Powerful and modular"	
 	weapon[wp.ak, GUN.SPRITE] = AK	
 	weapon[wp.ak, GUN.TYPE] = WeaponType.AR
 	weapon[wp.ak, GUN.PLAYER_SPRITE] = AK_armed
@@ -192,14 +192,14 @@ function WeaponFrontEnd() {
 	weapon[wp.ak, GUN.SFX_SWAPPING] = snd_AK_swap
 	weapon[wp.ak, GUN.SFX_RELOADING] = snd_AK_re
 	
-	weapon[wp.ak, GUN.OPTIC] = true
-	weapon[wp.ak, GUN.MOUNT] = true
-	weapon[wp.ak, GUN.GRIP] = true
-	weapon[wp.ak, GUN.BARREL] = true
+	weapon[wp.ak, GUN.ALLOW_OPTIC] = true
+	weapon[wp.ak, GUN.ALLOW_MOUNT] = true
+	weapon[wp.ak, GUN.ALLOW_GRIP] = true
+	weapon[wp.ak, GUN.ALLOW_BARREL] = true
 	
 	
-	weapon[wp.r700, GUN.NAME] = "r700"
-	weapon[wp.r700, GUN.DESCRIPTION] = "r700 Camo"	
+	weapon[wp.r700, GUN.NAME] = "R700"
+	weapon[wp.r700, GUN.DESCRIPTION] = "Light & accurate"	
 	weapon[wp.r700, GUN.SPRITE] = R700	
 	weapon[wp.r700, GUN.TYPE] = WeaponType.Bolt
 	weapon[wp.r700, GUN.PLAYER_SPRITE] = R700_armed
@@ -208,20 +208,20 @@ function WeaponFrontEnd() {
 	weapon[wp.r700, GUN.OBJECT] = obj_r700
 	weapon[wp.r700, GUN.ITEM_OBJECT] = obj_item_r700
 	weapon[wp.r700, GUN.PLAYER_AMMO] = par_bullet_SCAR
-	weapon[wp.r700, GUN.CALIBER_ID] = Caliber.Medium
+	weapon[wp.r700, GUN.CALIBER_ID] = Caliber.Long
 
 	weapon[wp.r700, GUN.SFX_SHOOTING] = snd_r700
 	weapon[wp.r700, GUN.SFX_SWAPPING] = snd_r700_swap
 	weapon[wp.r700, GUN.SFX_RELOADING] = snd_r700_re
 	
-	weapon[wp.r700, GUN.OPTIC] = true
-	weapon[wp.r700, GUN.MOUNT] = true
-	weapon[wp.r700, GUN.GRIP] = false
-	weapon[wp.r700, GUN.BARREL] = true
+	weapon[wp.r700, GUN.ALLOW_OPTIC] = true
+	weapon[wp.r700, GUN.ALLOW_MOUNT] = true
+	weapon[wp.r700, GUN.ALLOW_GRIP] = false
+	weapon[wp.r700, GUN.ALLOW_BARREL] = true
 	
 	
-	weapon[wp.m870, GUN.NAME] = "m870"
-	weapon[wp.m870, GUN.DESCRIPTION] = "m870 Camo"	
+	weapon[wp.m870, GUN.NAME] = "M870"
+	weapon[wp.m870, GUN.DESCRIPTION] = "Pump up"	
 	weapon[wp.m870, GUN.SPRITE] = M870	
 	weapon[wp.m870, GUN.TYPE] = WeaponType.Shotgun
 	weapon[wp.m870, GUN.PLAYER_SPRITE] = M870_armed
@@ -236,10 +236,10 @@ function WeaponFrontEnd() {
 	weapon[wp.m870, GUN.SFX_SWAPPING] = snd_m870_swap
 	weapon[wp.m870, GUN.SFX_RELOADING] = snd_m870_re
 	
-	weapon[wp.m870, GUN.OPTIC] = true
-	weapon[wp.m870, GUN.MOUNT] = false
-	weapon[wp.m870, GUN.GRIP] = false
-	weapon[wp.m870, GUN.BARREL] = false
+	weapon[wp.m870, GUN.ALLOW_OPTIC] = true
+	weapon[wp.m870, GUN.ALLOW_MOUNT] = false
+	weapon[wp.m870, GUN.ALLOW_GRIP] = false
+	weapon[wp.m870, GUN.ALLOW_BARREL] = false
 	
 	
 	weapon[wp.m1911, GUN.NAME] = "M1911"
@@ -258,14 +258,14 @@ function WeaponFrontEnd() {
 	weapon[wp.m1911, GUN.SFX_SWAPPING] = snd_m1911_swap
 	weapon[wp.m1911, GUN.SFX_RELOADING] = snd_m1911_re
 	
-	weapon[wp.m1911, GUN.OPTIC] = false
-	weapon[wp.m1911, GUN.MOUNT] = false
-	weapon[wp.m1911, GUN.GRIP] = false
-	weapon[wp.m1911, GUN.BARREL] = true
+	weapon[wp.m1911, GUN.ALLOW_OPTIC] = false
+	weapon[wp.m1911, GUN.ALLOW_MOUNT] = false
+	weapon[wp.m1911, GUN.ALLOW_GRIP] = false
+	weapon[wp.m1911, GUN.ALLOW_BARREL] = true
 	
 	
 	weapon[wp.model19, GUN.NAME] = "Model19"
-	weapon[wp.model19, GUN.DESCRIPTION] = "chambered in .357 magnum"
+	weapon[wp.model19, GUN.DESCRIPTION] = "Chambered in .357 magnum"
 	weapon[wp.model19, GUN.SPRITE] = Model19
 	weapon[wp.model19, GUN.TYPE] = WeaponType.Pistol
 	weapon[wp.model19, GUN.PLAYER_SPRITE] = Model19_armed
@@ -280,14 +280,14 @@ function WeaponFrontEnd() {
 	weapon[wp.model19, GUN.SFX_SWAPPING] = snd_model19_swap
 	weapon[wp.model19, GUN.SFX_RELOADING] = snd_model19_re
 	
-	weapon[wp.model19, GUN.OPTIC] = false
-	weapon[wp.model19, GUN.MOUNT] = false
-	weapon[wp.model19, GUN.GRIP] = false
-	weapon[wp.model19, GUN.BARREL] = true
+	weapon[wp.model19, GUN.ALLOW_OPTIC] = false
+	weapon[wp.model19, GUN.ALLOW_MOUNT] = false
+	weapon[wp.model19, GUN.ALLOW_GRIP] = false
+	weapon[wp.model19, GUN.ALLOW_BARREL] = true
 	
 	
 	weapon[wp.mp5, GUN.NAME] = "MP5"
-	weapon[wp.mp5, GUN.DESCRIPTION] = "Limited modular"
+	weapon[wp.mp5, GUN.DESCRIPTION] = "Limited module"
 	weapon[wp.mp5, GUN.SPRITE] = MP5
 	weapon[wp.mp5, GUN.TYPE] = WeaponType.SMG
 	weapon[wp.mp5, GUN.PLAYER_SPRITE] = MP5_armed
@@ -302,8 +302,118 @@ function WeaponFrontEnd() {
 	weapon[wp.mp5, GUN.SFX_SWAPPING] = snd_mp5_swap
 	weapon[wp.mp5, GUN.SFX_RELOADING] = snd_mp5_re
 	
-	weapon[wp.mp5, GUN.OPTIC] = false
-	weapon[wp.mp5, GUN.MOUNT] = false
-	weapon[wp.mp5, GUN.GRIP] = false
-	weapon[wp.mp5, GUN.BARREL] = true
+	weapon[wp.mp5, GUN.ALLOW_OPTIC] = true
+	weapon[wp.mp5, GUN.ALLOW_MOUNT] = false
+	weapon[wp.mp5, GUN.ALLOW_GRIP] = false
+	weapon[wp.mp5, GUN.ALLOW_BARREL] = true
+	
+		
+	weapon[wp.aa12, GUN.NAME] = "AA12"
+	weapon[wp.aa12, GUN.DESCRIPTION] = "Fully automatic"	
+	weapon[wp.aa12, GUN.SPRITE] = AA12
+	weapon[wp.aa12, GUN.TYPE] = WeaponType.Shotgun
+	weapon[wp.aa12, GUN.PLAYER_SPRITE] = AA12_armed
+	weapon[wp.aa12, GUN.HEATED_BARREL] = AA12_armed
+
+	weapon[wp.aa12, GUN.OBJECT] = obj_aa12
+	weapon[wp.aa12, GUN.ITEM_OBJECT] = obj_item_aa12
+	weapon[wp.aa12, GUN.PLAYER_AMMO] = par_bullet_SCAR
+	weapon[wp.aa12, GUN.CALIBER_ID] = Caliber.Shell
+
+	weapon[wp.aa12, GUN.SFX_SHOOTING] = snd_aa12
+	weapon[wp.aa12, GUN.SFX_SWAPPING] = snd_sawnoff_swap
+	weapon[wp.aa12, GUN.SFX_RELOADING] = snd_super90_re
+	
+	weapon[wp.aa12, GUN.ALLOW_OPTIC] = true
+	weapon[wp.aa12, GUN.ALLOW_MOUNT] = true
+	weapon[wp.aa12, GUN.ALLOW_GRIP] = false
+	weapon[wp.aa12, GUN.ALLOW_BARREL] = true
+	
+
+	weapon[wp.mini_uzi, GUN.NAME] = "MINI UZI"
+	weapon[wp.mini_uzi, GUN.DESCRIPTION] = "Faster firerate, very light"		
+	weapon[wp.mini_uzi, GUN.SPRITE] = MINI_UZI
+	weapon[wp.mini_uzi, GUN.TYPE] = WeaponType.Pistol
+	weapon[wp.mini_uzi, GUN.PLAYER_SPRITE] = MINI_UZI_armed
+	weapon[wp.mini_uzi, GUN.HEATED_BARREL] = MINI_UZI_armed
+
+	weapon[wp.mini_uzi, GUN.OBJECT] = obj_mini_uzi
+	weapon[wp.mini_uzi, GUN.ITEM_OBJECT] = obj_item_mini_uzi
+	weapon[wp.mini_uzi, GUN.PLAYER_AMMO] = par_bullet_SCAR
+	weapon[wp.mini_uzi, GUN.CALIBER_ID] = Caliber.Light
+
+	weapon[wp.mini_uzi, GUN.SFX_SHOOTING] = snd_mini_uzi
+	weapon[wp.mini_uzi, GUN.SFX_SWAPPING] = snd_uzi_swap
+	weapon[wp.mini_uzi, GUN.SFX_RELOADING] = snd_uzi_re
+	
+	weapon[wp.mini_uzi, GUN.ALLOW_OPTIC] = true
+	weapon[wp.mini_uzi, GUN.ALLOW_MOUNT] = true
+	weapon[wp.mini_uzi, GUN.ALLOW_GRIP] = false
+	weapon[wp.mini_uzi, GUN.ALLOW_BARREL] = true	
+	
+	
+	weapon[wp.db, GUN.NAME] = "DB"
+	weapon[wp.db, GUN.DESCRIPTION] = "Cannot modded, less damage falloff"
+	weapon[wp.db, GUN.SPRITE] = DB
+	weapon[wp.db, GUN.TYPE] = WeaponType.Pistol
+	weapon[wp.db, GUN.PLAYER_SPRITE] = DB_armed
+	weapon[wp.db, GUN.HEATED_BARREL] = spr_void
+
+	weapon[wp.db, GUN.OBJECT] = obj_db
+	weapon[wp.db, GUN.ITEM_OBJECT] = obj_item_DB
+	weapon[wp.db, GUN.PLAYER_AMMO] = par_bullet_SCAR
+	weapon[wp.db, GUN.CALIBER_ID] = Caliber.Shell
+
+	weapon[wp.db, GUN.SFX_SHOOTING] = snd_db
+	weapon[wp.db, GUN.SFX_SWAPPING] = snd_sawnoff_swap
+	weapon[wp.db, GUN.SFX_RELOADING] = snd_sawnoff_re
+
+	weapon[wp.db, GUN.ALLOW_OPTIC] = false
+	weapon[wp.db, GUN.ALLOW_MOUNT] = false
+	weapon[wp.db, GUN.ALLOW_GRIP] = false
+	weapon[wp.db, GUN.ALLOW_BARREL] = false
+	
+	
+	weapon[wp.akm_scrap, GUN.NAME] = "AKM scrape"
+	weapon[wp.akm_scrap, GUN.DESCRIPTION] = "Cannot modded"	
+	weapon[wp.akm_scrap, GUN.SPRITE] = AKM_scrap	
+	weapon[wp.akm_scrap, GUN.TYPE] = WeaponType.AR
+	weapon[wp.akm_scrap, GUN.PLAYER_SPRITE] = AKM_scrap_armed
+	weapon[wp.akm_scrap, GUN.HEATED_BARREL] = AKM_scrap_armed_heated
+
+	weapon[wp.akm_scrap, GUN.OBJECT] = obj_AKM_scrap
+	weapon[wp.akm_scrap, GUN.ITEM_OBJECT] = obj_item_AKM_scrap
+	weapon[wp.akm_scrap, GUN.PLAYER_AMMO] = par_bullet_SCAR
+	weapon[wp.akm_scrap, GUN.CALIBER_ID] = Caliber.Medium
+
+	weapon[wp.akm_scrap, GUN.SFX_SHOOTING] = snd_AKM_scrap
+	weapon[wp.akm_scrap, GUN.SFX_SWAPPING] = snd_AK_swap
+	weapon[wp.akm_scrap, GUN.SFX_RELOADING] = snd_AK_re
+	
+	weapon[wp.akm_scrap, GUN.ALLOW_OPTIC] = false
+	weapon[wp.akm_scrap, GUN.ALLOW_MOUNT] = false
+	weapon[wp.akm_scrap, GUN.ALLOW_GRIP] = false
+	weapon[wp.akm_scrap, GUN.ALLOW_BARREL] = false
+	
+	
+	weapon[wp.m249, GUN.NAME] = "M249"
+	weapon[wp.m249, GUN.DESCRIPTION] = "M249 Light machine gun"
+	weapon[wp.m249, GUN.SPRITE] = M249
+	weapon[wp.m249, GUN.TYPE] = WeaponType.LMG
+	weapon[wp.m249, GUN.PLAYER_SPRITE] = M249_armed
+	weapon[wp.m249, GUN.HEATED_BARREL] = M249_armed_heated
+
+	weapon[wp.m249, GUN.OBJECT] = obj_m249
+	weapon[wp.m249, GUN.ITEM_OBJECT] = obj_item_M249
+	weapon[wp.m249, GUN.PLAYER_AMMO] = par_bullet_SCAR
+	weapon[wp.m249, GUN.CALIBER_ID] = Caliber.Heavy
+
+	weapon[wp.m249, GUN.SFX_SHOOTING] = snd_M249
+	weapon[wp.m249, GUN.SFX_SWAPPING] = snd_M249_swap
+	weapon[wp.m249, GUN.SFX_RELOADING] = snd_M249_re
+	
+	weapon[wp.m249, GUN.ALLOW_OPTIC] = true
+	weapon[wp.m249, GUN.ALLOW_MOUNT] = true
+	weapon[wp.m249, GUN.ALLOW_GRIP] = false
+	weapon[wp.m249, GUN.ALLOW_BARREL] = false	
 }

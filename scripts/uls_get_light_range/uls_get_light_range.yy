@@ -6,7 +6,7 @@
   "name":"uls_get_light_range",
   "parent":{
     "name":"Get Light",
-    "path":"folders/Objects/Scripts/Ultimate Light System/Scripts/Get Light.yy",
+    "path":"folders/Scripts/Ultimate Light System/Scripts/Get Light.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

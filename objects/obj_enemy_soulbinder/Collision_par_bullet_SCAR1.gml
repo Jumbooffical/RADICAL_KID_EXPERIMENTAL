@@ -1,0 +1,1 @@
+other.soulbinded = true

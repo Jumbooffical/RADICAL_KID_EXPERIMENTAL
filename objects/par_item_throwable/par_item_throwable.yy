@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Throwable",
-    "path":"folders/Rooms/Objects/Items/Throwable.yy",
+    "path":"folders/Items/Throwable.yy",
   },
   "parentObjectId":{
     "name":"par_item",

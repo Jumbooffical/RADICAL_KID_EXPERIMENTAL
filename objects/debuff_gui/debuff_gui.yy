@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Player Status",
-    "path":"folders/Objects/Dumbass/Controller/UI/Player Status.yy",
+    "path":"folders/Items/Consumable/Player Status.yy",
   },
   "parentObjectId":null,
   "persistent":true,

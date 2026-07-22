@@ -3,28 +3,32 @@
 // NO IT'S NOT AI GENERATED, IT'S YANDERE SIMULATOR
 
 with (obj_player) {
+if obj_player.is_aiming exit;
+var slot_alpha = 0.5
 var slot_size = sprite_get_width(spr_selection);	
-		draw_sprite(spr_gunslot, 0, (slot_size) + (nade_quickslot-1) * slot_size, 0);
-		draw_sprite(spr_meleeslot, 0, (slot_size) + (nade_quickslot-2) * slot_size, 0);
+		draw_sprite_ext(spr_nadeslot, 0, (slot_size) + (nade_quickslot-1) * slot_size, 0, 1, 1, 0, c_white, slot_alpha);
+		draw_sprite_ext(spr_meleeslot, 0, (slot_size) + (nade_quickslot-2) * slot_size, 0, 1, 1, 0, c_white, slot_alpha);
 		for (var i = 0; i <= nade_quickslot; i++) {
 			if i < extra_quickslot_amount {
-			draw_sprite(spr_gunslot, 0, (slot_size) + (i-1) * slot_size, 0);
+			draw_sprite_ext(spr_gunslot, 0, (slot_size) + (i-1) * slot_size, 0, 1, 1, 0, c_white, slot_alpha);
 			}
 		}
 		
 		switch (quickslot_type) {
 		case Slot.Gun:
-		draw_sprite(spr_quickslot_selection, 0, 0 + (selected_item - 1) * slot_size, 0);
+		new_spot = (selected_item - 1) * slot_size
 		break;
 	
 		case Slot.Melee:
-		draw_sprite(spr_quickslot_selection, 0, (slot_size) + (nade_quickslot-2) * slot_size, 0);
+		new_spot = (slot_size) + (nade_quickslot-2) * slot_size
 		break;
 	
 		case Slot.Nade:
-		draw_sprite(spr_quickslot_selection, 0, (slot_size) + (nade_quickslot-1) * slot_size, 0);
+		new_spot = (slot_size) + (nade_quickslot-1) * slot_size
 		break;
 		}
+		other.current_spot = lerp(other.current_spot, new_spot, 0.2)
+		draw_sprite(spr_quickslot_selection, 0, other.current_spot, 0);
 		
 		for (var i = 0; i <= nade_quickslot; i++) {
 			if (quickslot[i, QSlot.Gun] != noone) {
@@ -59,11 +63,12 @@ var slot_size = sprite_get_width(spr_selection);
 
 		
 		if (quickslot[melee_quickslot, QSlot.Melee] != noone) {
-			draw_sprite(
+			draw_sprite_ext(
 			melee[quickslot[melee_quickslot, QSlot.Melee], MELEE.SPRITE], 
 			0, 
-			(slot_size/2) + (nade_quickslot-1) * slot_size, 
-			slot_size/2);
+			(slot_size/3) + (nade_quickslot-1) * slot_size, 
+			slot_size/1.5,
+			0.8, 0.8, -40, c_white, 1);
 		}
 		
 		for (var i = 0; i < 4; i++) {

@@ -11,11 +11,12 @@ function inv_use() {
 			inv_use_consumable()
 		break;
 		
+		case type.NADE:
+			inv_use_nade()
+		break;
+		
 		case type.ATTACHMENT:
-			if obj_player.selected_item != obj_player.melee_quickslot
-			&& obj_player.selected_item != obj_player.nade_quickslot {
 			inv_use_attachment()
-			}
 		break;
 	}
 }

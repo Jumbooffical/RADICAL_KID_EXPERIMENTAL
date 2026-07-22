@@ -8,8 +8,8 @@
   "name":"obj_uzi",
   "overriddenProperties":[],
   "parent":{
-    "name":"Weapons",
-    "path":"folders/Objects/Dumbass/Data/Weapons.yy",
+    "name":"Object",
+    "path":"folders/Items/Weapon/Object.yy",
   },
   "parentObjectId":{
     "name":"par_gun",

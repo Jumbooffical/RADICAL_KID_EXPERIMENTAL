@@ -53,3 +53,14 @@ smooth_arm_inertia = lerp(smooth_arm_inertia, target, 0.15);
 }
 
 enemy_swing_animation()
+
+if !spotted exit;
+painbar = lerp(painbar, (enemy_hp/maxhp) * hpbar_w, 0.02)
+hpbar_w = 150;
+hpbar_h = 80;
+hpbar_x = (x) - (hpbar_w/2);
+hpbar_y = y - 120;
+
+draw_sprite_stretched(health_bar_bg, 0, hpbar_x, hpbar_y, hpbar_w, hpbar_h);
+draw_sprite_stretched(health_bar_damaged, 0, hpbar_x, hpbar_y, painbar, hpbar_h);
+draw_sprite_stretched(health_bar, 0, hpbar_x, hpbar_y, (enemy_hp/maxhp) * hpbar_w, hpbar_h);

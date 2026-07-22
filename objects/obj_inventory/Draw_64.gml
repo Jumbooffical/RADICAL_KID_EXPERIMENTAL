@@ -1,9 +1,11 @@
+
+var tr_x = 1308;
+var tr_y = 31;
+var tr_offsety = 25;
+
 if (obj_player.open_inventory) {
 	sprite_index = spr_mapcanvas
     draw_self();
-
-    var mx = device_mouse_x_to_gui(0);
-    var my = device_mouse_y_to_gui(0);
 
     var cols = max_column;
     var rows = ceil(inv._max_inventory_slots / cols);
@@ -15,12 +17,11 @@ if (obj_player.open_inventory) {
     y = height_half;
 
     var sprite_width_padding = 69;
-    var item_number_half = inv._max_inventory_slots / 2;
-    var xx = width_half - (sprite_width_padding * floor(item_number_half));
-    var yy = height_half;
+	var grid_width = (cols - 1) * sprite_width_padding;
+	var xx = width_half - grid_width / 2;
+	var yy = height_half - grid_width / 2;
 
     var _items = inv.getAll();
-
 
     for (var i = 0; i < inv._max_inventory_slots; i++) {
 
@@ -35,7 +36,46 @@ if (obj_player.open_inventory) {
         if (i < array_length(_items) && _items[i] != undefined) {
 
             if (!(is_dragging && i == mouse_selected_inv)) {
-                draw_sprite(_items[i].sprite, 0, slot_x, slot_y);
+				var co = c_white
+				var no = 0
+				co = c_white
+				no = 0
+				#region ATTACHMENT
+				if _items[i].Type == type.ATTACHMENT {
+					switch (_items[i].id) {
+						case 1:
+							if !obj_player.allow_optic {
+								co = c_red
+								no = 1
+							}
+						break;
+	
+						case 2:
+							if !obj_player.allow_grip {
+								co = c_red
+								no = 1
+							}
+						break;
+	
+						case 3:
+							if !obj_player.allow_mount {
+								co = c_red
+								no = 1
+							}
+						break;
+	
+						case 4:
+							if !obj_player.allow_barrel {
+								co = c_red
+								no = 1
+							}
+						break;
+					}
+				}
+				#endregion
+				
+                draw_sprite_ext(_items[i].sprite, no, slot_x, slot_y, 1, 1, 40, co, 1);
+				draw_set_colour(c_white)
             }
 
             if (_items[i].hover) {
@@ -62,25 +102,27 @@ if (obj_player.open_inventory) {
         }
     }
 
+var xoff = 30
+draw_sprite(ammoLight, 0, tr_x / 2 + xoff, tr_y);
+draw_text(tr_x / 2 + xoff, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Light]);
 
-    var tr_x = 1308;
-    var tr_y = 31;
-    var tr_offsety = 25;
+draw_sprite(ammoMed, 0, tr_x / 2 + xoff - 50, tr_y);
+draw_text(tr_x / 2 + xoff - 50, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Medium]);
+	
+draw_sprite(ammoShell, 0, tr_x / 2 + xoff - 100, tr_y);
+draw_text(tr_x / 2 + xoff - 100, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Shell]);
+	
+draw_sprite(ammoHeavy, 0, tr_x / 2 + xoff - 150, tr_y);
+draw_text(tr_x / 2 + xoff - 150, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Heavy]);
+	
+draw_sprite(ammoLong, 0, tr_x / 2 + xoff - 200, tr_y);
+draw_text(tr_x / 2 + xoff - 200, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Long]);
 
-    draw_sprite(ammoLight, 0, tr_x, tr_y);
-    draw_text(tr_x, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Light]);
+    draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 60, "selected_inv:");
+    draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 60, selected_inv);
 
-    draw_sprite(ammoMed, 0, tr_x - 50, tr_y);
-    draw_text(tr_x - 50, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Medium]);
-
-    draw_text(tr_x / 2 - 70, tr_y + tr_offsety, "selected_inv:");
-    draw_text(tr_x / 2 + 70, tr_y + tr_offsety, selected_inv);
-
-    draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 20, "mouse_sel_inv:");
-    draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 20, mouse_selected_inv);
-
-    draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 40, "context_open?:");
-    draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 40, context_open);
+    draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 80, "mouse_sel_inv:");
+    draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 80, mouse_selected_inv);
 }
 
 if (context_open) {
@@ -90,9 +132,12 @@ if (context_open) {
 	var items = inv.getAll();
 	
 	if (selected_inv >= 0 && selected_inv < array_length(items)) {	
-	var item = items[selected_inv];
+		draw_sprite(RMB, 0, mx + 30, my)
+		draw_text(mx + 45, my, ":Use Item")
+		
+		var item = items[selected_inv];
 	
-		draw_set_alpha(random_range(0.5, 0.7))
+		draw_set_alpha(random_range(0.8, 1))
 	    draw_set_colour(c_grey);
 	    draw_rectangle(context_x, context_y + 5, context_x + w * 3, context_y + h * 3, false);
 
@@ -114,5 +159,8 @@ if (context_open) {
 			draw_text_ext_transformed(context_x + 20, context_y + 120 + i * spacing, textbox_list[i],
 			-1, w * 3 - 10, 1, 1, 0)
 		}
+		
+		draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 40, "object:");
+		draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 40, inv._inventory[selected_inv].object);
 	}
 }

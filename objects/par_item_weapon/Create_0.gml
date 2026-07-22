@@ -1,7 +1,8 @@
 event_inherited()
+WeaponData()
 
-current_mag = 0;
-full_auto = false;
+current_mag = weapon[index, GUN.MAG_SIZE];
+full_auto = true;
 mag = 0;
 
 // Buff
@@ -14,3 +15,6 @@ heatseek = 0;
 airmag = 0
 
 image_angle = random_range(-30, 30)
+
+name = weapon[index, GUN.NAME]
+description = weapon[index, GUN.DESCRIPTION]

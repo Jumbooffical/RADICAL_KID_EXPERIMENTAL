@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Ammo",
-    "path":"folders/Rooms/Objects/Items/Ammo.yy",
+    "path":"folders/Items/Ammo.yy",
   },
   "parentObjectId":{
     "name":"par_item_ammo",

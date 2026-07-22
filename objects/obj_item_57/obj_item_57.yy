@@ -9,8 +9,8 @@
   "name":"obj_item_57",
   "overriddenProperties":[],
   "parent":{
-    "name":"Weapons",
-    "path":"folders/Objects/Items/Weapons.yy",
+    "name":"unused",
+    "path":"folders/Rooms/Items/Weapons/unused.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"BELG_Five_seven",
-    "path":"sprites/BELG_Five_seven/BELG_Five_seven.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

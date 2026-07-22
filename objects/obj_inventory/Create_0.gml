@@ -10,6 +10,8 @@ mouse_selected_inv = -1
 is_dragging = false
 outside = false
 
-max_column = 3
+start_use = false
+
+max_column = 5
 
 textbox_list = []

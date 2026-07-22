@@ -1,3 +1,4 @@
+instance_create_depth(x, y, depth, obj_camera)
 WeaponData() 
 MeleeData()
 GrenadeData()
@@ -8,15 +9,29 @@ my_spd = 9;
 current_spd = my_spd;
 step_dist = 0
 
+// Status
 immobilize_timer = 0
+MEND_stim_timer = 0
+ZERK_stim_timer = 0
+NOON_stim_timer = 0
+UNDY_stim_timer = 0
 
-hp = 1000;
-maxhp = max(0,hp);
+CLAR_stim_count = 0
+EPIK_stim_count = 0
+DRUM_stim_count = 0
+HEX_stim_count = 0
+
+maxhp = 1000;
+hp = maxhp
+heal_mult = 1
 prev_hp = 0
 pain = 0
+pain_decay = 1
 
 debuff_wallhacked = false
 global.combo = 0
+global.combo1_milestone = 3
+global.combo2_milestone = 7
 global.combo_cd = 0
 global.max_combo_cd = 300
 global.bloodlust = 1
@@ -39,7 +54,7 @@ lost_balance,
 death
 }
 
-cash = 9999
+cash = 0
 cash_text = 0
 cash_textscale = 2
 
@@ -71,8 +86,8 @@ rolling_timer = 0;
 roll_spd = 12;
 
 // Ammo reserve
-current_magazine[Caliber.Medium] = 111	// Medium
-current_magazine[Caliber.Light] = 111	// Light
+current_magazine[Caliber.Medium] = 0	// Medium
+current_magazine[Caliber.Light] = 0		// Light
 current_magazine[Caliber.Heavy] = 0		// Heavy
 current_magazine[Caliber.Long] = 0		// Long
 current_magazine[Caliber.Shell]	= 0		// Shell
@@ -148,6 +163,11 @@ meleeIndex = 0;
 nadeIndex = noone;
 #endregion
 
+optic = quickslot[selected_item, QSlot.Optic]
+mount = quickslot[selected_item, QSlot.Mount]
+grip = quickslot[selected_item, QSlot.Grip]
+barrel = quickslot[selected_item, QSlot.Barrel]
+
 allow_optic = false
 allow_mount = false
 allow_grip = false
@@ -167,8 +187,8 @@ sound_alarm = 0
 hpbar_w = 400;
 painbar = 400
 hpbar_h = 130;
-hpbar_x = (700) - (hpbar_w/2);
-hpbar_y = 670;
+hpbar_x = (1000) - (hpbar_w/2);
+hpbar_y = 770;
 global.healthbar_glow = 0
 
 // Reload bar ui
@@ -178,8 +198,10 @@ rlbar_x = 767
 rlbar_y = 288
 gui_frame = 0
 
+status_x = 1330
+
 // Actual stats
-wID = par_gun.weaponIndex
+wID = 0
 weapon_grab_distance = 75;
 
 base_damage = weapon[wID, GUN.DAMAGE]
@@ -190,7 +212,19 @@ aiming_damage_mult = 1
 		damage_output : 0,
 		ads_speed : 0,
 		recoil : 0,
-		base_accuracy : 0
+		base_accuracy : 0,
+	}
+	
+	base = {
+		maxhp : 1000,
+		heal_mult : 1,
+		roll_cd : 30,
+		react_mult: 1,
+		
+		reload_mult : 1,
+		recoil_penalty : 1,
+		deviation : 1,
+		magsize_mult : 1
 	}
 							
 	player_stat = {
@@ -208,14 +242,16 @@ recoil = 1
 min_deviation = 1.5
 gun_heat = quickslot[selected_item, QSlot.Heat]
 heat_penalty = 1.7
+heat_mult = 1
 noise = 1
 gun_pitch = 1
+gun_gain = 1
 
 current_accuracy = 0
 inaccuracy = 0;
 deviation = 1
 
-base_camzoom = 0.3
+base_zoom = 0.25
 magnify = 1
 
 mult_react_time = 1
@@ -231,7 +267,6 @@ ricochet_accuracy = 30
 
 caliber_type = weapon[wID, GUN.CALIBER_ID]
 
-optic_shape = obj_dot
 stat.ads_speed = weapon[wID, GUN.CAM_TO_RETICLE_SPD]
 
 have_laser = false
@@ -251,24 +286,18 @@ burst_failure = false
 // Auxiliary
 kunai = 0
 shuriken = 0
+nade_launcher_cd = 60
 
 // Set initial interval
 reload_timer = 0;
+reload_mult = 1
 max_reload = 0
 taped_reload = false
 
 melee_cd = 0
 roll_cd = 0
 flash_duration = 0
-
-// Input logic
-hold_pressed = 0
-input_R_pressed = 0
-mouse_input = mouse_check_button_pressed(mb_left)
 bolt_cycle = false
-
-rmb_hold_mag = 0
-is_dragging = false
 
 // Get direction
 dir = point_direction(other.x, other.y, x, y);
@@ -296,9 +325,13 @@ smooth_knockback_x = 0
 smooth_knockback_y = 0
 
 gun_bob_time = 0;
-gun_bob_amount = current_spd * 2;     // how strong the wave is
-gun_bob_speed = current_spd * 0.1;    // how fast it waves
-smooth_arm_inertia = 0;   // smooth interpolation
+gun_bob_amount = current_spd * 2;
+gun_bob_speed = current_spd * 0.1;
+
+bob_spd = 0
+bob_time = 0
+bob_lerp = 0
+smooth_arm_inertia = 0;
 
 left_punch = 0
 right_punch = 0
@@ -312,6 +345,9 @@ gore = 0
 idle_spr = spr_player_idle
 run_spr = spr_player_running
 death_spr = spr_player_dying
+
+name = ""
+desc = ""
 
 global.afterimg_timer = 0
 global.afterimg_frequency = 3;
@@ -342,8 +378,6 @@ enum MAG_CALIBER {
 global.allmags = [
     new magazine(spr_mag, 
 	MAG_CALIBER.UNIVERSAL, RARITY.COMMON),
-    new magazine(spr_rngmag, 
-	MAG_CALIBER.UNIVERSAL, RARITY.COMMON),
     new magazine(spr_overpressure, 
 	MAG_CALIBER.UNIVERSAL, RARITY.COMMON),
     new magazine(spr_marksman_mag, 
@@ -355,9 +389,11 @@ global.allmags = [
 	MAG_CALIBER.UNIVERSAL, RARITY.UNCOMMON),
 	new magazine(spr_extmag, 
 	MAG_CALIBER.UNIVERSAL, RARITY.UNCOMMON),
-	new magazine(spr_corrosive_mag, 
-	MAG_CALIBER.UNIVERSAL, RARITY.UNCOMMON),
+	//new magazine(spr_corrosive_mag, 
+	//MAG_CALIBER.UNIVERSAL, RARITY.UNCOMMON),
 	new magazine(spr_belt_printermag, 
+	MAG_CALIBER.UNIVERSAL, RARITY.UNCOMMON),
+    new magazine(spr_rngmag, 
 	MAG_CALIBER.UNIVERSAL, RARITY.UNCOMMON),
 	
     new magazine(spr_drummag, 
@@ -397,11 +433,12 @@ curse_chance = 1
 
 cursed = false
 curse_reload_penalty = 300
+curse_alarm = 0
 
-// Hardcode
+// Hardcode :(
 hardcode_airmag = 0
 
-// Controls
+#region // Controls
 key_pause = vk_escape
 
 key_up = ord("W")
@@ -411,7 +448,7 @@ key_right = ord("D")
 key_rolling = vk_space
 
 key_aim = mb_right
-key_firing_mode = ord("B")
+key_firing_mode = ord("C")
 key_reloading = ord("R")
 
 key_slot1 = ord("1")
@@ -423,3 +460,96 @@ key_pickup = ord("F")
 key_drop = ord("X")
 key_inventory = vk_tab
 key_gun_to_inv = ord("F")
+
+// Input behavior
+hold_pressed = 0
+input_R_pressed = 0
+mouse_input = mouse_check_button_pressed(mb_left)
+
+rmb_hold_mag = 0
+is_dragging = false
+
+slot_input_delay = 0
+#endregion
+
+#region MUTATIONS
+	all_mutations = [
+		new mutation("Fast Footed", 
+		"Movement Speed +15%", U_RARITY.RARE),
+		
+		new mutation("Trained Lung", 
+		"Dodgeroll cooldown -50%", U_RARITY.RARE),
+		
+		new mutation("Bloodthirsty", 
+		"-1 First combo milestone, Movement Speed -20%", U_RARITY.RARE),
+		
+		new mutation("Modified Veins", 
+		"Combo last 1 extra second", U_RARITY.RARE),
+		
+		new mutation("Tough", 
+		"+200 Max HP", U_RARITY.COMMON),
+		
+		new mutation("Quickhand", 
+		"-25% Reload Speed", U_RARITY.COMMON),
+		
+		new mutation("Lucky", 
+		"x1.1 Magazine Rarity", U_RARITY.COMMON),
+		
+		new mutation("Warm Blooded", 
+		"+25% Heat", U_RARITY.DEFECT),	
+
+		new mutation("Short Sighted", 
+		"Reduce vision -10%", U_RARITY.MAJOR_DEFECT),
+		
+		new mutation("Fragile", 
+		"-250 Max HP", U_RARITY.DEFECT),
+		
+		new mutation("Extra finger", 
+		"Do nothing", U_RARITY.DEFECT),
+		
+		new mutation("Noodle Arms", 
+		"+20% recoil & deviation", U_RARITY.MAJOR_DEFECT),
+		
+		new mutation("Clumsy", 
+		"+20% Reload Speed, +50% cursed chance", U_RARITY.MAJOR_DEFECT),
+		
+		new mutation("Lightweight", 
+		"-350 Max HP, +15% Movement Speed", U_RARITY.MAJOR_DEFECT),
+		
+		new mutation("Cancer!", 
+		"Unfortunately it's terminal!", U_RARITY.MAJOR_DEFECT),
+		
+		new mutation("Low blood pressure", 
+		"Combo last 1.5 second less", U_RARITY.MAJOR_DEFECT),
+		
+		new mutation("Conspicuous",
+		"Enemy have quicker reaction time", U_RARITY.DEFECT), 
+	]
+	applied_mutation = []
+	
+	mutation_system()
+
+#endregion
+
+#region ENEMY MUTATIONS
+	all_enemy_mutations = [
+		new mutation("Deadly AR", 
+		"AR enemy deal +33% damage", U_RARITY.COMMON),
+	
+		new mutation("Deadly SMG", 
+		"SMG enemy deal +50% damage", U_RARITY.COMMON),
+		
+		new mutation("Deadly Pistol", 
+		"Pistol enemy deal +100% damage", U_RARITY.COMMON),
+		
+		new mutation("Deadly Sniper", 
+		"Bolt & DMR enemy deal +75% damage", U_RARITY.COMMON),
+		
+		new mutation("Deadly Shotgun", 
+		"Shotgunner deal +33% damage", U_RARITY.COMMON),
+	]
+	applied_enemy_mutation = []
+	
+	enemy_mutation_system()
+#endregion
+save_alarm = 0

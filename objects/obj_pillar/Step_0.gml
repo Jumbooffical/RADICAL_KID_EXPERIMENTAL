@@ -1,7 +1,7 @@
 if crate_hp <= 0 {
 	instance_destroy()
 	part_particles_create(sys_brick_splash, x, y, pt_brick_splash, irandom_range(25, 30))
-	audio_play_sound(snd_box_dead, 10, false, 1, 0, 1);
+	
 }
 
 depth = obj_player.depth - 1

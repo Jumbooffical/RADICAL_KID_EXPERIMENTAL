@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Debuff",
-    "path":"folders/Objects/Dumbass/Controller/UI/Player Status/Icons/Debuff.yy",
+    "path":"folders/Items/Consumable/Player Status/Icons/Debuff.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

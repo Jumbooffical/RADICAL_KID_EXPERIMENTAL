@@ -1,19 +1,21 @@
-var wID = par_gun.weaponIndex
+
+
+camW = base_camW * zoom
+camH = base_camH * zoom
 
 var realpx = obj_player.x;
 var realpy = obj_player.y;
 	
-var mx = device_mouse_x(0);
-var my = device_mouse_y(0);	
-var left = point_direction(mx, my, px, py)
-var right = point_direction(px, py, mx, my)	
+var _mx = device_mouse_x(0);
+var _my = device_mouse_y(0);	
+var left = point_direction(_mx, _my, px, py)
+var right = point_direction(px, py, _mx, _my)	
 	
-// Apply to view
 var cam = view_camera[0];
 	
 if (instance_exists(obj_player)) {
-    var target_x = lerp(px, mx, camera_zoom);
-    var target_y = lerp(py, my, camera_zoom);
+    var target_x = lerp(px, _mx, camera_zoom);
+    var target_y = lerp(py, _my, camera_zoom);
 
     x = lerp(x, target_x, ads);
     y = lerp(y, target_y, ads);
@@ -26,7 +28,7 @@ if (instance_exists(obj_player)) {
         shake_x = random_range(-shake_str, shake_str) * 2 * global.shake_mult;
         shake_y = random_range(-shake_str, shake_str) * global.shake_mult;
 		tilt_angle = random_range(-shake_str, shake_str) * global.shake_mult;
-        shake_str *= shake_decay; // reduce over time
+        shake_str *= shake_decay;
     } else {
         shake_x = 0;
         shake_y = 0;

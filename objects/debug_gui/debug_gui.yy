@@ -8,8 +8,8 @@
   "name":"debug_gui",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/Dumbass/Controller/UI.yy",
+    "name":"Dumbass",
+    "path":"folders/Objects/Dumbass.yy",
   },
   "parentObjectId":null,
   "persistent":true,

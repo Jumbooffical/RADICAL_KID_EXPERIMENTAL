@@ -27,7 +27,7 @@
   "origin":9,
   "parent":{
     "name":"DMR",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Gun Sprites/DMR.yy",
+    "path":"folders/Items/Weapon/Gun Sprites/DMR.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

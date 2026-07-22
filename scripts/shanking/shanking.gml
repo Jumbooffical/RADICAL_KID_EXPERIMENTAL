@@ -41,10 +41,9 @@ if (mouse_check_button(mb_left)) && no_click {
 		max_range = other.melee[other.meleeIndex, MELEE.RANGE] * 1.3
 		direction = image_angle
 		image_angle = dir
-		visible = false
+		is_melee = true
+		meleeIndex = other.meleeIndex
 	}
-	
-	smooth_knockback_x += lengthdir_x(pull, dir)
-	smooth_knockback_y += lengthdir_y(pull, dir)	
+
 	}
 }}}

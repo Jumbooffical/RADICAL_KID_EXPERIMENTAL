@@ -63,7 +63,3 @@ switch (casing_type) {
 if allow_smoke {
 part_particles_create(global.sys_smoke_trail, x, y, global.pt_smoke_trail, 1)
 }
-
-if outside_cam {
-	instance_destroy()
-}

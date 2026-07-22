@@ -1,14 +1,14 @@
+
+
 var mi = obj_player;
-var mx = device_mouse_x_to_gui(0);
-var my = device_mouse_y_to_gui(0);
 buff_list = [];
 buff_description()
 
 for (var i = 0; i < array_length(buff_list); i++) {
 	var d = buff_list[i];
-	var spacing = 45;
+	var spacing = 55;
 	
-	var draw_x = x  - i * spacing;
+	var draw_x = x - i * spacing;
 	var draw_y = y;
 
 	draw_sprite(d.sprite, 0, draw_x, draw_y);

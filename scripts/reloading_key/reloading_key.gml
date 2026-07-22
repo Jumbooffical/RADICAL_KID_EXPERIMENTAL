@@ -1,6 +1,11 @@
 function reloading_key(_key){
 	if (is_reloading) {
 		is_loading_gun()
+		if gun_type == WeaponType.Shotgun {				
+			if mouse_check_button_pressed(mb_left) {
+				is_reloading = false
+			}
+		}
 	}
 
 	if (keyboard_check_pressed(_key)) && (!busy)

@@ -1,3 +1,3 @@
 trigger = false
-trap_damage = 12
+trap_damage = 50
 debuff_timer = 180

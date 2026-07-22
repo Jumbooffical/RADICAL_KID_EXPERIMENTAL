@@ -1,3 +1,4 @@
+x = obj_player.status_x
 depth = -22
 
 gun_bob_time += gun_bob_speed / 6;
@@ -8,18 +9,5 @@ y = y + smooth_arm_inertia
 
 debuff_description()
 var spacing = 60;
-var new_item = array_length(debuff_list) > prev_item;
 
-for (var i = 0; i < array_length(debuff_list); i++) {
-	var d = debuff_list[i];
-	
-	var draw_x = x - i * spacing;
-	var draw_y = y;
-
-	if (new_item) {
-		var inst = instance_create_depth(draw_x, draw_y, depth, gui_afterimage);
-		inst.sprite_index = d.sprite;
-		new_item = false;
-	}
-}
 prev_item = array_length(debuff_list);

@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"LMG",
-    "path":"folders/Objects/Dumbass/Data/Weapon/Items/LMG.yy",
+    "path":"folders/Items/Weapon/Items/LMG.yy",
   },
   "parentObjectId":{
     "name":"par_item_weapon",

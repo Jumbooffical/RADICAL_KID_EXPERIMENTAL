@@ -1,10 +1,7 @@
+draw_shadow(sprite_index, global.grayness, global.shadow_x, global.shadow_y, global.all_offset, 
+image_xscale * global.shadow_xscale, global.shadow_yscale, global.shadow_angle, image_alpha * 0.6)
 draw_self()
 if death exit;
-draw_text_blend(x + 10,y + 10, enemy_hp, c_red)
-
-draw_text(x + 10,y + 30, state_name)
-draw_text(x + 10,y + 50, "is rolling:" + string(is_rolling))
-draw_text(x + 10,y + 70, "will dodge:" + string(will_dodge))
 draw_set_colour(c_white)
 
 if global.pathfinding_debug {

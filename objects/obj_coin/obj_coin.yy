@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Money",
-    "path":"folders/Rooms/Objects/Items/Money.yy",
+    "path":"folders/Items/Money.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"enemy_stab_animation",
   "parent":{
-    "name":"Animation",
-    "path":"folders/Objects/Scripts/Animation.yy",
+    "name":"Melee",
+    "path":"folders/Objects/Enemy/Normal/Melee.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

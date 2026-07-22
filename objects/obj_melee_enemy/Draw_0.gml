@@ -1,6 +1,9 @@
+draw_shadow(sprite_index, global.grayness, global.shadow_x, global.shadow_y, global.all_offset, 
+image_xscale * global.shadow_xscale, global.shadow_yscale, global.shadow_angle, image_alpha * 0.6)
 draw_self()
+
 if death exit;
-draw_text_blend(x + 10,y + 10, cooldown, c_red)
+//draw_text_blend(x + 10,y + 10, cooldown, c_red)
 draw_set_colour(c_white)
 
 if global.pathfinding_debug {
@@ -17,13 +20,9 @@ draw_path(path, x, y, true)
 }
 
 if sprite_index == run_spr {
-	gun_bob_time += gun_bob_speed
-    var target = sin(gun_bob_time) * gun_bob_amount * 1.5;
-    smooth_arm_inertia = lerp(smooth_arm_inertia, target, 0.15);
+	smooth_arm_inertia = apply_bobbing(0.7, 1)
 } else if sprite_index == walk_spr {
-	gun_bob_time += gun_bob_speed / 2;
-	var target = sin(gun_bob_time) * gun_bob_amount;
-	smooth_arm_inertia = lerp(smooth_arm_inertia, target, 0.15) / 2;
+	smooth_arm_inertia = apply_bobbing(0.3, 0.8)
 }
 
 switch (attack_style) {
@@ -49,3 +48,15 @@ idle_spr = spr_goon_idle
 walk_spr = spr_goon_walk_noarm
 run_spr = spr_goon_running
 }
+
+
+painbar = lerp(painbar, (enemy_hp/maxhp) * hpbar_w, 0.02)
+hpbar_w = 150;
+hpbar_h = 80;
+hpbar_x = (x) - (hpbar_w/2);
+hpbar_y = y - 120;
+
+if !spotted exit;
+draw_sprite_stretched(health_bar_bg, 0, hpbar_x, hpbar_y, hpbar_w, hpbar_h);
+draw_sprite_stretched(health_bar_damaged, 0, hpbar_x, hpbar_y, painbar, hpbar_h);
+draw_sprite_stretched(health_bar, 0, hpbar_x, hpbar_y, (enemy_hp/maxhp) * hpbar_w, hpbar_h);

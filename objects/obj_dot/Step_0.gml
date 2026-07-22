@@ -1,4 +1,4 @@
-image_alpha -= 0.01
+image_alpha -= 0.005
 if image_alpha == 0 {
 	instance_destroy(self)
 }
@@ -8,6 +8,7 @@ if instance_exists(obj_head) {
 	if bonus_applied && place_meeting(x, y, obj_head) {
 		nearest.dot_received += 1
 		bonus_applied = false
+		sprite_index = green_dot
 	}
 
 	if !place_meeting(x, y, obj_head) && !bonus_applied {

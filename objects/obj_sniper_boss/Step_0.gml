@@ -1,7 +1,12 @@
+
+
 if death {
 enemy_dying()
 }
 if death exit;
+
+spawn_alarm--
+if spawn_alarm > 0 exit;
 
 if enemy_hp <= 0 {
 	death = true
@@ -18,12 +23,13 @@ if reinforcement_interval == 0 {
 	with instance_create_depth(x, y, depth, obj_ranged_enemy) {
 		sniper_minion = true
 		ewID = global.sniper_boss_pool[irandom(array_length(global.sniper_boss_pool) - 1)];
+		current_mag = weapon[ewID, GUN.MAG_SIZE]
 		flashlight = true
 		my_state = STATE.ALERT
-		alarm_interval = 400
-		enemy_hp = 50			
+		alarm_interval = irandom_range(300, 600)
+		enemy_hp = 40			
 	}
-	reinforcement_interval = 900
+	reinforcement_interval = irandom_range(900, 1200)
 }
 
 if gun_frame > 0 {
@@ -137,16 +143,6 @@ if reload == true {
 			recalc_path_to(avoidx, avoidy, enemy_spd);
 			
 			aggro_range = base_aggro
-			if !reload {
-			my_state = STATE.ALERT
-				with instance_create_depth(x, y, depth, obj_ranged_enemy) {
-					ewID = global.sniper_boss_pool[irandom(array_length(global.sniper_boss_pool) - 1)];
-					flashlight = true
-					my_state = STATE.ALERT
-					alarm_interval = 400
-					enemy_hp = 50			
-				}
-			}
 	    break;
 		
 		case STATE.BLINDED:
@@ -183,3 +179,4 @@ for (var i = 0; i < dot_received; i++) {
 }
 
 global.tilt_mult = 0
+obj_player.magnify = clamp(obj_player.magnify, 1, 1.5)
