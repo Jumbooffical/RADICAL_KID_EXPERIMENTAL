@@ -20,6 +20,7 @@ if instance_exists(obj_enemy_titan) {
 	if start_buff {
 		audio_play_sound(snd_smartmag, 1, 0, 1)
 		obj_enemy_titan.can_teleport = true
+		obj_enemy_titan.spotted = true
 		start_buff = false
 	}
 }

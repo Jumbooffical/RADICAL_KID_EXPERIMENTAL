@@ -25,5 +25,6 @@ if apply_buff {
 	if instance_exists(obj_titan_magnetfield) {
 		obj_titan_magnetfield.glow = 1
 	}
+	obj_enemy_titan.spotted = true
 	apply_buff = false
 }

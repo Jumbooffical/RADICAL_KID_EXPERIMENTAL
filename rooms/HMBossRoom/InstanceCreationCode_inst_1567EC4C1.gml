@@ -1,1 +1,1 @@
-audio_play_sound(snd_mag, 1, 0, 2)
+audio_play_sound(snd_hm_intro, 1, 0, 1)

@@ -24,7 +24,7 @@ if distance_to_object(obj_player) < radius {
 switch (phase) {
 	case TUT.WELCOME:
 		name = "WELCOME YOUNG SOLDIER"
-		desc = "Before you are send into a meatgrinder, you are required to complete this mandatory course as thousands of soldier have been previously killed because they don't know how to reload"
+		desc = "Before you are send into a meatgrinder, you are required to complete this mandatory course as thousands of soldier have been previously killed because they don't know how to reload, or worst case scenario, they shot themselves in the eye while trying to learn how to shoot"
 	break;
 	
 	case TUT.SHOOTING:
@@ -59,7 +59,7 @@ switch (phase) {
 	
 	case TUT.COMBO:
 		name = "COMBO"
-		desc = "Each kill accumulated combo-ing indicated by orange bar above your health \n\nAt x3 combo each kill make you faster, \nAt x7 you will heal 33% of the enemy's max hp \n\nPick up this gun, it has infinite ammo. Try to get as much combo as possible"
+		desc = "Each kill accumulated combo-ing indicated by small orange bar above your health \n\nAt x3 combo each kill make you faster, \nAt x7 you will heal 33% of the enemy's max hp \n\nPick up this gun, it has infinite ammo. Try to get as much combo as possible"
 	break;
 	
 	case TUT.CONCLUSION:

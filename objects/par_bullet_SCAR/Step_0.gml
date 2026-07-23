@@ -94,7 +94,7 @@ switch (my_state) {
 		instance_destroy()
 		}
 		
-		image_alpha -= 0.01
+		image_alpha -= 0.005
 		if image_alpha < 0 {
 		instance_destroy()
 		}
@@ -112,7 +112,7 @@ switch (my_state) {
 			instance_destroy()
 		}
 		
-		image_alpha -= 0.01
+		image_alpha -= 0.005
 		if image_alpha < 0 {
 		instance_destroy()
 		}
@@ -153,7 +153,7 @@ switch (my_state) {
 			instance_destroy()
 		}
 		
-		image_alpha -= 0.01
+		image_alpha -= 0.005
 		if image_alpha < 0 {
 		instance_destroy()
 		}

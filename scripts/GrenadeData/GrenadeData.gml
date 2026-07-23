@@ -19,7 +19,7 @@ BOUNCE_COUNT
 }
 	
 	nade[thr.m62, NADE.NAME] = "M-62"
-	nade[thr.m62, NADE.DESCRIPTION] = "FRAG GRENADE"
+	nade[thr.m62, NADE.DESCRIPTION] = "FRAG GRENADE, long fuse time, not meant to kill but to force enemies to stop attacking and reposition"
 	nade[thr.m62, NADE.ARMED_SPRITE] = m62_enemy_armed
 	nade[thr.m62, NADE.SPRITE] = m62
 	nade[thr.m62, NADE.UNPIN] = obj_m62_unpin;
@@ -32,7 +32,7 @@ BOUNCE_COUNT
 	
 	
 	nade[thr.smoke_nade, NADE.NAME] = "Smoker"	
-	nade[thr.smoke_nade, NADE.DESCRIPTION] = "SMOKE GRENADE"
+	nade[thr.smoke_nade, NADE.DESCRIPTION] = "They can't fight anyone they can't see... most of the time"
 	nade[thr.smoke_nade, NADE.ARMED_SPRITE] = m62_enemy_armed
 	nade[thr.smoke_nade, NADE.SPRITE] = smoke_nade		
 	nade[thr.smoke_nade, NADE.UNPIN] = obj_smokenade_unpin;	

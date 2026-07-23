@@ -7,12 +7,12 @@ switch (other.sprite_index) {
 
         case spr_drummag:
             desc = "Drum Magazine"
-			desc2 = "+50 Mag Size \nNext reload speed is 50% slower"
+			desc2 = "+50 Mag Size \nNext reload speed is 33% slower"
         break;
 
         case spr_taped2:
             desc = "Taped Magazine"
-			desc2 = "Allow emergency reload twice (double press reload) \nEmergency reload grant triple reload speed"
+			desc2 = "Allow emergency reload once (double press reload) \nEmergency reload grant triple reload speed"
         break;
 
         case spr_rngmag:
@@ -29,7 +29,7 @@ switch (other.sprite_index) {
 		
 		case spr_smartmag:
 			desc = "Smart Magazine"
-			desc2 = "Velocity -50%, Reticle controlled projectile \nprojectile slowly disappear"
+			desc2 = "Velocity -33%, Reticle controlled projectile \nprojectile slowly disappear"
 		break;
 		
 		case spr_heatseekmag:

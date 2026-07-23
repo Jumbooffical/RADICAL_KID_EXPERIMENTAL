@@ -86,9 +86,11 @@ if player_armed {
 		break;
 	}
 	draw_sprite(caliber, 0, 720, hpbar_y)
+	if current_magazine[weapon[wID, GUN.CALIBER_ID]] == 0 { draw_set_colour(c_red) }
 	draw_text_transformed(740, hpbar_y, 
 	": " + string(current_magazine[weapon[wID, GUN.CALIBER_ID]]),
 	1.2, 1.2, 1)
+	draw_set_colour(c_white)
 	
 	if is_reloading {
 		draw_sprite_ext(caliber, 0, 740, hpbar_y - 25, 0.7, 0.7, 0, c_white, 0.5)

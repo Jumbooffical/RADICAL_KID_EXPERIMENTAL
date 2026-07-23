@@ -86,7 +86,7 @@ rolling_timer = 0;
 roll_spd = 12;
 
 // Ammo reserve
-current_magazine[Caliber.Medium] = 0	// Medium
+current_magazine[Caliber.Medium] = 110	// Medium
 current_magazine[Caliber.Light] = 0		// Light
 current_magazine[Caliber.Heavy] = 0		// Heavy
 current_magazine[Caliber.Long] = 0		// Long
@@ -109,7 +109,7 @@ Nade
 quickslot_type = Slot.Gun;
 
 magslot = 3
-max_pocket = 1
+max_pocket = 2
 
 #region Quick Slot
 enum QSlot {

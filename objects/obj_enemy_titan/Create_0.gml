@@ -13,7 +13,7 @@ death_spr = spr_titan_death
 enemy_hp = 3000;
 armor_tier = 0
 
-base_spd = 1;
+base_spd = 0.5;
 
 base_aggro = 600
 
@@ -21,7 +21,7 @@ base_react_time = 15
 alarm_interval = 60
 
 stamina = 100
-recovery_rate = 0.5
+recovery_rate = 0.4
 drain_rate = 0.15
 exhausted = false
 

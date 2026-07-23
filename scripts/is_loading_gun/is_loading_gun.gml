@@ -1,4 +1,4 @@
-function is_loading_gun(){
+function is_loading_gun() {
     reload_timer--;
     reroll_magazine();
 	
@@ -29,6 +29,7 @@ function is_loading_gun(){
         // Finish reload
 		if gun_type == WeaponType.Shotgun {
 			if quickslot[selected_item, QSlot.LoadedAmmo] < mag_size {
+				current_magazine[reload_caliber]--;
 				quickslot[selected_item, QSlot.LoadedAmmo]++
 				start_reloading()
 				exit;
@@ -69,7 +70,7 @@ function is_loading_gun(){
 		
 		if quickslot[selected_item, QSlot.Mag] == spr_smartmag
 		|| quickslot[selected_item, QSlot.Buff_Smart] > 0 {
-			audio_play_sound(snd_smartmag, 1, 0, 2, 0, 1, 1)
+			audio_play_sound(snd_smartmag, 1, 0, 1, 0, 1, 1)
 			obj_controller.glow = 0.5
 		}
 		

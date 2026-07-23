@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.0783901,
+  "duration":1.8256009,
   "exportDir":"",
   "name":"snd_hm_intro",
   "parent":{

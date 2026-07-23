@@ -13,6 +13,7 @@ alarm_interval = 120
 stamina = clamp(stamina, -100, 100)
 
 if speed_buff {
+	spotted = true
 	base_spd = 6.5
 	img_spd = 2
 	recovery_rate = 1.7

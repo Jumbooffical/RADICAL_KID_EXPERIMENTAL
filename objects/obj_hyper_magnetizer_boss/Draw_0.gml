@@ -1,9 +1,9 @@
 // Inherit the parent event
 event_inherited();
 
-draw_text(x + 10,y + 50, state_name)
-draw_text(x + 10,y + 70, "interval: "+string(state_interval))
-draw_text(x + 10,y + 90, "cd: "+string(cooldown))
+//draw_text(x + 10,y + 50, state_name)
+//draw_text(x + 10,y + 70, "interval: "+string(state_interval))
+//draw_text(x + 10,y + 90, "cd: "+string(cooldown))
 
 if lazer {
 	var max_dist = 2000;

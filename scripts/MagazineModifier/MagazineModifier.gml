@@ -8,7 +8,7 @@ function MagazineModifier() {
 		case spr_marksman_mag:
 			recoil = weapon[wID, GUN.RECOIL] * 0.5
 			deviation = deviation + 0.25
-			aiming_damage_mult = 1.25
+			aiming_damage_mult = 1.33
 		break;
 		
 		case spr_overpressure:
@@ -31,12 +31,12 @@ function MagazineModifier() {
 		
 		case spr_taped2:
 			if !is_reloading {
-				quickslot[selected_item, QSlot.Buff_Taped] = 1		
+				quickslot[selected_item, QSlot.Buff_Taped] = 1
 			}
 		break;
 		
 		case spr_corrosive_mag:
-			stat.damage_output = stat.damage_output * 1.25
+			stat.damage_output = stat.damage_output / 1.25
 		break;
 		
 		case spr_belt_printermag:
@@ -49,7 +49,7 @@ function MagazineModifier() {
 		#region Rare
 		case spr_drummag:
 			mag_size = weapon[wID, GUN.MAG_SIZE] + 50
-			reload_mult = 0.5
+			reload_mult = 0.33
 		break;
 		
 		case spr_deflectivemag:
@@ -86,7 +86,7 @@ function MagazineModifier() {
 			if !is_reloading {
 				quickslot[selected_item, QSlot.Buff_Smart] = 1
 			}
-			velocity = velocity / 1.5
+			velocity = velocity / 1.33
 		break;
 		
 		case spr_heatseekmag:
@@ -107,6 +107,7 @@ function MagazineModifier() {
 		break;
 		
 		case spr_air_mag:
+			free_mag = true
 			if !is_reloading {
 			quickslot[selected_item, QSlot.Debuff_AirMag] = 3
 			hardcode_airmag = true
@@ -137,6 +138,7 @@ function MagazineModifier() {
 	}
 	
 	if quickslot[selected_item, QSlot.Debuff_AirMag] > 0 {
+	free_mag = true
 	mag_size = 999
 	stat.damage_output = 0
 	noise = 0.01

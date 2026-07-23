@@ -1,4 +1,5 @@
 if !instance_exists(obj_hyper_magnetizer_boss) exit;
+if obj_player.death exit;
 visible = true
 image_xscale = 5
 image_yscale = 5
