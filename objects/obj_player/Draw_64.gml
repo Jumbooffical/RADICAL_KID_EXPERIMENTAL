@@ -1,4 +1,12 @@
 
+var ammo_x = 40
+var ammo_y = 850
+var txt_scale = 1.1
+draw_text_transformed(1500, ammo_y, "Level: " + string(global.level - 1) + "/9", txt_scale, txt_scale, 0)
+draw_text_transformed(1425, ammo_y + 25, "Run Duration: " + display_duration(time_elapsed), txt_scale, txt_scale, 0)
+draw_text_transformed(1500, ammo_y + 50, "Death: " + string(death_count), txt_scale, txt_scale, 0)
+draw_text_transformed(1500, ammo_y + 75, "FPS: " + string(fps), txt_scale, txt_scale, 0)
+
 if (death) exit;
 if is_aiming && pain <= 0 { 
 	draw_set_alpha(0.2)
@@ -127,19 +135,17 @@ if text_shake_alarm > 0 {
 	text_shake = 0
 }
 
-var ammo_x = 40
-var ammo_y = 850
-draw_sprite(ammoLight, 0, ammo_x, ammo_y - 200);
-draw_text(ammo_x + 25, ammo_y - 200, ": " + string(current_magazine[Caliber.Light]));
+draw_sprite(ammoLight, 0, ammo_x, ammo_y - 100);
+draw_text(ammo_x + 25, ammo_y - 100, ": " + string(current_magazine[Caliber.Light]));
 
-draw_sprite(ammoMed, 0, ammo_x, ammo_y - 150);
-draw_text(ammo_x + 25, ammo_y - 150, ": " + string(current_magazine[Caliber.Medium]));
+draw_sprite(ammoMed, 0, ammo_x, ammo_y - 75);
+draw_text(ammo_x + 25, ammo_y - 75, ": " + string(current_magazine[Caliber.Medium]));
 	
-draw_sprite(ammoShell, 0, ammo_x, ammo_y - 100);
-draw_text(ammo_x + 25, ammo_y - 100, ": " + string(current_magazine[Caliber.Shell]));
+draw_sprite(ammoShell, 0, ammo_x, ammo_y - 50);
+draw_text(ammo_x + 25, ammo_y - 50, ": " + string(current_magazine[Caliber.Shell]));
 	
-draw_sprite(ammoHeavy, 0, ammo_x, ammo_y - 50);
-draw_text(ammo_x + 25, ammo_y - 50, ": " + string(current_magazine[Caliber.Heavy]));
+draw_sprite(ammoHeavy, 0, ammo_x, ammo_y - 25);
+draw_text(ammo_x + 25, ammo_y - 25, ": " + string(current_magazine[Caliber.Heavy]));
 	
 draw_sprite(ammoLong, 0, ammo_x, ammo_y);
 draw_text(ammo_x + 25, ammo_y, ": " + string(current_magazine[Caliber.Long]));

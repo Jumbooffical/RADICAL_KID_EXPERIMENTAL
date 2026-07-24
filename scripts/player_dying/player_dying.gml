@@ -1,5 +1,6 @@
 function player_dying() {
 	if sound_proc {
+		death_count++
 		audio_play_sound(snd_dead, 1, 0, 1)
 		image_speed = random_range(0.5, 1)
 		

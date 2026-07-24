@@ -1,6 +1,7 @@
 function swap_melee(_key) {
 	var key = _key
 	if (keyboard_check_pressed(key)) || key == noone {
+		if cursed {error_feedback() exit;}
 		if quickslot_type == Slot.Melee {
 		selected_item = 1
 		quickslot_type = Slot.Gun

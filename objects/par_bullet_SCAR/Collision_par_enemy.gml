@@ -1,13 +1,5 @@
 if my_state == bullet_state.STASIS exit;
-if my_state == bullet_state.SOULBINDED exit;
-//if obj_player.is_aiming && other.dot_received < 2 exit;
-
-if (place_meeting(x + lengthdir_x(velocity, direction),
-                  y + lengthdir_y(velocity, direction),
-                  obj_tank_boss))
-{
-	audio_play_sound(random_array(global.deflect_snd), 1, 0, global.deflect_snd_gain)
-}
+if my_state == bullet_state.SOULBINDED && other.object_index != obj_enemy_titan exit;
 
 var nearest = instance_nearest(x, y, par_enemy)
 
@@ -26,7 +18,7 @@ nearest.my_state = STATE.TELEPORT exit;
 var dmg_falloff = 1
 if apply_falloff {
 	var mouse_dist = point_distance(obj_player.x, obj_player.y, x, y)	
-	for (var i = 0; i < round(mouse_dist/200); i++) {
+	for (var i = 0; i < round(mouse_dist/300); i++) {
 	dmg_falloff = (1 - (i * 0.15))
 	dmg_falloff = clamp(dmg_falloff, 0.25, 1)
 	}

@@ -79,7 +79,10 @@ function savegame() {
 			cancer_phase : cancer_phase,
 			cancer_timer : cancer_timer,
 			
-			cash : cash
+			cash : cash,
+			
+			time_elapsed : time_elapsed,
+			death_count : death_count
         };
         array_push(_saveData, _savePlayer);
     }

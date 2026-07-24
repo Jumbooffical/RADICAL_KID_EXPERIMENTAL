@@ -23,6 +23,7 @@ function reloading_key(_key){
 	input_R_pressed--
 
 	if input_R_pressed == 0 {
+		
 		if taped_reload {
 			gui_frame = 1
 			reload_mult = 3
@@ -31,11 +32,14 @@ function reloading_key(_key){
 		} else {
 			gui_frame = 0
 		}
+		
 		if cursed {
 			if quickslot[selected_item, QSlot.LoadedAmmo] < 1
 			|| quickslot[selected_item, QSlot.Debuff_AirMag] > 0 {
-			start_reloading()
-			} 
+				start_reloading()
+			} else {
+				error_feedback()
+			}
 		} else {
 		start_reloading()
 		}

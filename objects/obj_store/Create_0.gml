@@ -8,6 +8,7 @@ enum SHOP {
 	MEDICAL
 }
 
+store = [0, 1, 2]
 store_type = 
 irandom_range(0, 2)
 

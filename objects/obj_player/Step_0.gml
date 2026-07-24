@@ -115,3 +115,7 @@ if curse_alarm == 1 {
 if keyboard_check_pressed(ord("N")) {
 	hp = 0
 }
+
+if global.level > 1 {
+	time_elapsed++
+}

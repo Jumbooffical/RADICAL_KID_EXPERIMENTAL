@@ -1,8 +1,10 @@
 function drop_weapon(_key, _slot) {
-	if (!busy) && !cursed {
+	if (busy) exit
 	
 	var key = _key
 	if (keyboard_check_pressed(key)) || key == noone {
+	if cursed {error_feedback() exit;}
+	
 	bolt_cycle = false
     // Drop firearm if it exists
     if (quickslot[_slot, QSlot.Gun] != noone) {
@@ -50,4 +52,4 @@ function drop_weapon(_key, _slot) {
         quickslot[selected_item, QSlot.Nade] = noone;
 		nadeIndex = noone
     }
-}}}
+}}

@@ -1,3 +1,4 @@
+if !live_enabled exit;
 if !global.dev_mode exit;
 if !instance_exists(obj_camera) exit;
 

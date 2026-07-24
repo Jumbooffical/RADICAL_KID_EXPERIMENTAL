@@ -24,3 +24,7 @@ y = nearest.y
 if nearest.death {
 	instance_destroy()
 }
+
+if !instance_exists(obj_enemy_magnetizer) {
+	instance_destroy()
+}

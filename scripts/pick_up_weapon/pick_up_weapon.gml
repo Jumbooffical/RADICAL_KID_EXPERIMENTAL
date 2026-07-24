@@ -21,9 +21,11 @@ function pick_up_weapon(_key) {
 	    pickup_target.show_pickup = true;
 	}
 	
-	if (!busy) && !cursed {
+	if (!busy) {
 	if (keyboard_check_released(_key))
 	|| _key == noone {
+	if cursed {error_feedback() exit;}
+	
 	if (pickup_target == noone) exit;
 	
 	// CAPITALISM

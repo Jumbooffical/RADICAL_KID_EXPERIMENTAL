@@ -42,12 +42,6 @@ if !spawn {
 			for (var i = 0; i < amount; i++) {
 				array_push(unique_enemies, obj_melee_enemy)
 			}
-			
-			base = 1
-			amount = floor(base + (global.tier/3))
-			for (var i = 0; i < amount; i++) {
-				array_push(unique_enemies, obj_enemy_assassin)
-			}
 		break;
 		
 		case (SPAWN_GROUP.ASSAULT):
@@ -83,8 +77,8 @@ if !spawn {
 			    array_push(universal_enemies, new item(obj_ranged_enemy, all_smg));
 			}
 		
-			base = 2
-			amount = base + floor(global.tier/4)
+			base = 0
+			amount = base + floor(global.tier)
 			for (var i = 0; i < amount; i++) {
 				array_push(unique_enemies, obj_enemy_assassin)
 			}

@@ -34,5 +34,5 @@
     "path":"sprites/spr_chopper_zone/spr_chopper_zone.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

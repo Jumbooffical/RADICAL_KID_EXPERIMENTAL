@@ -190,3 +190,10 @@ if my_state != STATE.ATTACK {
 react = false
 }
 #endregion
+
+if head_alarm > 0 {
+	head_alarm--
+}
+if head_alarm == 1 && !head_immune {
+	instance_create_depth(x, y, depth, obj_head)
+}

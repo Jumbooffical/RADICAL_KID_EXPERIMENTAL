@@ -53,7 +53,8 @@ visible = true
 	
 	if instance_exists(obj_enemy_titan) {
 		var titan = instance_nearest(x, y, obj_enemy_titan)
-		if place_meeting(x, y, obj_titan_magnetfield) {
+		if place_meeting(x, y, obj_titan_magnetfield) 
+		&& object_index !=  obj_incendiary_bullet {
 			my_state = bullet_state.SOULBINDED		
 		}
 	}

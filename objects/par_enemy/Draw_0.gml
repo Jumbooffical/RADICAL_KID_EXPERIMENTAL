@@ -1,4 +1,3 @@
-
 var mi = obj_player
 shader_reset();
 
@@ -85,9 +84,21 @@ switch (mask_index) {
 		gun_scale = 1
 	break;
 	
+	case aim_hitbox:
+		gun_scale = 1
+	break;
+	
 	case giant_hitbox:
 		gun_scale = 1.25
 	break;
+}
+
+if mask_index != giant_hitbox {
+	if obj_player.is_aiming {
+		mask_index = aim_hitbox
+	} else {
+		mask_index = body_hitbox
+	}
 }
 
 draw_sprite_ext(weapon[ewID, GUN.PLAYER_SPRITE], gun_frame, gun_x, gun_y, 1 * gun_scale, flip * gun_scale, dir, c_white, image_alpha);

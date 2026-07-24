@@ -17,7 +17,7 @@ enum SPAWN_GROUP {
 group = 0
 if rng < 5 {
 group = SPAWN_GROUP.ANGRY_MOB
-} else if rng < 30 {
+} else if rng < 25 {
 group = choose(1, 2, 3)
 } else {
 group = 0

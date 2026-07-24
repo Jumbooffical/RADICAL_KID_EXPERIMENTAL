@@ -31,7 +31,7 @@ pause_key(key_pause)
 inventory_key(key_inventory)
 next_slot(key_slot1, key_slot2, key_slot3, key_slot4, key_slot5, key_slotnade)
 
-if !is_reloading && !cursed {
+if !is_reloading {
 swap_melee(key_swapping)
 swap_nade(key_nading)
 }

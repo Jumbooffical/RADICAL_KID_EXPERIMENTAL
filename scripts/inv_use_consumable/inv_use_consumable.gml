@@ -64,8 +64,7 @@ function inv_use_consumable() {
 		
 		case spr_stim_TAPE:
 			if !holding_weapon() {
-				audio_play_sound(snd_burst_fail, 1, 0)
-				obj_camera.shake_str += 5
+				error_feedback()
 				return
 			}
 			obj_player.quickslot[obj_player.selected_item, QSlot.Buff_Taped] += 5

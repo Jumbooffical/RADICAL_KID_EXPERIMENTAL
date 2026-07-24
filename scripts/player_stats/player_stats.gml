@@ -64,6 +64,7 @@ function player_default_stats(){
 
 	mag_size = weapon[wID, GUN.MAG_SIZE]
 	magslot = weapon[wID, GUN.MAG_SLOT]
+	magslot = clamp(magslot, 1, 7)
 
 	noise = 1
 	gun_pitch = 1

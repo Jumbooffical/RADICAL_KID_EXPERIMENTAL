@@ -27,6 +27,7 @@ function loadgame() {
 			quickslot_type = Slot.Gun
 			
 			death = false
+			sound_proc = true
 			x = _loadPlayer.x
 			y = _loadPlayer.y
 			
@@ -101,6 +102,11 @@ function loadgame() {
 			
 			cancer_phase = _loadPlayer.cancer_phase
 			cancer_timer = _loadPlayer.cancer_timer
+			
+			if room != StartRoom {
+			time_elapsed = _loadPlayer.time_elapsed
+			death_count = _loadPlayer.death_count
+			}
         }
 		global.sniper_revive = 2
     }

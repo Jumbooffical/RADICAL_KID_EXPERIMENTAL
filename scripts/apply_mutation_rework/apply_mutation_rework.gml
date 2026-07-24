@@ -35,6 +35,11 @@ for (var i = 0; i < array_length(_mut); i++) {
 			rare_chance = rare_chance * 1.1;
 			epic_chance = epic_chance * 1.1;
 		break;
+		
+		case "Magic Pistol":
+            sex_pistol = true
+			weapon[wp.model19, GUN.DAMAGE] = 35
+        break;
     }
 #endregion
 

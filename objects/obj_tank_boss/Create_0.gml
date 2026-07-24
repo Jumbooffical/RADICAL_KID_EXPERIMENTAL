@@ -21,3 +21,4 @@ mask_index = sprite_index
 
 // Immunity
 knockback_immune = true
+head_immune = true

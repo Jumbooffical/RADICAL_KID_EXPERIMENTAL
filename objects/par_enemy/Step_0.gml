@@ -54,3 +54,11 @@ enemy_knockback()
 for (var i = 0; i < dot_received; i++) {
 	damage_taken = 5 * i
 }
+
+if head_alarm > 0 {
+	head_alarm--
+}
+
+if head_alarm == 1 && !head_immune {
+	instance_create_depth(x, y, depth, obj_head)
+}

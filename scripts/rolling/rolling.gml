@@ -19,4 +19,11 @@ function rolling() {
 	    }
 	}
 	roll_spd *= 0.95
+			
+	if (image_xscale == 1 && keyboard_check(key_left)) {
+		image_xscale = -1
+	}
+	if (image_xscale == -1 && keyboard_check(key_right)) {
+		image_xscale = 1
+	}
 }

@@ -15,6 +15,7 @@ heli_mounted = false
 can_teleport = false
 
 // Immunity
+head_immune = false
 blind_immune = false
 knockback_immune = false
 stun_immune = false
@@ -175,3 +176,5 @@ hpbar_w = 0
 hpbar_h = 0
 hpbar_x = 0
 hpbar_y = 0;
+
+head_alarm = 30

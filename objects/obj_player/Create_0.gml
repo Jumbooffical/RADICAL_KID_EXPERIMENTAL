@@ -86,7 +86,7 @@ rolling_timer = 0;
 roll_spd = 12;
 
 // Ammo reserve
-current_magazine[Caliber.Medium] = 110	// Medium
+current_magazine[Caliber.Medium] = 0	// Medium
 current_magazine[Caliber.Light] = 0		// Light
 current_magazine[Caliber.Heavy] = 0		// Heavy
 current_magazine[Caliber.Long] = 0		// Long
@@ -137,8 +137,7 @@ Grip,
 Barrel
 }
 
-for (var i = 0; i < max_quickslot + 1; i++)
-{
+for (var i = 0; i < max_quickslot + 1; i++) {
     quickslot[i, QSlot.Gun] = noone;
     quickslot[i, QSlot.LoadedAmmo] = 0;
     quickslot[i, QSlot.Melee] = ml.fist;
@@ -354,12 +353,15 @@ global.afterimg_frequency = 3;
 
 attack_style = melee[meleeIndex, MELEE.STYLE]
 
-// Prevent duplicate player
 if (instance_number(obj_player) > 1) {
 	instance_destroy();
 }
 
 ewID = 0 // Prevent crash for enemy bullet when last enemy dies
+
+// DEBUG
+death_count = 0
+time_elapsed = 0
 
 enum RARITY {
     COMMON,
@@ -474,6 +476,9 @@ slot_input_delay = 0
 
 #region MUTATIONS
 	all_mutations = [
+		new mutation("Magic Pistol", 
+		"Model19 revolver always shoot smart bullet & +50% damage", U_RARITY.COMMON),	
+	
 		new mutation("Fast Footed", 
 		"Movement Speed +15%", U_RARITY.RARE),
 		
@@ -481,7 +486,7 @@ slot_input_delay = 0
 		"Dodgeroll cooldown -50%", U_RARITY.RARE),
 		
 		new mutation("Bloodthirsty", 
-		"-1 First combo milestone, Movement Speed -20%", U_RARITY.RARE),
+		"-1 first combo milestone, Movement Speed -15%", U_RARITY.RARE),
 		
 		new mutation("Modified Veins", 
 		"Combo last 1 extra second", U_RARITY.RARE),
@@ -520,15 +525,14 @@ slot_input_delay = 0
 		"Unfortunately it's terminal!", U_RARITY.MAJOR_DEFECT),
 		
 		new mutation("Low blood pressure", 
-		"Combo last 1.5 second less", U_RARITY.MAJOR_DEFECT),
+		"Combo last 1.5 second less", U_RARITY.DEFECT),
 		
 		new mutation("Conspicuous",
-		"Enemy have quicker reaction time", U_RARITY.DEFECT), 
+		"Enemy have quicker reaction time", U_RARITY.MAJOR_DEFECT), 
 	]
 	applied_mutation = []
 	
 	mutation_system()
-
 #endregion
 
 #region ENEMY MUTATIONS

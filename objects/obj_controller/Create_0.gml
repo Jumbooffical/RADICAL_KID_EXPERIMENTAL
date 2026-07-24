@@ -1,3 +1,4 @@
+#macro live_enabled 0
 loot_pool()
 global.level = 1
 global.tier = 0

@@ -37,5 +37,5 @@
     "path":"sprites/head/head.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

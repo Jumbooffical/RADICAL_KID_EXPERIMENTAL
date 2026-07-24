@@ -3,6 +3,6 @@ function set_current_weapon(slot) {
     
     if (holding_weapon()) {
         var select = quickslot[selected_item, QSlot.Gun];
-		audio_play_sound(weapon[select, GUN.SFX_SWAPPING], 10, false, 1, 0, 0.7);
+		audio_play_sound(weapon[select, GUN.SFX_SWAPPING], 10, false, 0.5, 0, 0.7);
     }
 }

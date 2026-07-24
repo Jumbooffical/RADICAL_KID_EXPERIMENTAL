@@ -7,7 +7,7 @@ run_spr = spr_goon_running_noarm
 death_spr = spr_goon_death
 
 // Enemy stat
-enemy_hp = 2300;
+enemy_hp = 2500;
 armor_tier = 0
 base_spd = 7;
 
@@ -23,6 +23,7 @@ mask_index = sprite_index
 blind_immune = true
 knockback_immune = true
 stun_immune = true
+head_immune = true
 
 enum HMB_STATE {
 IDLE,

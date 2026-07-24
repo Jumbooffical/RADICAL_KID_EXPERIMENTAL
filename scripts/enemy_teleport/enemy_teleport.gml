@@ -10,9 +10,11 @@ function enemy_teleport() {
 	x = obj_player.x
 	y = obj_player.y
 	
+	if instance_exists(obj_titan_magnetfield) {
 	var nearest = instance_nearest(x, y, obj_titan_magnetfield)
-	nearest.x = y
+	nearest.x = x
 	nearest.y = y
+	}
 	
 	image_alpha = 0
 	}

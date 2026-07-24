@@ -16,9 +16,10 @@ base_aggro = 900
 base_react_time = 15
 alarm_interval = 30
 
-
 base_cd = 300
 teleport_cd = 60
 
 base_aggro = 1200
+start_buff = true
 
+have_titan_copter = false

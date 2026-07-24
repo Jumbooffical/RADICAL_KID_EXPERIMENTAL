@@ -16,6 +16,8 @@ function mutation_system() {
 	
 	cancer_phase = CANCER_PHASE.PHASE0
 	cancer_timer = 1
+	
+	sex_pistol = false
 }
 
 function mutation(_name, _desc, _rarity) constructor {

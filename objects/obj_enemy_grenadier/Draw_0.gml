@@ -3,10 +3,6 @@ image_xscale * global.shadow_xscale, global.shadow_yscale, global.shadow_angle, 
 draw_self();
 
 if death exit;
-
-draw_text_blend(x + 10,y + 10, nade_cooldown, c_red)
-
-draw_text(x + 10,y + 30, react)
 draw_set_colour(c_white)
 
 if global.pathfinding_debug {

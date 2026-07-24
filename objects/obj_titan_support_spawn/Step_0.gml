@@ -1,3 +1,5 @@
+if outside_cam exit;
+
 if spawn {
 	global.titan_support_pool = array_shuffle(global.titan_support_pool);
 	for (var i = 0; i < support_num; i++) {	

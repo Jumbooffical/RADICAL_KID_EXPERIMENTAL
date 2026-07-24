@@ -42,7 +42,8 @@ fall = -1000
 grav = 1.5;
 zspd = -9;
 
-state_delay = 60
+state_delay = 90
 is_deployed = true
 
 stun_immune = true
+head_immune = true
