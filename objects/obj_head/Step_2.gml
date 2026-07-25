@@ -1,3 +1,4 @@
+if !instance_exists(nearest) exit;
 if nearest.death {
 instance_destroy()
 }
