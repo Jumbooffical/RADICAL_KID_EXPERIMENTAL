@@ -6,6 +6,6 @@ follow_player = false
 follow_delay = 20
 glow = 1
 
-gun_type = wp.m249
+gun_type = WeaponType.LMG
 damage = 8
 dir = point_direction(x, y, obj_player.x, obj_player.y)
