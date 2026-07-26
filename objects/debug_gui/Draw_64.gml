@@ -31,8 +31,8 @@ with (obj_player) {
 	name[8] = ""
     desc[8] = ""
 	
-	name[9] = "mutation count : "
-    desc[9] = string(array_length(applied_mutation))	
+	name[9] = "save alarm : "
+    desc[9] = string(save_alarm)	
 	
 	name[10] = "all mutations : "
     desc[10] = string(array_length(obj_player.all_mutations))

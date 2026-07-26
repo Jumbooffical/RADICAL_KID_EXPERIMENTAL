@@ -15,6 +15,7 @@ MEND_stim_timer = 0
 ZERK_stim_timer = 0
 NOON_stim_timer = 0
 UNDY_stim_timer = 0
+beat_interval = 1
 
 CLAR_stim_count = 0
 EPIK_stim_count = 0

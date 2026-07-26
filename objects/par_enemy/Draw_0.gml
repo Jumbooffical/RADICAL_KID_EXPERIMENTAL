@@ -107,10 +107,9 @@ draw_sprite_ext(weapon[ewID, GUN.HEATED_BARREL], 0, gun_x, gun_y, 1 * gun_scale,
 }
 shader_reset();
 
-if !global.dev_mode exit;
 //draw_text_blend(x + 10,y + 10, enemy_hp, c_red)
 
-//draw_text(x + 10,y + 30, "ammo : " + string(current_mag))
+//draw_text(x + 10,y + 30, "stun timer : " + string(stun_timer))
 //draw_text(x + 10,y + 50, "hitbox : " + string(reload_timer))
 //draw_text(x + 10,y + 70, state_name)
 draw_set_colour(c_white)

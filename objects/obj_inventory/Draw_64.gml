@@ -101,28 +101,11 @@ if (obj_player.open_inventory) {
             draw_set_alpha(1);
         }
     }
+    //draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 60, "selected_inv:");
+    //draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 60, selected_inv);
 
-var xoff = 30
-draw_sprite(ammoLight, 0, tr_x / 2 + xoff, tr_y);
-draw_text(tr_x / 2 + xoff, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Light]);
-
-draw_sprite(ammoMed, 0, tr_x / 2 + xoff - 50, tr_y);
-draw_text(tr_x / 2 + xoff - 50, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Medium]);
-	
-draw_sprite(ammoShell, 0, tr_x / 2 + xoff - 100, tr_y);
-draw_text(tr_x / 2 + xoff - 100, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Shell]);
-	
-draw_sprite(ammoHeavy, 0, tr_x / 2 + xoff - 150, tr_y);
-draw_text(tr_x / 2 + xoff - 150, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Heavy]);
-	
-draw_sprite(ammoLong, 0, tr_x / 2 + xoff - 200, tr_y);
-draw_text(tr_x / 2 + xoff - 200, tr_y + tr_offsety, obj_player.current_magazine[Caliber.Long]);
-
-    draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 60, "selected_inv:");
-    draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 60, selected_inv);
-
-    draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 80, "mouse_sel_inv:");
-    draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 80, mouse_selected_inv);
+    //draw_text(tr_x / 2 - 70, tr_y + tr_offsety + 80, "mouse_sel_inv:");
+    //draw_text(tr_x / 2 + 70, tr_y + tr_offsety + 80, mouse_selected_inv);
 }
 
 if (context_open) {

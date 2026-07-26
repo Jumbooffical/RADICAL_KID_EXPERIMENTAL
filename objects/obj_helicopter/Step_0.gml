@@ -1,8 +1,9 @@
 
 var mi = obj_player
-
 steering_spd = 0.007
-reset_alarm--
+
+vulnerable = clamp(vulnerable, 0, 2)
+vulnerable--
 
 if mystate == HELI_STATE.RETREAT {
 var in = 0.001
@@ -17,6 +18,12 @@ image_yscale -= in
 image_alpha = 0.5
 image_xscale = scale
 image_yscale = scale
+}
+
+if hull_hp <= 0 {
+	mystate = HELI_STATE.RETREAT
+	part_particles_create(global.sys_black_smoke, 
+	x, y, global.pt_black_smoke, irandom_range(3, 5))
 }
 
 var dir = point_direction(obj_player.x, obj_player.y, x, y); 
@@ -42,12 +49,6 @@ if has_titan {
 	mystate = HELI_STATE.DEPLOYING
 }
 
-if hull_hp <= 0 {
-	mystate = HELI_STATE.RETREAT
-	part_particles_create(global.sys_black_smoke, 
-	x, y, global.pt_black_smoke, irandom_range(3, 5))
-}
-
 if attack_interval == 0 {
 start_attacking = !start_attacking
 	if start_attacking {
@@ -55,6 +56,10 @@ start_attacking = !start_attacking
 	} else {
 	attack_interval = 300
 	}
+}
+
+if instance_exists(obj_airstrike_zone) {
+	mystate = HELI_STATE.RETREAT
 }
 
 retreat_alarm--
@@ -86,7 +91,11 @@ switch (mystate) {
 	case HELI_STATE.RETREAT:
 		state_name = "RUN SON!"
 		dir = image_angle
-		//velocity = lerp(velocity, 20, 0.03)
+		velocity = lerp(velocity, 15, 0.025)
+		
+		if !instance_exists(obj_airstrike_zone) {
+			mystate = HELI_STATE.CHASE
+		}
 	break;
 	
 	case HELI_STATE.ORBIT:
@@ -104,46 +113,8 @@ switch (mystate) {
 	case HELI_STATE.ATTACK:
 		attack_interval--
 		state_name = "attack"
-		var acc = 7
-		var dmg = 200
-		var spread = irandom_range(-acc, acc)
 		
-		dir = point_direction(obj_player.x, obj_player.y, x, y); 
-		velocity = lerp(velocity, 6, 0.03)
-		steering_spd = 0.05
-		
-		with instance_create_depth(x, y + 85, depth, par_enemybullet_SCAR) {
-			image_angle = other.image_angle + spread
-				
-			fire_trail = true
-			ignore_collision = true
-			velocity = 50
-			damage = dmg
-		}
-		
-		with instance_create_depth(x, y + 85, depth, obj_casing) {
-			left = true
-			casing_type =  WeaponType.Bolt
-			timer = 180
-		}
-		
-		with instance_create_depth(x, y - 85, depth, par_enemybullet_SCAR) {
-			image_angle = other.image_angle + spread
-				
-			fire_trail = true
-			ignore_collision = true
-			velocity = 50
-			damage = dmg
-		}
-		
-		with instance_create_depth(x, y - 85, depth, obj_casing) {
-			left = true
-			casing_type =  WeaponType.Bolt
-			timer = 180
-		}
-		
-		audio_play_sound(snd_heli_bren, 1, 0, 
-		random_range(0.5, 0.6), 0, random_range(0.8, 1))
+		heli_shooting()
 	break;
 	
 	case HELI_STATE.DEPLOYING:
@@ -163,12 +134,3 @@ switch (mystate) {
 
 x += lengthdir_x(velocity, dir);
 y += lengthdir_y(velocity, dir);
-
-dot_received = clamp(dot_received, 1, 3)
-if dot_received > 1 {
-reset_alarm = 5
-}
-
-if reset_alarm < 0 {
-dot_received = 1
-}

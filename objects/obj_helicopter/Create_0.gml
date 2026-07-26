@@ -1,5 +1,5 @@
 randomize()
-hull_hp = 50
+hull_hp = 100
 
 velocity = 5
 timer = 120
@@ -58,7 +58,5 @@ if has_sniper {
 		current_mag = 0
 	}
 }
-
-dot_received = 1
-reset_alarm = 0
+vulnerable = 0
 flash_alarm = 2

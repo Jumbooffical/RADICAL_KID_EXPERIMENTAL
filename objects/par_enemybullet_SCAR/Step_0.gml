@@ -37,3 +37,9 @@ sprite_index = BULLET_medium
 if velocity > 55 {
 	sprite_index = BULLET_long
 }
+
+if ignore_collision {
+	if distance_to_object(heli_id) >= max_dist {
+		instance_destroy()
+	}
+}

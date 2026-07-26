@@ -1,4 +1,4 @@
-
+draw_text(x, y, state_name)
 wing_spd += 45
 
 if start_attacking && flash_alarm == 1 {
@@ -18,5 +18,5 @@ image_angle += angle_difference(target, image_angle) * steering_spd;
 
 flash_alarm--
 if flash_alarm == 0 {
-	flash_alarm = 3
+	flash_alarm = 2
 }

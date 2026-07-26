@@ -1,4 +1,5 @@
 function apply_status(){
+	
 	if MEND_stim_timer > 0 {
 		MEND_stim_timer--		
 		heal_mult = 2
@@ -25,6 +26,19 @@ function apply_status(){
 	
 	if UNDY_stim_timer > 0 {
 		UNDY_stim_timer--
+		
+		beat_interval--
+		if beat_interval < 0 {
+		beat_interval = 40
+		
+			if hp <= 0 {
+				beat_interval = 30
+				audio_play_sound(snd_heartbeat, 1, 0, 3)
+			} else {
+				audio_play_sound(snd_heartbeat, 1, 0, 2)
+			}
+		}
+		
 	} else {
 		with (obj_inventory) {
 		var UNDY = inv.findItemById(spr_stim_UNDY);

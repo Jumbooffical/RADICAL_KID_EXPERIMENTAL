@@ -125,6 +125,10 @@ mask_index = body_hitbox
 
 reaction_time = 0
 cooldown = 0
+
+recon_death_stun = false
+stun_timer = 0
+
 heat = 0
 
 left_punch = 0

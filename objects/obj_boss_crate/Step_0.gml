@@ -2,10 +2,11 @@ image_speed = 0.5
 if crate_hp <= 0 {
 	instance_destroy()
 	instance_create_depth(x, y, depth-1, obj_item_super_medkit)
+	instance_create_depth(x, y, depth-1, obj_item_stable_mutagen)
 	
-	drop_money(obj_stack_of_cash, 15)
+	drop_money(obj_stack_of_cash, 5)
 	drop_money(obj_coin, 100)
-	drop_money(obj_cash, 50)
+	drop_money(obj_cash, 15)
 	audio_play_sound(snd_coins_spill, 1, 0, 3)
 	
 	switch (loot_index) {

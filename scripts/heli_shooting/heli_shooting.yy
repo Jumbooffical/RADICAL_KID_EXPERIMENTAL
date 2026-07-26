@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"heli_shooting",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"heli_shooting",
+  "parent":{
+    "name":"Vehicle",
+    "path":"folders/Objects/Enemy/Normal/Vehicle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

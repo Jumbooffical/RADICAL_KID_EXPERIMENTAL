@@ -14,7 +14,7 @@ function enemy_idle(){
 		&& !obj_player.have_suppressor 
 		&& obj_player.selected_item != obj_player.melee_quickslot {
 			my_state = STATE.ALERT
-			global.grid_dirty = true
+			
 		}
 	}}
 	
@@ -22,7 +22,7 @@ function enemy_idle(){
 	if !(collision_line(x, y, par_enemybullet_SCAR.x, par_enemybullet_SCAR.y, par_indestructable, true, true)) {
 		if distance_to_object(par_enemybullet_SCAR) < aggro_range / 2 && !spotted {
 			my_state = STATE.ALERT
-			global.grid_dirty = true
+			
 		}
 	}}
 	
@@ -30,7 +30,14 @@ function enemy_idle(){
 	if !(collision_line(x, y, obj_player_afterimg.x, obj_player_afterimg.y, obj_player_afterimg, true, true)) {
 		if distance_to_object(obj_player_afterimg) < aggro_range / 2 && !spotted {
 			my_state = STATE.ALERT
-			global.grid_dirty = true
+			
+		}
+	}}
+	
+	if instance_exists(obj_entity_dying) {
+	if !(collision_line(x, y, obj_entity_dying.x, obj_entity_dying.y, obj_entity_dying, true, true)) {
+		if distance_to_object(obj_entity_dying) < aggro_range / 2 && !spotted {
+			my_state = STATE.RETREAT
 		}
 	}}
 	

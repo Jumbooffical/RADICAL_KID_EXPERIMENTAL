@@ -1,16 +1,19 @@
+
 // Inherit the parent event
 if death {
 	obj_player.debuff_wallhacked = false
-	par_enemy.cooldown = 180
+	par_enemy.spotted = false
+	par_enemy.recon_death_stun = true
 }
 
 event_inherited();
 
-if spotted && !death {
+if !spotted exit;
+if !death {
+	global.wallhack_alpha = lerp(global.wallhack_alpha, 1, 0.02)
 	if start_buff {
 	obj_player.debuff_wallhacked = true
-	global.wallhack_alpha = lerp(global.wallhack_alpha, 1, 0.02)
-	par_enemy.cooldown = 180
+	par_enemy.stun_timer = 180
 	start_buff = false
 	}
 	

@@ -92,7 +92,7 @@ break;
 
 case spr_stim_UNDY:
 name = "'UNDY' Ancient Stimulant"
-description = "Cannot die while HP is at 0 for 30 seconds, applied automatically at 0 HP. \n\nDon't forget to healup afterward!"
+description = "Cannot die while HP is at 0 for 15 seconds, applied automatically at 0 HP. \n\nDon't forget to healup afterward!"
 break;
 	}
 }

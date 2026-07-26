@@ -49,7 +49,7 @@ function MagazineModifier() {
 		#region Rare
 		case spr_drummag:
 			mag_size = weapon[wID, GUN.MAG_SIZE] + 50
-			reload_mult = 0.33
+			reload_mult = 0.66
 		break;
 		
 		case spr_deflectivemag:
@@ -135,6 +135,7 @@ function MagazineModifier() {
 	
 	if quickslot[selected_item, QSlot.Buff_Overclocked] > 0 {
 	firerate = 0.1
+	mag_size = mag_size * 3
 	}
 	
 	if quickslot[selected_item, QSlot.Debuff_AirMag] > 0 {

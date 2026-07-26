@@ -79,21 +79,6 @@ if collision_circle(x, y, aggro_range, mi, false, true) {
 		spotted = true
 }}
 
-if instance_exists(obj_lastseen_zone) {
-	path_target = obj_lastseen_zone
-}
-
-if place_meeting(x, y, obj_lastseen_zone) {
-	path_finished = true
-	aggro_range = base_aggro
-	my_state = STATE.PATROL
-}
-
-if last_seen_player {
-	instance_create_depth(mi.x, mi.y, depth, obj_lastseen_zone)
-	last_seen_player = false
-}
-
 if distance_to_object(obj_m62_unpin) < base_aggro {
 	my_state = STATE.RETREAT
 	spotted = true

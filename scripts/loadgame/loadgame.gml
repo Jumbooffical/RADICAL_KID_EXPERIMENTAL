@@ -31,6 +31,11 @@ function loadgame() {
 			x = _loadPlayer.x
 			y = _loadPlayer.y
 			
+			MEND_stim_timer = _loadPlayer.MEND_stim_timer
+			ZERK_stim_timer = _loadPlayer.ZERK_stim_timer
+			NOON_stim_timer = _loadPlayer.NOON_stim_timer
+			UNDY_stim_timer = _loadPlayer.UNDY_stim_timer
+			
 			CLAR_stim_count = _loadPlayer.CLAR_stim_count
 			EPIK_stim_count = _loadPlayer.EPIK_stim_count
 			DRUM_stim_count = _loadPlayer.DRUM_stim_count
@@ -103,10 +108,12 @@ function loadgame() {
 			cancer_phase = _loadPlayer.cancer_phase
 			cancer_timer = _loadPlayer.cancer_timer
 			
-			if room != StartRoom {
 			time_elapsed = _loadPlayer.time_elapsed
+			
+			if room == StartRoom {
 			death_count = _loadPlayer.death_count
 			}
+			save_alarm = 5
         }
 		global.sniper_revive = 2
     }

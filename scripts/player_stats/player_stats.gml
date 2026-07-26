@@ -212,4 +212,13 @@ function player_default_stats(){
 		epic_chance = 0
 		curse_chance = 0
 	}
+	
+	if global.dev_mode {
+		hp = 999
+		spd_mult = 2
+	}
+	
+	if cursed && current_magazine[weapon[wID, GUN.CALIBER_ID]] == 0 {
+		current_magazine[weapon[wID, GUN.CALIBER_ID]] = 1
+	}
 }

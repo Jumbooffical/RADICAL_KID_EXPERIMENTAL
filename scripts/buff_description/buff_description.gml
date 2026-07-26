@@ -17,7 +17,7 @@ function buff_description() {
 		sprite: overclock_icon,
 		name: "OVERCLOCKED MAGAZINE!!!",
 		desc: "Gun now have maximum firerate & velocity in " 
-		+ string(mi.quickslot[mi.selected_item, QSlot.Buff_Overclocked]) + " reload",
+		+ string(mi.quickslot[mi.selected_item, QSlot.Buff_Overclocked]) + " reload, +300% magsize",
 		note: "Obtained from overclocked magazine",
 		duration: string((mi.quickslot[mi.selected_item, QSlot.Buff_Overclocked])) + " rload"
 		});

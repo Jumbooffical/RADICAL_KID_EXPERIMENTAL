@@ -3,7 +3,7 @@ if (!other.is_rolling) {
 var dmg_falloff = 1
 if apply_falloff {
 	var mouse_dist = point_distance(start_x, start_x, x, y)	
-	for (var i = 0; i < round(mouse_dist/200); i++) {
+	for (var i = 0; i < round(mouse_dist/150); i++) {
 	dmg_falloff = (1 - (i * 0.15))
 	dmg_falloff = clamp(dmg_falloff, 0.25, 1)
 	}

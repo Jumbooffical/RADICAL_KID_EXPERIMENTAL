@@ -16,6 +16,9 @@ fire_trail = false
 timer = 3
 
 ignore_collision = false
+max_dist = 0
+heli_id = 0
+
 apply_falloff = false
 
 start_x = x

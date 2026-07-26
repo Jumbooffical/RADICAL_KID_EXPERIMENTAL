@@ -22,7 +22,7 @@ switch (other.sprite_index) {
 		
 		case spr_overlockmag:
 			desc = "OVERLOCKING Magazine"
-			desc2 = "OVERCLOCK the gun until next 2 reload \n+50% Mag Size."
+			desc2 = "OVERCLOCK the gun and +300% magsize until next 2 reload \n"
 			draw_text_colour(x + 50, y + 20, "!!!OVERCLOCKED!!!", 
 			c_red, c_red, c_red, c_red, irandom_range(0.5, 1))
 		break;

@@ -112,10 +112,10 @@ if curse_alarm == 1 {
 	cursed = true
 }
 
-if keyboard_check_pressed(ord("N")) {
-	hp = 0
-}
-
 if global.level > 1 {
 	time_elapsed++
+}
+
+if keyboard_check_pressed(ord("N")) {
+	death = true
 }

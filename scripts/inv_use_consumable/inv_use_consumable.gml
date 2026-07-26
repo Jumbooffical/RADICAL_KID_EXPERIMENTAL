@@ -47,7 +47,7 @@ function inv_use_consumable() {
 		break;
 		
 		case spr_stim_UNDY:
-			obj_player.UNDY_stim_timer += duration(0,30)
+			obj_player.UNDY_stim_timer += duration(0,15)
 		break;		
 		
 		case spr_stim_CLAR:

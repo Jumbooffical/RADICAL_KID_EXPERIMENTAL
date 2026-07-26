@@ -1,11 +1,14 @@
+global.version = "V0.1.03"
 #macro live_enabled 0
+object_clamp(obj_controller)
+
 loot_pool()
 global.level = 1
 global.tier = 0
 
 // DEBUG
 global.pathfinding_debug = false
-global.dev_mode = true
+global.dev_mode = false
 
 randomize()
 

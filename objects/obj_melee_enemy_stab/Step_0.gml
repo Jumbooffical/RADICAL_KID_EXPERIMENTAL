@@ -72,15 +72,6 @@ if (set_retreatzone) && (!instance_exists(obj_retreat_zone)) {
 	set_retreatzone = false
 }
 
-if instance_exists(obj_lastseen_zone) {
-	path_target = obj_lastseen_zone
-}
-
-if last_seen_player {
-	instance_create_depth(mi.x, mi.y, depth, obj_lastseen_zone)
-	last_seen_player = false
-}
-
 if distance_to_object(obj_m62_unpin) < base_aggro {
 	my_state = STATE.RETREAT
 	spotted = true

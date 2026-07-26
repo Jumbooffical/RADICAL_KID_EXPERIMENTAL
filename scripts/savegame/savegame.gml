@@ -1,5 +1,4 @@
 function savegame() {
-	
     var _saveData = array_create(0);
 
     with (obj_player) {
@@ -55,6 +54,11 @@ function savegame() {
 			magslot : magslot,
 			max_pocket : max_pocket,
 			mags : mags,
+			
+			MEND_stim_timer : MEND_stim_timer,
+			ZERK_stim_timer : ZERK_stim_timer,
+			NOON_stim_timer : NOON_stim_timer,
+			UNDY_stim_timer : UNDY_stim_timer,
 			
 			CLAR_stim_count : CLAR_stim_count,
 			EPIK_stim_count : EPIK_stim_count,

@@ -1,4 +1,9 @@
 function enemy_inherited() {	
+	if stun_timer > 0 {	
+		stun_timer--
+		exit;
+	}
+	
 	var mi = obj_player
 	enemy_spd = clamp(enemy_spd, 1, 10)
 	cooldown = clamp(cooldown, 0, 999)
@@ -10,6 +15,11 @@ function enemy_inherited() {
 	spotted = true
 	base_react_time = 1
 	blind_immune = true
+	}
+	
+	if recon_death_stun {
+		stun_timer = 300
+		recon_death_stun = false
 	}
 	
 	if start_teleport

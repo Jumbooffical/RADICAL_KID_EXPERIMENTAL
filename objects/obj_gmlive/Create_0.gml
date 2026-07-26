@@ -1,7 +1,8 @@
 /// @description Don't forget to place this object in the first room!
 // this is a simple safeguard against making multiple obj_gmlive instances
-if (instance_number(obj_gmlive) > 1) {
-	var first = instance_find(obj_gmlive, 0);
+var object = obj_gmlive
+if (instance_number(object) > 1) {
+	var first = instance_find(object, 0);
 	if (id != first) { instance_destroy(); exit; }
 }
 
