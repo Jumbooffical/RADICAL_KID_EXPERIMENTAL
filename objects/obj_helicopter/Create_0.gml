@@ -5,9 +5,6 @@ velocity = 5
 timer = 120
 scale = 1
 
-path = path_add()
-path_alarm = 11
-
 retreat_zone = 350
 retreat_alarm = 0
 stop_zone = 1800
@@ -21,6 +18,7 @@ orbit_radius = 900;
 orbit_angle = irandom(359);
 
 attack_interval = 300
+cooldown = 0
 
 enum HELI_STATE {
 	STOP,

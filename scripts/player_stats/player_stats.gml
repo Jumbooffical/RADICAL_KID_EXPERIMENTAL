@@ -6,7 +6,7 @@ function player_default_stats(){
 	my_spd = 8;
 
 	global.combo1_milestone = 3;
-	global.max_combo_cd = 300;
+	global.max_combo_cd = 360;
 
 	base.roll_cd = 30;
 

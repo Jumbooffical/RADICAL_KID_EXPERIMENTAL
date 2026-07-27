@@ -26,3 +26,5 @@ if dot_received > 1 {
 } else {
 	nearest.damage_taken = 1
 }
+
+visible = global.pathfinding_debug

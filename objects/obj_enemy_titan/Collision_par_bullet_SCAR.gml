@@ -11,4 +11,6 @@ timer = 60
 }
 
 flash_duration = 2
-stamina -= 7
+
+if obj_player.selected_item == obj_player.melee_quickslot exit;
+stamina -= 9

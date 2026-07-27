@@ -42,7 +42,7 @@ function weapon_pool() {
 		new item(obj_ammoLight, RARITY.COMMON),
 		new item(obj_ammoMed, RARITY.COMMON),
 		new item(obj_ammoHeavy, RARITY.UNCOMMON),
-		new item(obj_ammoShell, RARITY.UNCOMMON),
+		new item(obj_ammoShell, RARITY.COMMON),
 		new item(obj_ammoLong, RARITY.UNCOMMON),
 	]
 		

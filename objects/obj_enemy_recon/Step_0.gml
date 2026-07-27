@@ -13,7 +13,7 @@ if !death {
 	global.wallhack_alpha = lerp(global.wallhack_alpha, 1, 0.02)
 	if start_buff {
 	obj_player.debuff_wallhacked = true
-	par_enemy.stun_timer = 180
+	par_enemy.stun_timer = 60
 	start_buff = false
 	}
 	

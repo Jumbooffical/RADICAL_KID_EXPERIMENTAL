@@ -44,6 +44,5 @@ if (mouse_check_button(mb_left)) && no_click {
 		is_melee = true
 		meleeIndex = other.meleeIndex
 	}
-
 	}
 }}}

@@ -1,6 +1,12 @@
 function heli_shooting() {
+	cooldown--
+	if cooldown <= 0 {
+		cooldown = 2
+	} else {
+		exit;
+	}
+	
 	var acc = 7
-	var dmg = 300
 	var spread = irandom_range(-acc, acc)
 	var dist_to_player = point_distance(x, y, obj_player.x, obj_player.y)
 		
@@ -10,11 +16,10 @@ function heli_shooting() {
 		
 	with instance_create_depth(x, y + 85, depth, par_enemybullet_SCAR) {
 		image_angle = other.image_angle + spread
-				
-		fire_trail = true
+
 		ignore_collision = true
 		velocity = 70
-		damage = dmg
+		damage = 10
 		
 		max_dist = dist_to_player * random_range(0.9, 1.3)
 		heli_id = other.id
@@ -28,11 +33,10 @@ function heli_shooting() {
 		
 	with instance_create_depth(x, y - 85, depth, par_enemybullet_SCAR) {
 		image_angle = other.image_angle + spread
-				
-		fire_trail = true
+
 		ignore_collision = true
-		velocity = 50
-		damage = dmg
+		velocity = 70
+		damage = 10
 		
 		max_dist = dist_to_player * random_range(0.9, 1.3)
 		heli_id = other.id

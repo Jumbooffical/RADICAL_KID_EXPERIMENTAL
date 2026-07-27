@@ -1,3 +1,4 @@
+instance_create_depth(x, y, depth, obj_head)
 global.all_wp_pool = [
 			wp.scar, wp.fal, wp.ss2, wp.ak,
 			wp.uzi, wp.mp5,

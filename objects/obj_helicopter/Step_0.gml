@@ -1,30 +1,8 @@
-
 var mi = obj_player
 steering_spd = 0.007
 
 vulnerable = clamp(vulnerable, 0, 2)
 vulnerable--
-
-if mystate == HELI_STATE.RETREAT {
-var in = 0.001
-image_alpha -= in
-image_xscale -= in
-image_yscale -= in
-
-	if image_alpha <= 0 {
-		instance_destroy()
-	}
-} else {
-image_alpha = 0.5
-image_xscale = scale
-image_yscale = scale
-}
-
-if hull_hp <= 0 {
-	mystate = HELI_STATE.RETREAT
-	part_particles_create(global.sys_black_smoke, 
-	x, y, global.pt_black_smoke, irandom_range(3, 5))
-}
 
 var dir = point_direction(obj_player.x, obj_player.y, x, y); 
 
@@ -52,7 +30,7 @@ if has_titan {
 if attack_interval == 0 {
 start_attacking = !start_attacking
 	if start_attacking {
-	attack_interval = 120
+	attack_interval = 180
 	} else {
 	attack_interval = 300
 	}
@@ -60,6 +38,25 @@ start_attacking = !start_attacking
 
 if instance_exists(obj_airstrike_zone) {
 	mystate = HELI_STATE.RETREAT
+}
+
+if hull_hp <= 0 {
+	mystate = HELI_STATE.RETREAT
+	part_particles_create(global.sys_black_smoke, 
+	x, y, global.pt_black_smoke, irandom_range(3, 5))
+	
+	var in = 0.001
+	image_alpha -= in
+	image_xscale -= in
+	image_yscale -= in
+
+	if image_alpha <= 0 {
+		instance_destroy()
+	}
+} else {
+	image_alpha = 0.5
+	image_xscale = scale
+	image_yscale = scale
 }
 
 retreat_alarm--

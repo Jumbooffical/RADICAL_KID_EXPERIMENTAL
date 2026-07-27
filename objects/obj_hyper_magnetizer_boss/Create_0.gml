@@ -7,7 +7,7 @@ run_spr = spr_goon_running_noarm
 death_spr = spr_goon_death
 
 // Enemy stat
-enemy_hp = 2500;
+enemy_hp = 3000;
 armor_tier = 0
 base_spd = 7;
 

@@ -6,7 +6,7 @@ flash_duration = 2
 
 if other.object_index == obj_incendiary_bullet exit;
 var acc = 30
-with instance_create_depth(x, y, depth - 1, obj_deflective_enemybullet) {	
+with instance_create_depth(x, y, depth - 1, par_enemybullet_SCAR) {	
 	wID = other.ewID;
 	direction = point_direction(x, y, obj_player.x, obj_player.y)+ random_range(-acc, acc)	
 	image_angle = direction

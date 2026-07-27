@@ -6,7 +6,7 @@ draw_text_transformed(1500, ammo_y - 25, "FPS: " + string(fps), txt_scale, txt_s
 draw_text_transformed(1500, ammo_y, "Level: " + string(global.level - 1) + "/9", txt_scale, txt_scale, 0)
 draw_text_transformed(1425, ammo_y + 25, "Run Duration: " + display_duration(time_elapsed), txt_scale, txt_scale, 0)
 draw_text_transformed(1500, ammo_y + 50, "Death: " + string(death_count), txt_scale, txt_scale, 0)
-draw_text_transformed(1500, ammo_y + 90, global.version, txt_scale, txt_scale, 0)
+draw_text_transformed(1500, ammo_y + 90, global.version, txt_scale/1.5, txt_scale/1.5, 0)
 
 
 if (death) exit;
@@ -72,6 +72,9 @@ if player_armed {
 	draw_text_transformed(800, hpbar_y + 15, 
 	"[C]:" + string(mode), 1, 1, 0)
 	
+	draw_text_transformed(900, hpbar_y + 15, 
+	"[X]: Drop", 1, 1, 0)
+	
 	// Display caliber
 	var caliber = 0
 	switch (weapon[wID, GUN.CALIBER_ID]) {
@@ -109,7 +112,7 @@ if player_armed {
 	
 	with (current_mag_gui) {
 		x = 940
-		y = other.hpbar_y
+		y = other.hpbar_y - 15
 	}
 }
 

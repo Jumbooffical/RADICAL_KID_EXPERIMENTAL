@@ -1,4 +1,3 @@
-draw_text(x, y, state_name)
 wing_spd += 45
 
 if start_attacking && flash_alarm == 1 {

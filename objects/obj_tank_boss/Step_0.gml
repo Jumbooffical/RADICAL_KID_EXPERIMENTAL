@@ -1,6 +1,6 @@
 image_speed = 0.5
 enemy_spd = base_spd
-bullet_type = obj_deflective_enemybullet
+bullet_type = par_enemybullet_SCAR
 
 if death {
 	if snd_death {

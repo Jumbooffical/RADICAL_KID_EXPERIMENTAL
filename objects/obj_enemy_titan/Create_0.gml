@@ -15,13 +15,13 @@ armor_tier = 0
 
 base_spd = 0.5;
 
-base_aggro = 600
+base_aggro = 700
 
 base_react_time = 15
 alarm_interval = 60
 
 stamina = 100
-recovery_rate = 0.4
+recovery_rate = 0.3
 drain_rate = 0.15
 exhausted = false
 
