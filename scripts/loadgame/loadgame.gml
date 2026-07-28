@@ -109,6 +109,7 @@ function loadgame() {
 			cancer_timer = _loadPlayer.cancer_timer
 			
 			time_elapsed = _loadPlayer.time_elapsed
+			easymode = _loadPlayer.easymode
 			
 			if room == StartRoom {
 			death_count = _loadPlayer.death_count

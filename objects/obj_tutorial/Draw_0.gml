@@ -24,7 +24,7 @@ if distance_to_object(obj_player) < radius {
 switch (phase) {
 	case TUT.WELCOME:
 		name = "WELCOME YOUNG SOLDIER"
-		desc = "Before you are send into a meatgrinder, you are required to complete this mandatory course as thousands of soldier have been previously killed because they don't know how to reload, or worst case scenario, they shot themselves in the eye while trying to learn how to shoot"
+		desc = "Before you are send into a meatgrinder, you are required to complete this mandatory course as thousands of soldier have been previously killed because they don't know how to reload"
 	break;
 	
 	case TUT.SHOOTING:

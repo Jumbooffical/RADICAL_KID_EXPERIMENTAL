@@ -14,6 +14,7 @@ if instance_exists(obj_head) {
 	if !place_meeting(x, y, obj_head) && !bonus_applied {
 		nearest.dot_received -= 1
 		bonus_applied = true
+		sprite_index = dot
 	}
 }
 

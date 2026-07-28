@@ -1,3 +1,4 @@
+damage = weapon[wID, GUN.DAMAGE];
 timer--
 if fire_trail {
 	damage = weapon[wID, GUN.DAMAGE] / 4.5

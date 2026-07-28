@@ -1,3 +1,4 @@
+easymode = false
 instance_create_depth(x, y, depth, obj_camera)
 WeaponData() 
 MeleeData()
@@ -363,6 +364,7 @@ ewID = 0 // Prevent crash for enemy bullet when last enemy dies
 // DEBUG
 death_count = 0
 time_elapsed = 0
+gamemode = ""
 
 enum RARITY {
     COMMON,

@@ -1,4 +1,3 @@
-
 var ammo_x = 40
 var ammo_y = 850
 var txt_scale = 1.1
@@ -6,8 +5,8 @@ draw_text_transformed(1500, ammo_y - 25, "FPS: " + string(fps), txt_scale, txt_s
 draw_text_transformed(1500, ammo_y, "Level: " + string(global.level - 1) + "/9", txt_scale, txt_scale, 0)
 draw_text_transformed(1425, ammo_y + 25, "Run Duration: " + display_duration(time_elapsed), txt_scale, txt_scale, 0)
 draw_text_transformed(1500, ammo_y + 50, "Death: " + string(death_count), txt_scale, txt_scale, 0)
-draw_text_transformed(1500, ammo_y + 90, global.version, txt_scale/1.5, txt_scale/1.5, 0)
-
+draw_text_transformed(1500, ammo_y + 75, "Difficulty: " + string(gamemode), 1, 1, 0)
+draw_text_transformed(1500, ammo_y + 100, global.version, txt_scale/1.5, txt_scale/1.5, 0)
 
 if (death) exit;
 if is_aiming && pain <= 0 { 

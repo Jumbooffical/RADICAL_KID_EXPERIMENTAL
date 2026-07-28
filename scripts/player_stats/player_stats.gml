@@ -17,7 +17,7 @@ function player_default_stats(){
 
 	heat_mult = 1;
 
-	uncommon_chance = 300;
+	uncommon_chance = 30;
 	rare_chance = 12;
 	epic_chance = 3;
 	curse_chance = 1 * (gun_heat * 3)

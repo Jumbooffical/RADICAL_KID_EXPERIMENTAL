@@ -114,6 +114,11 @@ if curse_alarm == 1 {
 
 if global.level > 1 {
 	time_elapsed++
+	
+	gamemode = "Normal"
+	if obj_player.easymode {
+	gamemode = "Easy"
+	}
 }
 
 if keyboard_check_pressed(ord("N")) {

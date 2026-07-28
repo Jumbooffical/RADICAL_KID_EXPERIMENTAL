@@ -86,7 +86,8 @@ function savegame() {
 			cash : cash,
 			
 			time_elapsed : time_elapsed,
-			death_count : death_count
+			death_count : death_count,
+			easymode : easymode,
         };
         array_push(_saveData, _savePlayer);
     }
