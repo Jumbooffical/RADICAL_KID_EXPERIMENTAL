@@ -43,7 +43,7 @@ function is_loading_gun() {
 			current_magazine[reload_caliber]--;
 		}
 		
-		if obj_store_mag.sprite_index == spr_belt_printermag {
+		if have_belt_printer {
 			obj_player.printed_ammo += 5
 		}
 		

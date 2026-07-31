@@ -62,6 +62,8 @@ function loadgame() {
             current_magazine[Caliber.Heavy] = _loadPlayer.Heavy;
             current_magazine[Caliber.Long] = _loadPlayer.Long;
             current_magazine[Caliber.Shell] = _loadPlayer.Shell;
+			
+			printed_ammo = _loadPlayer.printed_ammo
 
             for (var i = 0; i <= max_quickslot; i++) {
                 var q = _loadPlayer.quickslots[i];

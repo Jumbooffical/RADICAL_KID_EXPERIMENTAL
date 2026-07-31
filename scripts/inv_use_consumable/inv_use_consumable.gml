@@ -30,6 +30,10 @@ function inv_use_consumable() {
 		break;
 		
 		case spr_antibiotic:
+			if obj_player.cancer_phase == CANCER_PHASE.PHASE0 {
+				error_feedback()
+				return
+			}
 			obj_player.cancer_timer += duration(2,0)
 		break;		
 		
@@ -78,7 +82,7 @@ function inv_use_consumable() {
 			apply_mutation_ext(all_pos, 1)
 			
 			if rng < (array_length(obj_player.applied_mutation) * 1.5) {
-				apply_mutation_ext(neg, 1)
+				apply_mutation_ext(all_neg, 1)
 			}
 		break;
 		

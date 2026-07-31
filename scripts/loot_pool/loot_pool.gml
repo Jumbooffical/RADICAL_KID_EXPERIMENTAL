@@ -2,6 +2,7 @@ function loot_pool() {
 	randomize()
 	weapon_pool()
 	global.supplies_lootpool = [
+	obj_item_m62,
 	obj_item_m1911, obj_item_model19, obj_ammoLong
 	]
 	var med = pick_items(global.medical_pool, 99, RARITY.COMMON)
@@ -12,7 +13,7 @@ function loot_pool() {
 	}
 	
 	global.uncommon_lootpool = [
-	obj_item_m62, obj_item_smokenade,
+	obj_item_smokenade,
 	obj_item_knife, obj_item_spear, obj_item_axe,
 	]
 	var common_gun = pick_items(global.weapon_pool, 99, RARITY.COMMON)

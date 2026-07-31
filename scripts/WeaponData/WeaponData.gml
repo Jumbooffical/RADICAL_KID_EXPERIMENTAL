@@ -123,7 +123,7 @@ enum GUN {
 	weapon[wp.fal, GUN.RECOIL] = 7
 
 	weapon[wp.fal, GUN.MAG_SIZE] = 22
-	weapon[wp.fal, GUN.MAG_SLOT] = 3
+	weapon[wp.fal, GUN.MAG_SLOT] = 4
 	weapon[wp.fal, GUN.RELOAD_DELAY] = 90
 	weapon[wp.fal, GUN.SPD_MULT_PENALTY] = 0.25
 	#endregion
@@ -304,7 +304,7 @@ enum GUN {
 	#endregion	
 	
 	#region aa12
-	weapon[wp.aa12, GUN.DAMAGE] = 5
+	weapon[wp.aa12, GUN.DAMAGE] = 7
 	weapon[wp.aa12, GUN.VELOCITY] = 50
 	weapon[wp.aa12, GUN.BULLET_COUNT] = 9
 	weapon[wp.aa12, GUN.FIRE_DELAY] = 9
@@ -315,7 +315,7 @@ enum GUN {
 
 	weapon[wp.aa12, GUN.MAG_SIZE] = 20
 	weapon[wp.aa12, GUN.MAG_SLOT] = 3
-	weapon[wp.aa12, GUN.RELOAD_DELAY] = 30
+	weapon[wp.aa12, GUN.RELOAD_DELAY] = 25
 	weapon[wp.aa12, GUN.SPD_MULT_PENALTY] = 0.15
 	#endregion
 	

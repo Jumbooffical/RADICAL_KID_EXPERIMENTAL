@@ -57,7 +57,7 @@ break;
 case spr_knife_mount:
 index = 3
 name = "BAYONET MOUNT"
-description = "Middle mouse click to thrust, deal less damage but have extra range compare to unmounted knife"
+description = "Middle mouse click to thrust, it have extra range compare to unmounted knife"
 break;
 
 

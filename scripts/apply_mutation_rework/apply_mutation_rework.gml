@@ -1,6 +1,4 @@
 function apply_mutation_rework() {
-	
-	
 #region MUTATIONS
 var _mut = obj_player.applied_mutation
 for (var i = 0; i < array_length(_mut); i++) {
@@ -10,7 +8,7 @@ for (var i = 0; i < array_length(_mut); i++) {
         break;
 
         case "Tough":
-            maxhp = base.maxhp + 200;
+            extra_maxhp = extra_maxhp + 200;
         break;
 
         case "Modified Vein":
@@ -46,7 +44,7 @@ for (var i = 0; i < array_length(_mut); i++) {
 #region DEFECT
 	switch (_mut[i].name) {
 		case "Fragile":
-            maxhp = base.maxhp - 250;
+            extra_maxhp = extra_maxhp - 250;
         break;
 		
 		case "Warm Blooded":
@@ -67,7 +65,7 @@ for (var i = 0; i < array_length(_mut); i++) {
 		break;
 		
 		case "Lightweight":
-			maxhp = base.maxhp - 350;
+			maxhp = maxhp - 350;
 			my_spd = my_spd + 1;
 		break;
 		

@@ -7,7 +7,7 @@ function bayonet_mount() {
 			
 			var aim = point_direction(x, y, mouse_x, mouse_y);
 			with instance_create_depth(x, y, depth, obj_overpressure_bullet) {
-				damage = other.melee[ml.knife, MELEE.DAMAGE] / 3
+				damage = other.melee[ml.knife, MELEE.DAMAGE] * 1.5
 				stun = 35
 				max_range = other.melee[ml.knife, MELEE.RANGE] * 2
 				direction = image_angle

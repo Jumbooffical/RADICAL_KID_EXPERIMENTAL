@@ -18,4 +18,5 @@ function nade_launcher() {
 			nade_launcher_cd = duration(0,60)
 		}
 	}
+	nade_launcher_cd = clamp(nade_launcher_cd, 0, duration(0,60))
 }

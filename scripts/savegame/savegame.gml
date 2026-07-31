@@ -70,6 +70,8 @@ function savegame() {
             Heavy : current_magazine[Caliber.Heavy],
             Long : current_magazine[Caliber.Long],
             Shell : current_magazine[Caliber.Shell],
+			
+			printed_ammo : printed_ammo,
 
             quickslots : _quickslots,
 			inventory : obj_inventory.inv._inventory,

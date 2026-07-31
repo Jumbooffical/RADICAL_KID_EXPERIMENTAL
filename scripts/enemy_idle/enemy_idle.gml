@@ -1,4 +1,5 @@
 function enemy_idle(){
+	path_end(); path_finished = true;
 	var mi = obj_player
 	reaction_time = base_react_time * obj_player.mult_react_time * 2
 	sprite_index = idle_spr
@@ -37,6 +38,7 @@ function enemy_idle(){
 	if instance_exists(obj_entity_dying) {
 	if !(collision_line(x, y, obj_entity_dying.x, obj_entity_dying.y, obj_entity_dying, true, true)) {
 		if distance_to_object(obj_entity_dying) < aggro_range / 2 && !spotted {
+			retreat_alarm = irandom_range(60, 180)
 			my_state = STATE.RETREAT
 		}
 	}}

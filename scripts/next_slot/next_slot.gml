@@ -1,5 +1,4 @@
 function next_slot(slot1, slot2, slot3, slot4, slot5, slotnade) {
-	slot_input_delay--
 	if slot_input_delay > 0 exit;
 	if selected_item != last_slot {
 		last_slot = selected_item

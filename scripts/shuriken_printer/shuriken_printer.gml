@@ -2,7 +2,7 @@ function shuriken_printer(){
 	
 	if step_dist == 0 {
 
-	var chance = 30 * spd_mult
+	var chance = 35 * spd_mult
 	chance = clamp(chance, 0, 100);
 
 	if (rng <= chance) {

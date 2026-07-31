@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"giant_hitbox",
   "bboxMode":2,
-  "bbox_bottom":185,
+  "bbox_bottom":175,
   "bbox_left":100,
   "bbox_right":155,
   "bbox_top":70,

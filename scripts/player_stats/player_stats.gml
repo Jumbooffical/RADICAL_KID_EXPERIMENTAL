@@ -1,8 +1,8 @@
 function player_default_stats(){
 	
-	
 	#region BASE PLAYER STAT
-	maxhp = base.maxhp
+	maxhp = base.maxhp + extra_maxhp
+	extra_maxhp = 0
 	my_spd = 8;
 
 	global.combo1_milestone = 3;
@@ -63,6 +63,8 @@ function player_default_stats(){
 	velocity = weapon[wID, GUN.VELOCITY]
 
 	mag_size = weapon[wID, GUN.MAG_SIZE]
+	printed_ammo = clamp(printed_ammo, 0, 75)
+	
 	magslot = weapon[wID, GUN.MAG_SLOT]
 	magslot = clamp(magslot, 1, 7)
 
@@ -221,4 +223,5 @@ function player_default_stats(){
 	if cursed && current_magazine[weapon[wID, GUN.CALIBER_ID]] == 0 {
 		current_magazine[weapon[wID, GUN.CALIBER_ID]] = 1
 	}
+	slot_input_delay--
 }

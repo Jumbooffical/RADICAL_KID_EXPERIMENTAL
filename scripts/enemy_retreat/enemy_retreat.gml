@@ -34,4 +34,17 @@ function enemy_retreat() {
 	if distance_to_object(obj_retreat_zone) < 50 {
 	path_end(); path_finished = true;
 	}
+	
+	if retreat_alarm > 0 {
+		retreat_alarm--
+		
+		if retreat_alarm == 1 {
+			if rng < 60 {
+				my_state = STATE.IDLE
+				spotted = false
+			} else {
+				my_state = STATE.ALERT
+			}
+		}
+	}
 }

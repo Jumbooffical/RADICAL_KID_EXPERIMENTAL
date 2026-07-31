@@ -4,6 +4,7 @@ function next_room() {
 			room_goto(global.all_rooms[i])
 		}
 	} else {
+		// YOUTUBE LINK MUST BE SANITIZED!!!!!!!!!!!!
 		var url = irandom(2)
 		switch (url) {
 			case 0:
@@ -15,7 +16,7 @@ function next_room() {
 			break;
 			
 			case 2:
-				url_open("https://www.youtube.com/watch?v=Cj2TBlqD2cI")
+				url_open("https://www.youtube.com/watch?v=Ngpd6nZzdTM")
 			break;
 		}
 		game_restart()

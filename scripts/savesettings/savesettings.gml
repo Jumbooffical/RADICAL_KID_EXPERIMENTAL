@@ -34,4 +34,6 @@ function savesettings() {
 	buffer_write(_buffer, buffer_string, _string);
 	buffer_save(_buffer, "radicalkid.set");
 	buffer_delete(_buffer);
+	
+	show_debug_message("Saved settings!")
 }

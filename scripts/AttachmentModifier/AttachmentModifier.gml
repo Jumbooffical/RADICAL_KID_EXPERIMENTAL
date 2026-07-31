@@ -1,6 +1,10 @@
 function AttachmentModifier() {	
 	if allow_optic {
 	switch (quickslot[selected_item, QSlot.Optic]) {
+		case 0:
+			stat.ads_speed = stat.ads_speed / 3
+		break;
+		
 		case spr_rds:
 			stat.ads_speed = stat.ads_speed * 1.5
 			obj_reticle.sprite_index = spr_rds_reticle

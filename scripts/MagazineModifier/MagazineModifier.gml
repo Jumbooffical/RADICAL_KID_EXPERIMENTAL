@@ -40,7 +40,7 @@ function MagazineModifier() {
 		break;
 		
 		case spr_belt_printermag:
-			mag_size = weapon[wID, GUN.MAG_SIZE] * 1.1 + printed_ammo
+			mag_size = weapon[wID, GUN.MAG_SIZE] * 0.5 + printed_ammo
 			printed_ammo = 0
 		break;
 		
@@ -54,7 +54,7 @@ function MagazineModifier() {
 		
 		case spr_deflectivemag:
 			bullet_type = obj_deflective_bullet
-			max_ricochet = 10
+			max_ricochet = 25
 			ricochet_accuracy = 30
 		break;
 		

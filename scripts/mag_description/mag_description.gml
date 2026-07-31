@@ -39,17 +39,17 @@ switch (other.sprite_index) {
 	
 		case spr_overpressure:
 			desc = "Overpressure Magazine"
-			desc2 = "Gun recoil knockback self \n+25% velocity"
+			desc2 = "Gun recoil knockback self \n Shot knockback on impact, +25% velocity"
 		break;
 		
 		case spr_deflectivemag:
 			desc = "Deflective Magazine"
-			desc2 = "Ricochet ten times, shot now ricochet all surface. \n-50% ricochet accuracy, Ricochet no longer losing power"
+			desc2 = "Ricochet 25 times, shot now ricochet all surface. \n-50% ricochet accuracy, Ricochet no longer losing power"
 		break;
 		
 		case spr_marksman_mag:
 			desc = "Marksman Magazine"
-			desc2 = "Convert to semi auto, increase stability \nReduce damage, increase reticle damage"
+			desc2 = "Convert to semi auto, increase stability & velocity \n-25% hipfire damage, +25% aiming damage"
 		break;
 		
 		case spr_extmag:
@@ -59,7 +59,7 @@ switch (other.sprite_index) {
 		
 		case spr_rubber_jacket:
 			desc = "Full Rubber Jacket"
-			desc2 = "-50% base damage, +100% ricochet accuracy \nAfter ricochet, bullet deal 150% damage instead"
+			desc2 = "-50% base damage, 100% ricochet accuracy \nAfter ricochet, bullet deal 200% damage instead"
 		break;
 		
 		case spr_corrosive_mag:
@@ -79,7 +79,7 @@ switch (other.sprite_index) {
 		
 		case spr_belt_printermag:
 			desc = "Belt Printer"
-			desc2 = "+10% Magsize \nIf this is in pocket slot, increase \nBelt Printer Magsize by 5 per reload \n\nCurrent ammo printed: " + string(obj_player.printed_ammo) 
+			desc2 = "-50% Magsize \nIf this is in pocket slot, increase \nBelt Printer Magsize by 5 per reload \n\nCurrent ammo printed: " + string(obj_player.printed_ammo) + "/75"
 		break;
 		
 		case spr_glass_bullet:
