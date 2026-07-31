@@ -13,12 +13,19 @@ if boss_room {
 if place_meeting(x, y, obj_player) && !boss_room {
 	show_tooltip = true
 	
-	if keyboard_check_pressed(ord("E")) {
+	if keyboard_check_pressed(ord("E")) {	
 		next_room()
+		
+		if global.level > 2 {
 		obj_player.save_alarm = 30
+		}
 		
 		if obj_player.easymode {
 			obj_player.hp = obj_player.maxhp
+		}
+		
+		if sprite_index == spr_exit_easy {
+			obj_player.easymode = true
 		}
 	}
 }

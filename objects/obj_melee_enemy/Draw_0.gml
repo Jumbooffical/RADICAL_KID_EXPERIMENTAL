@@ -17,6 +17,14 @@ draw_text(x - 50,y + 70, "path alarm:") draw_text(x + 50,y + 70, path_alarm)
 
 draw_set_colour(c_lime);
 draw_path(path, x, y, true)
+
+draw_rectangle(
+    bbox_left,
+    bbox_top,
+    bbox_right,
+    bbox_bottom,
+    true
+);
 }
 
 if sprite_index == run_spr {
@@ -49,6 +57,13 @@ walk_spr = spr_goon_walk_noarm
 run_spr = spr_goon_running
 }
 
+if mask_index != giant_hitbox {
+	if obj_player.is_aiming {
+		mask_index = aim_hitbox
+	} else {
+		mask_index = body_hitbox
+	}
+}
 
 painbar = lerp(painbar, (enemy_hp/maxhp) * hpbar_w, 0.02)
 hpbar_w = 150;

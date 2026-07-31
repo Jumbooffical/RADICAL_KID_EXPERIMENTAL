@@ -1,5 +1,4 @@
 if !live_enabled exit;
-if !global.dev_mode exit;
 if !instance_exists(obj_camera) exit;
 
 with (obj_player) {
@@ -49,8 +48,8 @@ with (obj_player) {
 	name[14] = ""
     desc[14] = ""
 	
-	name[15] = "player speed : "
-    desc[15] = string(my_spd)
+	name[15] = "input delay : "
+    desc[15] = string(slot_input_delay)
 	
 	name[16] = "all level : "
 	desc[16] = string(global.all_rooms)

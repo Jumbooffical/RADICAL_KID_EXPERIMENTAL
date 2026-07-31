@@ -23,3 +23,4 @@ base_aggro = 1200
 start_buff = true
 
 have_titan_copter = false
+head_immune = true

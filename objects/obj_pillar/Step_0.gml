@@ -1,6 +1,6 @@
 if crate_hp <= 0 {
 	instance_destroy()
-	part_particles_create(sys_brick_splash, x, y, pt_brick_splash, irandom_range(25, 30))
+	part_particles_create(global.sys_brick_splash, x, y, global.pt_brick_splash, irandom_range(25, 30))
 	
 }
 

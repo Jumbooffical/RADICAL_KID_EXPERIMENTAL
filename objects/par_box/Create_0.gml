@@ -9,7 +9,8 @@ rare_chance = 1
 
 enum MAT {
 	WOOD,
-	METAL
+	METAL,
+	BRICK
 }
 
 material = MAT.WOOD

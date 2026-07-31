@@ -145,3 +145,14 @@ part_type_colour1(
     global.pt_metal_splash,
     make_color_rgb(150, 150, 150)
 );
+
+global.pt_brick_splash = part_type_create();
+global.sys_brick_splash = part_system_create();
+
+part_type_sprite(global.pt_brick_splash, pt_shape_brick, false, false, false);
+part_type_size(global.pt_brick_splash, 2.2, 2.3, 0, 0);
+part_type_speed(global.pt_brick_splash, 4, 4, 0, 0);
+part_type_life(global.pt_brick_splash, 15, 60);
+part_type_alpha2(global.pt_brick_splash, 0.5, 0);
+part_type_orientation(global.pt_brick_splash, 0, 360, 1, 0, false)
+part_type_direction(global.pt_brick_splash, 0, 360, 0, 0)

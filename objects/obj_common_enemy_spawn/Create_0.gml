@@ -5,6 +5,7 @@ rng_y = random_range(-rad, rad);
 
 spawn = false
 spawn_alarm = 15
+recon_command = false
 
 enum SPAWN_GROUP {
 	STANDARD,

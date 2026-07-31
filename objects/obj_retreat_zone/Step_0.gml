@@ -18,8 +18,6 @@ if instance_exists(obj_smoke_discharge) {
 var nearest = instance_nearest(x, y, obj_smoke_discharge)
 
 	if timer == 0 {
-		
-	
 	if rng < 40 {
 		x = nearest.x + radius / 2
 		y = nearest.y + radius / 2

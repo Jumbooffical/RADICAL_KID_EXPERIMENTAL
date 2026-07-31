@@ -6,6 +6,7 @@ if death {
 }
 
 event_inherited();
+if !instance_exists(obj_enemy_titan) exit;
 
 if spotted && !death {
 	buff_delay--

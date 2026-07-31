@@ -32,7 +32,7 @@ firerate = 0
 current_mag = weapon[ewID, GUN.MAG_SIZE]
 reload_timer = 0
 loop = 0
-retreat_timer = 0
+retreat_alarm = 0
 prev_hp = 0
 
 aggro_range = base_aggro;

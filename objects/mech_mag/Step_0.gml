@@ -54,3 +54,7 @@ if !obj_player.is_reloading {
 	}
 	instance_destroy()
 }
+
+if rng_mag == spr_rngmag {
+	rng_mag = spr_mag
+}

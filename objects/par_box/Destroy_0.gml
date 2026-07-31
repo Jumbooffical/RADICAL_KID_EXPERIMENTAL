@@ -12,7 +12,11 @@ switch (material) {
 		snd = snd_metal_dead
 		part_particles_create(global.sys_metal_splash, x, y, global.pt_metal_splash, irandom_range(15, 20))
 	break;
+	
+	case MAT.BRICK:
+		snd = snd_metal_dead
+		part_particles_create(global.sys_brick_splash, x, y, global.pt_brick_splash, irandom_range(15, 20))
+	break;
 }
-
 
 audio_play_sound(snd, 10, false, 1, 0, 1);

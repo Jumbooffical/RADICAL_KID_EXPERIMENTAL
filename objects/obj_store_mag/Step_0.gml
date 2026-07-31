@@ -33,3 +33,12 @@ if !obj_player.is_reloading {
 if obj_player.gun_type == WeaponType.Shotgun {
 	visible = false
 }
+
+obj_player.have_belt_printer = false
+if sprite_index == spr_belt_printermag {
+	obj_player.have_belt_printer = true
+}
+
+if rng_mag == spr_rngmag {
+	rng_mag = spr_mag
+}

@@ -11,8 +11,10 @@ instance_destroy()
 
 if obj_player.quickslot[obj_player.selected_item, QSlot.Mag] == spr_rubber_jacket {
 	damage = obj_player.stat.damage_output / 1.5
+	
 	if ricochet_count > 0 {
-	damage = obj_player.stat.damage_output * 1.5
+	damage = obj_player.stat.damage_output * 2
+	velocity = 55
 	image_blend = c_red
 	}
 }

@@ -23,6 +23,7 @@ EPIK_stim_count = 0
 DRUM_stim_count = 0
 HEX_stim_count = 0
 
+extra_maxhp = 0
 maxhp = 1000;
 hp = maxhp
 heal_mult = 1
@@ -164,19 +165,14 @@ meleeIndex = 0;
 nadeIndex = noone;
 #endregion
 
-optic = quickslot[selected_item, QSlot.Optic]
-mount = quickslot[selected_item, QSlot.Mount]
-grip = quickslot[selected_item, QSlot.Grip]
-barrel = quickslot[selected_item, QSlot.Barrel]
-
 allow_optic = false
 allow_mount = false
 allow_grip = false
 allow_barrel = false
 
-gun_inst = instance_create_layer(x, y, "Instances", weapon[wp.scar, GUN.OBJECT]);	// Create the gun on the player's hand
-gun_inst.owner = id;	// So the gun knows who owns it
-gun_inst.persistent = true;
+//gun_inst = instance_create_layer(x, y, "Instances", weapon[wp.scar, GUN.OBJECT]);
+//gun_inst.owner = id;
+//gun_inst.persistent = true;
 
 pickup_target = noone;
 full_auto = false
@@ -259,6 +255,7 @@ mult_react_time = 1
 
 mag_size = weapon[wID, GUN.MAG_SIZE]
 printed_ammo = 0
+have_belt_printer = false
 
 bullet_type = par_bullet_SCAR
 gun_type = weapon[wID, GUN.TYPE]

@@ -9,14 +9,14 @@ if quickslot[selected_item, QSlot.Heat] > 0 {
 }
 quickslot[selected_item, QSlot.Heat] = clamp(quickslot[selected_item, QSlot.Heat], 0, 1)
 
-if (instance_exists(gun_inst) && player_armed) {
-    gun_inst.x = x;
-    gun_inst.y = y;
-    gun_inst.visible = true;
-}
-else if (instance_exists(gun_inst)) {
-    gun_inst.visible = false;
-}
+//if (instance_exists(gun_inst) && player_armed) {
+//    gun_inst.x = x;
+//    gun_inst.y = y;
+//    gun_inst.visible = true;
+//}
+//else if (instance_exists(gun_inst)) {
+//    gun_inst.visible = false;
+//}
 
 // Disable other action while busy, prevent losing ammo while reloading
 if (is_reloading) || (is_shooting) || (is_aiming) || (is_rolling) {
@@ -116,7 +116,7 @@ if global.level > 1 {
 	time_elapsed++
 	
 	gamemode = "Normal"
-	if obj_player.easymode {
+	if easymode {
 	gamemode = "Easy"
 	}
 }

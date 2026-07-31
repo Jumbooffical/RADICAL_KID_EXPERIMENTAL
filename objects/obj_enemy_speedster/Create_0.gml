@@ -2,7 +2,7 @@
 event_inherited()
 name = obj_enemy_speedster
 idle_spr = spr_speedster_idle
-walk_spr = spr_speedster_running
+walk_spr = spr_speedster_walking
 run_spr = spr_speedster_running
 death_spr = spr_goon_death
 

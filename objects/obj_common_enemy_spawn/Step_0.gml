@@ -1,5 +1,12 @@
 if outside_cam exit;
 
+if recon_command {
+	if obj_player.debuff_wallhacked {
+		recon_command = false
+	}
+	exit;
+}
+
 if !spawn {
 	var base = 0
 	var amount = 0

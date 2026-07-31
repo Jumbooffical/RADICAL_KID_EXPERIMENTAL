@@ -107,11 +107,6 @@ draw_sprite_ext(weapon[ewID, GUN.HEATED_BARREL], 0, gun_x, gun_y, 1 * gun_scale,
 }
 shader_reset();
 
-//draw_text_blend(x + 10,y + 10, enemy_hp, c_red)
-
-//draw_text(x + 10,y + 30, "stun timer : " + string(stun_timer))
-//draw_text(x + 10,y + 50, "hitbox : " + string(reload_timer))
-//draw_text(x + 10,y + 70, state_name)
 draw_set_colour(c_white)
 
 if global.pathfinding_debug {
@@ -122,7 +117,6 @@ draw_line(x, y, obj_player.x, obj_player.y)
 	
 draw_set_colour(c_white);
 draw_text(x + 20,y + 50, state_name)
-draw_text(x - 50,y + 70, "minion:") draw_text(x + 50,y + 70, sniper_minion)
 
 draw_set_colour(c_lime);
 draw_path(path, x, y, true)

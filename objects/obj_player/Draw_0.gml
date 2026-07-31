@@ -53,9 +53,9 @@ smooth_recoil_y = lerp(smooth_recoil_y, 0, lerp_str)
 
 pistol_recoil_angle = lerp(pistol_recoil_angle, 0, lerp_str*2)
 	
-var gun_dir = par_gun.image_angle + inaccuracy
+var gun_dir = dir_to_mouse + inaccuracy
 if !is_shooting {
-	gun_dir = par_gun.image_angle
+	gun_dir = dir_to_mouse
 }
 
 if is_aiming {

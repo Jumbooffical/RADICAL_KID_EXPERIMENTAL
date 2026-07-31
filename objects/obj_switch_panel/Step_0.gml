@@ -53,7 +53,7 @@ switch (button_id)
 			break;
 			
 			case 3:
-			text = "Brainfuck x4"
+			text = "Brain damage x4"
 			color = c_red
 			global.shake_mult = 4
 			break;
