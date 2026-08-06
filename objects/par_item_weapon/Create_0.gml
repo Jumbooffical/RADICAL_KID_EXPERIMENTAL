@@ -9,7 +9,7 @@ mag = 0;
 overclocked = 0;
 taped = 0;
 smart = 0;
-heatseek = 0;
+heatseek = 3;
 powermag = 0
 
 // Debuff

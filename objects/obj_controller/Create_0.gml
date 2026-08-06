@@ -1,4 +1,4 @@
-global.version = "V0.1.74"
+global.version = "V0.1.75"
 #macro live_enabled 0
 #macro room_repair 0
 object_clamp(obj_controller)

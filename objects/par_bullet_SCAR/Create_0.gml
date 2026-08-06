@@ -18,6 +18,7 @@ path_index_current = path;
 text_float = 0
 my_state = bullet_state.NORMAL
 
+is_shrapnel = false
 soulbinded = false
 corrosive = false
 armor_piercing = 0

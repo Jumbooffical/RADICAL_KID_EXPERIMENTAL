@@ -80,8 +80,11 @@ switch (my_state) {
 	
 	case bullet_state.SMART:
 		image_angle = point_direction(x, y, px, py);
+		
+		if !is_shrapnel {
 		mp_potential_path_object(path, mouse_x, mouse_y, velocity, 3, par_indestructable)
 		path_start(path, velocity, path_action_stop, true)
+		}
 		
 		image_alpha -= 0.005
 		if image_alpha < 0 {
@@ -94,12 +97,13 @@ switch (my_state) {
 	
 		var enemy = instance_nearest(x, y, par_enemy)
 		
+		if !is_shrapnel {
 		if instance_exists(par_enemy) {
 			mp_potential_path_object(path, enemy.x, enemy.y, velocity, 3, par_indestructable)
 			path_start(path, velocity, path_action_stop, true)
 		} else {
 			instance_destroy()
-		}
+		}}
 		
 		image_alpha -= 0.005
 		if image_alpha < 0 {

@@ -1,6 +1,6 @@
 function inv_use_attachment() {
 	if obj_player.selected_item == obj_player.melee_quickslot obj_player.selected_item = 1;
-	if obj_player.selected_item == obj_player.nade_quickslot obj_player.selected_item = 1;
+	if obj_player.selected_item == obj_player.nade_quickslot obj_player.selected_item = 1; 
 	
 	var item = inv._inventory[selected_inv];
 	var mi = obj_player
