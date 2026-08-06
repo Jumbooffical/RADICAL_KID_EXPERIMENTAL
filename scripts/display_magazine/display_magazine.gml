@@ -1,11 +1,11 @@
 function display_magazine() {
-	
+	if live_call() return live_result
 	
 	var spacing = 77;
 	var nearest = instance_nearest(x, y, mech_mag)
 
 	var start_x = 1132
-	var center_y = 350;
+	var center_y = 450;
 	var total_height = (magslot - 1) * spacing;
 	var start_y = center_y - total_height / 2;
 		
@@ -17,7 +17,7 @@ function display_magazine() {
 	
 	var pocket_y = center_y - ((max_pocket - 1) * spacing) / 2;
 	for (var i = 0; i < max_pocket; i++) {
-	    var inst = instance_find(obj_store_mag, i);
+	    var inst = instance_find(obj_pocket_mag, i);
 	    if (inst != noone) {
 	        inst.x = 1012;
 	        inst.y = pocket_y + i * spacing;

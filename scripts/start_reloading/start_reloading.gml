@@ -35,6 +35,8 @@ function start_reloading() {
 	quickslot[selected_item, QSlot.Buff_Overclocked]--;
 	quickslot[selected_item, QSlot.Buff_Smart]--;
 	quickslot[selected_item, QSlot.Buff_HeatSeek]--;
+	quickslot[selected_item, QSlot.Buff_Power]--;
 	
 	quickslot[selected_item, QSlot.Debuff_AirMag]--;
+	quickslot[selected_item, QSlot.Debuff_Void]--;
 }

@@ -1,6 +1,4 @@
 function enemy_retreat() {
-	if heli_mounted exit;
-	
 	if path_alarm == 1 {
 	sprite_index = run_spr
 	}

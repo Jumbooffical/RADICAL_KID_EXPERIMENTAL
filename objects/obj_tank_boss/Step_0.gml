@@ -5,6 +5,7 @@ bullet_type = par_enemybullet_SCAR
 if death {
 	if snd_death {
 		audio_play_sound(random_array(global.boss_vanquished_snd), 1, 0, 1)
+		heal_player(1)
 		snd_death = false
 	}
 }

@@ -43,6 +43,16 @@ function buff_description() {
 		});
 	}
 	
+	if (mi.quickslot[mi.selected_item, QSlot.Buff_Power]) > 0 {
+	array_push(buff_list, {
+		sprite: power_icon,
+		name: "POWER MAG",
+		desc: "+100% damage, +50% velocity & -100% deviation & heat",
+		note: "Obtained from power magazine",
+		duration: string((mi.quickslot[mi.selected_item, QSlot.Buff_Power])) + " rload"
+		});
+	}
+	
 	if (mi.MEND_stim_timer) > 0 {
 	array_push(buff_list, {
 		sprite: MEND_icon,
@@ -83,23 +93,33 @@ function buff_description() {
 		});
 	}	
 	
+	if (mi.quickslot[mi.selected_item, QSlot.Mag]) == spr_wishingmag {
+	array_push(buff_list, {
+		sprite: wishing_icon,
+		name: "WISHING MAG",
+		desc: "Next reload have 7 additional magazine options",
+		note: "Obtained from wishing mag",
+		duration: "1 rload"
+		});
+	}
+	
 	if (mi.EPIK_stim_count) > 1 {
 	array_push(buff_list, {
 		sprite: EPIK_icon,
 		name: "EPIK",
-		desc: "Next " + string(mi.EPIK_stim_count) + " reload only offer rare or epic magazines",
+		desc: "Next " + string(mi.EPIK_stim_count-1) + " reload only offer rare or epic magazines",
 		note: "Obtained from EPIK stim",
 		duration: string(mi.EPIK_stim_count-1) + " rload"
 		});
 	}
 	
-	if (mi.DRUM_stim_count) > 0 {
+	if (mi.DRUM_stim_count) > 1 {
 	array_push(buff_list, {
 		sprite: DRUM_icon,
 		name: "DRUM",
 		desc: "Next " + string(mi.DRUM_stim_count) + " reload have doubled magsize",
 		note: "Obtained from DRUM stim",
-		duration: string(mi.DRUM_stim_count) + " rload"
+		duration: string(mi.DRUM_stim_count-1) + " rload"
 		});
 	}	
 	

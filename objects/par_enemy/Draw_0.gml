@@ -45,7 +45,7 @@ if (my_state == STATE.RETREAT) {
 }
 	
 tunring_spd = 0.1
-if (my_state == STATE.ATTACK) || heli_mounted {
+if (my_state == STATE.ATTACK) {
 	gun_dir = point_direction(x, y, mi.x, mi.y)
 	tunring_spd = 0.25
 }
@@ -102,7 +102,7 @@ if mask_index != giant_hitbox {
 }
 
 draw_sprite_ext(weapon[ewID, GUN.PLAYER_SPRITE], gun_frame, gun_x, gun_y, 1 * gun_scale, flip * gun_scale, dir, c_white, image_alpha);
-if !heli_mounted || phasing_timer > 0{
+if phasing_timer > 0{
 draw_sprite_ext(weapon[ewID, GUN.HEATED_BARREL], 0, gun_x, gun_y, 1 * gun_scale, flip * gun_scale, dir, c_white, heat);
 }
 shader_reset();

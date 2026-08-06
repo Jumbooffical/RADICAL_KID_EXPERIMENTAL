@@ -1,3 +1,4 @@
+if room_repair exit;
 if outside_cam exit;
 
 if recon_command {

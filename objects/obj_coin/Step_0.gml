@@ -36,7 +36,7 @@ if loot_delay > 0 exit;
 if place_meeting(x, y, obj_player) {
 collected = true
 	if play_sound {
-	audio_play_sound(snd_coin_collect, 1, 0, random_range(0.8, 1.1), 0, random_range(0.8, 1.1))
+	audio_play_sound(snd_coin_collect, 1, 0, random_range(0.5, 0.7), 0, random_range(0.8, 1.1))
 	play_sound = false
 	}
 }

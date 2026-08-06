@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Bullet Type",
-    "path":"folders/Objects/Dumbass/Innate/Bullet Type.yy",
+    "path":"folders/Objects/Players/Innate/Bullet Type.yy",
   },
   "parentObjectId":{
     "name":"par_bullet_SCAR",

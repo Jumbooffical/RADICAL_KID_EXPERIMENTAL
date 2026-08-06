@@ -1,6 +1,4 @@
 function apply_mutation(_mut) {
-	
-	
 	if array_length(obj_player.all_mutations) == 1 exit;
 	var clone = []
 	

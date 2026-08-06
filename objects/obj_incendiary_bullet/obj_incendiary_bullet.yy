@@ -5,13 +5,14 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"par_enemy","path":"objects/par_enemy/par_enemy.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"par_destructable","path":"objects/par_destructable/par_destructable.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_incendiary_bullet",
   "overriddenProperties":[],
   "parent":{
     "name":"Bullet Type",
-    "path":"folders/Objects/Dumbass/Innate/Bullet Type.yy",
+    "path":"folders/Objects/Players/Innate/Bullet Type.yy",
   },
   "parentObjectId":{
     "name":"par_bullet_SCAR",

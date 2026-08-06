@@ -3,21 +3,18 @@ function pick_up_weapon(_key) {
 	pickup_target = noone;
 	var nearest_dist = weapon_grab_distance;
 
-	with (par_item)
-	{
+	with (par_item) {
 	    show_pickup = false;
 
 	    var dist = point_distance(other.x, other.y, x, y);
 
-	    if (dist < nearest_dist)
-	    {
+	    if (dist < nearest_dist) {
 	        nearest_dist = dist;
 	        other.pickup_target = id;
 	    }
 	}
 
-	if (pickup_target != noone)
-	{
+	if (pickup_target != noone) {
 	    pickup_target.show_pickup = true;
 	}
 	
@@ -42,12 +39,18 @@ function pick_up_weapon(_key) {
 		
 	switch (object_get_parent(pickup_target.object_index)) {
 		case par_item_weapon:
+			quickslot_type = Slot.Gun
+			for (var i = 4; i > 0; i--) {
+	            if (quickslot[i, QSlot.Gun] == noone) {
+	                selected_item = i;
+	            }
+	        }
 			// Drop the selected weapon first
 			if (selected_item == melee_quickslot || selected_item >= nade_quickslot) {
 				selected_item = 1;
 				quickslot_type = Slot.Gun;
 			}
-
+			
 			if (holding_weapon()) {
 				var gun = instance_create_depth(x, y, 0, weapon[quickslot[selected_item, QSlot.Gun], GUN.ITEM_OBJECT]);
 				gun.current_mag = quickslot[selected_item, QSlot.LoadedAmmo];
@@ -58,8 +61,10 @@ function pick_up_weapon(_key) {
 				gun.taped = quickslot[selected_item, QSlot.Buff_Taped];
 				gun.smart = quickslot[selected_item, QSlot.Buff_Smart];
 				gun.heatseek = quickslot[selected_item, QSlot.Buff_HeatSeek];
+				gun.powermag = quickslot[selected_item, QSlot.Buff_Power]
 
 				gun.airmag = quickslot[selected_item, QSlot.Debuff_AirMag];
+				gun.voidmag = quickslot[selected_item, QSlot.Debuff_Void]
 				gun.image_xscale = image_xscale
 			}
 
@@ -71,8 +76,10 @@ function pick_up_weapon(_key) {
 			quickslot[selected_item, QSlot.Buff_Taped] = pickup_target.taped;
 			quickslot[selected_item, QSlot.Buff_Smart] = pickup_target.smart;
 			quickslot[selected_item, QSlot.Buff_HeatSeek] = pickup_target.heatseek;
+			quickslot[selected_item, QSlot.Buff_Power] = pickup_target.powermag;
 
 			quickslot[selected_item, QSlot.Debuff_AirMag] = pickup_target.airmag;
+			quickslot[selected_item, QSlot.Debuff_Void] = pickup_target.voidmag;
 
 			quickslot[selected_item, QSlot.Melee] = noone;
 
@@ -93,7 +100,6 @@ function pick_up_weapon(_key) {
 		break;
 
 		case par_item_melee:
-
 			if (quickslot[melee_quickslot, QSlot.Melee] != ml.fist) {
 				var meleeIndex = quickslot[melee_quickslot, QSlot.Melee];
 				instance_create_depth(x, y, 0, melee[meleeIndex, MELEE.ITEM]);

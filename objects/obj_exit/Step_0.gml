@@ -13,10 +13,8 @@ if boss_room {
 if place_meeting(x, y, obj_player) && !boss_room {
 	show_tooltip = true
 	
-	if keyboard_check_pressed(ord("E")) {	
-		next_room()
-		
-		if global.level > 2 {
+	if keyboard_check_pressed(ord("E")) {
+		if global.level > 1 {
 		obj_player.save_alarm = 30
 		}
 		
@@ -27,6 +25,25 @@ if place_meeting(x, y, obj_player) && !boss_room {
 		if sprite_index == spr_exit_easy {
 			obj_player.easymode = true
 		}
+		
+		if sprite_index == boss_icon {
+			obj_player.hardmode = true
+			global.tier = 1
+			
+			for (var i = 0; i < array_length(obj_player.all_mutations); i++) {
+		        if (obj_player.all_mutations[i].name == "Cancer!") {
+		            apply_mutation(obj_player.all_mutations[i]);
+		            break;
+		        }
+			}
+		}
+		
+		if sprite_index == spr_lastseen {
+			error_feedback()
+			exit;
+		}
+		
+		next_room()		
 	}
 }
 

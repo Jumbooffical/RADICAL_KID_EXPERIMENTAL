@@ -8,7 +8,7 @@ if position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id) {
 	
 	if mouse_check_button_pressed(mb_left) {
 		load_new_mag()
-		obj_store_mag.selected_pocket = false
+		obj_pocket_mag.selected_pocket = false
 	}
 }
 
@@ -22,9 +22,9 @@ if (mouse_check_button_pressed(mb_right))
     }
 }
 
-var nearest = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), obj_store_mag)
+var nearest = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), obj_pocket_mag)
 if (mouse_check_button_released(mb_right)
-&& instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), obj_store_mag)
+&& instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), obj_pocket_mag)
 && sprite_index == obj_player.rmb_hold_mag) {
 
     if (sprite_index == spr_empty_mag_slot) {

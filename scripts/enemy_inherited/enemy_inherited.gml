@@ -46,35 +46,6 @@ function enemy_inherited() {
 	}
 	blinding_flashlight = false
 	}
-	
-	if heli_mounted {
-		var nearest = instance_nearest(x, y, obj_helicopter)
-		if instance_exists(obj_helicopter) {
-			sprite_index = spr_goon_kneel
-			x = nearest.x
-			y = nearest.y
-			//visible = false
-			
-			if current_mag < 0 {
-			enemy_reloading()
-			} else {
-			my_state = STATE.ATTACK
-			}
-			
-			if place_meeting(x, y, obj_reticle) && obj_player.is_aiming {
-			image_alpha = clamp(image_alpha, 0, 0.6)
-			image_alpha +=	0.01
-			} else {
-			image_alpha = 0
-			}
-
-			if death {
-			nearest.has_sniper = false
-			}
-		} else {
-			instance_destroy()
-		}
-	}
 #endregion
 
 	image_speed = 1

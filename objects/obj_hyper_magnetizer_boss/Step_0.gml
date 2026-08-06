@@ -9,6 +9,7 @@ instance_destroy(obj_magnet_missile)
 if death {
 	if snd_death {
 		audio_play_sound(random_array(global.boss_vanquished_snd), 1, 0, 1)
+		heal_player(1)
 		snd_death = false
 	}
 }

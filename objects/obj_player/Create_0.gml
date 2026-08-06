@@ -1,4 +1,5 @@
 easymode = false
+hardmode = false
 instance_create_depth(x, y, depth, obj_camera)
 WeaponData() 
 MeleeData()
@@ -129,9 +130,11 @@ Buff_Taped,
 Buff_Overclocked,
 Buff_Smart,
 Buff_HeatSeek,
+Buff_Power,
 
 //Debuff
 Debuff_AirMag,
+Debuff_Void,
 
 //Attachments
 Optic,
@@ -152,8 +155,10 @@ for (var i = 0; i < max_quickslot + 1; i++) {
     quickslot[i, QSlot.Buff_Overclocked] = 0;
     quickslot[i, QSlot.Buff_Smart] = 0;
     quickslot[i, QSlot.Buff_HeatSeek] = 0;
+	quickslot[i, QSlot.Buff_Power] = 0;
 
     quickslot[i, QSlot.Debuff_AirMag] = 0;
+	quickslot[i, QSlot.Debuff_Void] = 0;
 
     quickslot[i, QSlot.Optic] = 0;
     quickslot[i, QSlot.Mount] = 0;
@@ -202,7 +207,6 @@ wID = 0
 weapon_grab_distance = 75;
 
 base_damage = weapon[wID, GUN.DAMAGE]
-flat_damage_bonus = 0;
 aiming_damage_mult = 1
 
 	stat = {
@@ -298,7 +302,6 @@ flash_duration = 0
 bolt_cycle = false
 
 // Get direction
-dir = point_direction(other.x, other.y, x, y);
 mouse_dir = point_direction(x, y, mouse_x, mouse_y);
 mouse_dist = point_distance(x, y, mouse_x, mouse_y);
 
@@ -413,6 +416,12 @@ global.allmags = [
 	MAG_CALIBER.UNIVERSAL, RARITY.EPIC),
 	new magazine(spr_heatseekmag, 
 	MAG_CALIBER.UNIVERSAL, RARITY.EPIC),
+	new magazine(spr_voidmag, 
+	MAG_CALIBER.UNIVERSAL, RARITY.EPIC),
+	new magazine(spr_wishingmag, 
+	MAG_CALIBER.UNIVERSAL, RARITY.EPIC),
+	//new magazine(spr_powermag,
+	//MAG_CALIBER.UNIVERSAL, RARITY.EPIC),
 ];
 
 global.cursedmags = [

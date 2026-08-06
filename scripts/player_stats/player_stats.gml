@@ -3,7 +3,7 @@ function player_default_stats(){
 	#region BASE PLAYER STAT
 	maxhp = base.maxhp + extra_maxhp
 	extra_maxhp = 0
-	my_spd = 8;
+	my_spd = 9;
 
 	global.combo1_milestone = 3;
 	global.max_combo_cd = 360;
@@ -23,6 +23,7 @@ function player_default_stats(){
 	curse_chance = 1 * (gun_heat * 3)
 
 	obj_camera.zoom = 2;
+	
 	#endregion
 	apply_mutation_rework()
 	apply_enemy_mutation_rework()
@@ -32,12 +33,13 @@ function player_default_stats(){
 		meleeIndex = quickslot[selected_item, QSlot.Melee]
 	}
 	
-	if hp < prev_hp {
+	if hp < prev_hp && hp != maxhp {
 	pain += (prev_hp - hp) * 0.01
 	}
 	prev_hp = hp
 	pain = clamp(pain, 0, 1)
 	pain_decay = 1
+	
 	heal_mult = base.heal_mult
 	
 	hp = clamp(hp, 0, maxhp)
@@ -57,7 +59,7 @@ function player_default_stats(){
 	nade_quickslot = 6
 
 	base_damage = weapon[wID, GUN.DAMAGE]
-	stat.damage_output = base_damage + flat_damage_bonus
+	stat.damage_output = base_damage 
 
 	firerate = weapon[wID, GUN.FIRE_DELAY]
 	velocity = weapon[wID, GUN.VELOCITY]
@@ -66,7 +68,10 @@ function player_default_stats(){
 	printed_ammo = clamp(printed_ammo, 0, 75)
 	
 	magslot = weapon[wID, GUN.MAG_SLOT]
-	magslot = clamp(magslot, 1, 7)
+	
+	if magslot < 1 {
+		magslot = 1
+	}
 
 	noise = 1
 	gun_pitch = 1
@@ -126,6 +131,7 @@ function player_default_stats(){
 	mouse_input = mouse_check_button_pressed(mb_left)
 
 	MagazineModifier()
+		noise = clamp(noise, 0.5, 1.5)
 
 	kunai = clamp(kunai, 0, 100)
 	shuriken = clamp(shuriken, 0, 100)
@@ -224,4 +230,8 @@ function player_default_stats(){
 		current_magazine[weapon[wID, GUN.CALIBER_ID]] = 1
 	}
 	slot_input_delay--
+	
+	if room_repair {
+	obj_camera.zoom = 5;
+	}
 }

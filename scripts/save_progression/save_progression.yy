@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"save_progression",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"save_progression",
+  "parent":{
+    "name":"Serialization",
+    "path":"folders/Objects/Players/Controller/Serialization.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

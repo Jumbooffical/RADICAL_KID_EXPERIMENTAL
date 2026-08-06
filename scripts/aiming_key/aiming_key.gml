@@ -25,6 +25,11 @@ function aiming_key(_key) {
 		}
 		
 		smooth_arm_inertia = apply_bobbing(0.02, 0.3)
+		
+		if aiming_damage_mult > 1 {
+			stat.damage_output = base_damage
+			stat.damage_output = base_damage * aiming_damage_mult
+		}
 	} else {
 	if recoil_penalty > 0 {
 	recoil_penalty -= 0.01

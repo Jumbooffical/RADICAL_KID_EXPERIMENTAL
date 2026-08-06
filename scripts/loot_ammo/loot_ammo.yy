@@ -6,7 +6,7 @@
   "name":"loot_ammo",
   "parent":{
     "name":"Object Interaction",
-    "path":"folders/Objects/Dumbass/Player Scripts/Object Interaction.yy",
+    "path":"folders/Objects/Players/Player Scripts/Object Interaction.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

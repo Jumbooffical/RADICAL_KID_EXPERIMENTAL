@@ -1,5 +1,4 @@
 if (id > other.id) {
-
     var push_amt = 3;
 
     var dx = sign(x - other.x);

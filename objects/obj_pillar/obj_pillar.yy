@@ -2,7 +2,6 @@
   "$GMObject":"",
   "%Name":"obj_pillar",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
@@ -14,8 +13,8 @@
     "path":"folders/Rooms/Objects/Enviroment.yy",
   },
   "parentObjectId":{
-    "name":"par_destructable",
-    "path":"objects/par_destructable/par_destructable.yy",
+    "name":"par_box",
+    "path":"objects/par_box/par_box.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

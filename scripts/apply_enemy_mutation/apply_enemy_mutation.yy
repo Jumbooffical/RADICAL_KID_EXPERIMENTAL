@@ -6,7 +6,7 @@
   "name":"apply_enemy_mutation",
   "parent":{
     "name":"Mutations",
-    "path":"folders/Objects/Dumbass/Player Scripts/Mutations.yy",
+    "path":"folders/Objects/Players/Player Scripts/Mutations.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

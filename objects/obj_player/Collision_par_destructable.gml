@@ -1,5 +1,2 @@
-// If horizontal collision
-if (x != xprevious) x = xprevious;
-
-// If vertical collision
-if (y != yprevious) y = yprevious;
+smooth_knockback_x *= -0.5;
+smooth_knockback_y *= -0.5;

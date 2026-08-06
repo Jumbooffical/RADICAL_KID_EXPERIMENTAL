@@ -50,11 +50,6 @@ if t > 0 {
 
 if has_sniper {
 	mystate = HELI_STATE.ORBIT
-	with instance_create_depth(x, y, depth, obj_ranged_enemy) {
-		ewID = wp.r700
-		heli_mounted = true
-		current_mag = 0
-	}
 }
 vulnerable = 0
 flash_alarm = 2

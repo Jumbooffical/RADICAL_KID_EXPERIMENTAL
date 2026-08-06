@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Inventory Behavior",
-    "path":"folders/Objects/Dumbass/Player Scripts/Inventory Behavior.yy",
+    "path":"folders/Objects/Players/Player Scripts/Inventory Behavior.yy",
   },
   "parentObjectId":null,
   "persistent":true,

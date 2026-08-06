@@ -1,6 +1,6 @@
 function enemy_shooting() {
-if !visible && !heli_mounted exit;	
-if image_alpha < 1 && !heli_mounted exit;
+if !visible exit;	
+if image_alpha < 1 exit;
 	
 var mi = obj_player
 var aim = other.dir
@@ -47,10 +47,6 @@ if gun_type == WeaponType.Pistol {
 	sprite_index = walk_spr
 }
 
-if heli_mounted {
-acc = 0
-}
-
 // Firing
 	if cooldown < 0 && current_mag > 0 {	
 		current_mag--;
@@ -81,10 +77,6 @@ acc = 0
 				if other.overclocked {
 				fire_trail = true
 				velocity = 50
-				}
-				
-				if other.heli_mounted {
-				ignore_collision = true
 				}
 			}
 		}
@@ -117,21 +109,16 @@ acc = 0
 		heat += 0.01 * weapon[ewID, GUN.RECOIL]
 		
 		bolt_cycle = true
-		
-		if !heli_mounted {
 		eject(weapon[ewID, GUN.PLAYER_SPRITE], aim)
-		}
 	}
 	
 	switch (name) {
 		case obj_ranged_enemy:
-			if !heli_mounted {
-	
 			if gun_type == WeaponType.AR
 			|| gun_type == WeaponType.Bolt
 			|| gun_type == WeaponType.DMR {
 				path_end(); path_finished = true;
-			}}
+			}
 					
 			if path_finished {
 			sprite_index = idle_spr

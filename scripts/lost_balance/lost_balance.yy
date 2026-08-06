@@ -6,7 +6,7 @@
   "name":"lost_balance",
   "parent":{
     "name":"States",
-    "path":"folders/Objects/Dumbass/Player Scripts/States.yy",
+    "path":"folders/Objects/Players/Player Scripts/States.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,6 @@ instance_destroy()
 
 if delay < 0 {
 	timer--
-	var radius = 3000;
 	var ang = random(360);
 
 	var spawn_x = x + lengthdir_x(radius, ang);

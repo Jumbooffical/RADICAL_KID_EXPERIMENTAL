@@ -1,4 +1,7 @@
 function lost_balance() {
+	is_reloading = false
+	is_rolling = false
+	
 	sprite_index = spr_player_rolling
 	for (var i = 0; i < extra_quickslot_amount + 1; i++) {
 	drop_weapon(noone, i)

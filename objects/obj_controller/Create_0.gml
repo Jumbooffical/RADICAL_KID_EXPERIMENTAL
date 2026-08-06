@@ -1,14 +1,16 @@
-global.version = "V0.1.6"
+global.version = "V0.1.74"
 #macro live_enabled 0
+#macro room_repair 0
 object_clamp(obj_controller)
 
 loot_pool()
+global.unlocked_hardmode = false
 global.level = 1
 global.tier = 0
 
 // DEBUG
 global.pathfinding_debug = false
-global.dev_mode = false
+global.dev_mode = live_enabled
 
 randomize()
 

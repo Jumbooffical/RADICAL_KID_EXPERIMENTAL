@@ -19,6 +19,12 @@ function next_room() {
 				url_open("https://www.youtube.com/watch?v=Ngpd6nZzdTM")
 			break;
 		}
+		
+		if obj_player.death_count == 0 {
+		global.unlocked_hardmode = true
+		save_progression()
+		}
+		
 		game_restart()
 	}
 	global.level++

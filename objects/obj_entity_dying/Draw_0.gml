@@ -1,5 +1,3 @@
-
-
 var shadow_y = 0
 if sprite_index == spr_titan_death {
 	shadow_y = 30

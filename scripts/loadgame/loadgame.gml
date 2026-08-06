@@ -17,12 +17,13 @@ function loadgame() {
 
         var _player = instance_create_layer(0, 0, "Instances", obj_player);
 		
-		with (obj_store_mag) {
+		with (obj_pocket_mag) {
 		    instance_destroy();
 		}
 
         with (obj_player) {
 			global.ringing = 0
+			slot_input_delay = -1
 			selected_item = 1
 			quickslot_type = Slot.Gun
 			
@@ -78,8 +79,10 @@ function loadgame() {
                 quickslot[i, QSlot.Buff_Overclocked] = q.Buff_Overclocked;
                 quickslot[i, QSlot.Buff_Smart] = q.Buff_Smart;
                 quickslot[i, QSlot.Buff_HeatSeek] = q.Buff_HeatSeek;
+				quickslot[i, QSlot.Buff_Power] = q.Buff_Power;
 
                 quickslot[i, QSlot.Debuff_AirMag] = q.Debuff_AirMag;
+				quickslot[i, QSlot.Debuff_Void] = q.Debuff_Void;
 
                 quickslot[i, QSlot.Optic] = q.Optic;
                 quickslot[i, QSlot.Mount] = q.Mount;
@@ -92,7 +95,7 @@ function loadgame() {
 			for (var i = 0; i < array_length(_loadPlayer.mags); i++) {
 			    var m = _loadPlayer.mags[i];
 
-			    var inst = instance_create_layer(0, 0, "Instances", obj_store_mag);
+			    var inst = instance_create_layer(0, 0, "Instances", obj_pocket_mag);
 			    inst.sprite_index = m.sprite;
 			}	
 				

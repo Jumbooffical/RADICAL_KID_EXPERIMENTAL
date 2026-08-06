@@ -3,6 +3,7 @@ depth = 0
 WeaponData()
 wID = obj_player.wID
 damage = obj_player.stat.damage_output
+dmg_falloff = 1
 stun = 0
 velocity = weapon[wID, GUN.VELOCITY]
 

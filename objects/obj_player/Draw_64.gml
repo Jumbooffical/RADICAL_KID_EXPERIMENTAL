@@ -1,3 +1,4 @@
+if live_call() return live_result
 var ammo_x = 40
 var ammo_y = 850
 var txt_scale = 1.1
@@ -58,6 +59,10 @@ if player_armed {
 	} else {
 		frame = 0
 	}
+	if quickslot[selected_item, QSlot.LoadedAmmo] == 0 && !is_reloading {
+		draw_text_blend(mx + 25, my - 25, "[R]: Reload!", c_red)
+	}
+	
 	draw_sprite_ext(spr_small_textbox, frame, 840, hpbar_y - 10, 1.5, 1.05, 0, c_white, 1)
 	draw_text_transformed(830, hpbar_y-25, 
 	round(quickslot[selected_item, QSlot.LoadedAmmo]), 1.35, 1.35, 0)
@@ -99,7 +104,10 @@ if player_armed {
 		break;
 	}
 	draw_sprite(caliber, 0, 720, hpbar_y)
-	if current_magazine[weapon[wID, GUN.CALIBER_ID]] == 0 { draw_set_colour(c_red) }
+	if current_magazine[weapon[wID, GUN.CALIBER_ID]] == 0 { 
+		draw_set_colour(c_red) 
+	}
+	
 	draw_text_transformed(740, hpbar_y, 
 	": " + string(current_magazine[weapon[wID, GUN.CALIBER_ID]]),
 	1.2, 1.2, 1)
@@ -168,7 +176,7 @@ var offset = 15
 rlbar_w = 18;
 rlbar_h = 240;
 rlbar_x = 1067
-rlbar_y = 288
+rlbar_y = 450
 
 if (is_reloading) {
 draw_sprite_stretched(reload_bar_bg, gui_frame, rlbar_x, rlbar_y / 1.5, rlbar_w, rlbar_h * 1.25);
@@ -190,9 +198,9 @@ var mut = applied_mutation
 var col = c_white
 
 draw_set_colour(c_lime)
-draw_text_transformed(190, 230, "MUTATIONS/", 1.5, 1.5, 0)
+draw_text_transformed(70, 230, "MUTATIONS/", 1.5, 1.5, 0)
 draw_set_colour(c_red)
-draw_text_transformed(330, 230, "/DEFECTS", 1.5, 1.5, 0)
+draw_text_transformed(220, 230, "/DEFECTS", 1.5, 1.5, 0)
 draw_set_colour(c_white)
 for (var i = 0; i < array_length(mut); i++) {
 	switch (mut[i].rarity) {
@@ -212,7 +220,7 @@ for (var i = 0; i < array_length(mut); i++) {
 			col = c_red
 		break;
 	}
-	draw_text_blend(190, 260 + (i * 25), mut[i].name + ": " + mut[i].desc, col)
+	draw_text_blend(70, 260 + (i * 25), mut[i].name + ": " + mut[i].desc, col)
 }
 		
 draw_set_colour(c_red)

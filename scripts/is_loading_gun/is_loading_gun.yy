@@ -6,7 +6,7 @@
   "name":"is_loading_gun",
   "parent":{
     "name":"Reloading Mechanic",
-    "path":"folders/Objects/Dumbass/Player Scripts/Reloading Mechanic.yy",
+    "path":"folders/Objects/Players/Player Scripts/Reloading Mechanic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

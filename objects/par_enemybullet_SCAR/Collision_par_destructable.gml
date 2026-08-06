@@ -15,6 +15,10 @@ switch (other.material) {
 	case MAT.METAL:
 	snd = random_array(global.deflect_snd)
 	break;
+	
+	case MAT.BRICK:
+	snd = snd_brick_hurt
+	break;
 }
 
 audio_play_sound(snd, 1, 0, random_range(0.8, 1), 0, random_range(0.8, 1))

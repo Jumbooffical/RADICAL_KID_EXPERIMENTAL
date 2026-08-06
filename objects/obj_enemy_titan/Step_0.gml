@@ -1,10 +1,13 @@
-if outside_cam && !spotted exit;
 if my_state == STATE.FREEFALL exit;
 enemy_inherited()
 var mi = obj_player
 gun_type = weapon[ewID, GUN.TYPE]
 
-base_spd = 1.5
+base_spd = 1
+if outside_cam {
+	base_spd = 0.1
+}
+
 knockback_immune = true
 
 img_spd = 0.3
@@ -55,23 +58,23 @@ if start_teleport
 }
 #endregion
 
-if !outside_cam {
-if sprite_index == run_spr 
-|| sprite_index == walk_spr && !exhausted {
-stamina -= drain_rate
-	if floor(image_index) == 3 || floor(image_index) == 14 {
-		if distance_to_object(obj_player) < aggro_range * 3 {
-			obj_camera.shake_str = 5
+if !outside_cam || speed_buff {
+	if sprite_index == run_spr 
+	|| sprite_index == walk_spr && !exhausted {
+	stamina -= drain_rate
+		if floor(image_index) == 3 || floor(image_index) == 14 {
+			if distance_to_object(obj_player) < aggro_range * 3 {
+				obj_camera.shake_str = 5
 		
-			if step {
-			audio_play_sound(snd_titan_kneel, 1, 0, 0.5, 0, 0.7)
-			step = false
+				if step {
+				audio_play_sound(snd_titan_kneel, 1, 0, 0.5, 0, 0.7)
+				step = false
+				}
 			}
+		} else {
+			step = true
 		}
-	} else {
-		step = true
 	}
-}
 }
 
 if stamina < 0 {

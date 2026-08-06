@@ -53,8 +53,8 @@ function inv_use_attachment() {
 			}
 			mi.quickslot[mi.selected_item, QSlot.Grip] = item.sprite
 	
-			//audio_play_sound(snd_optic, 1, 0, 
-			//3, 0, random_range(0.8, 1.1))
+			audio_play_sound(snd_grip, 1, 0, 
+			2, 0, random_range(1, 1.1))
 		break;
 		
 		
@@ -77,8 +77,10 @@ function inv_use_attachment() {
 			}
 			mi.quickslot[mi.selected_item, QSlot.Mount] = item.sprite
 			
-			//audio_play_sound(snd_optic, 1, 0, 
-			//3, 0, random_range(0.8, 1.1))
+			audio_play_sound(snd_mount, 1, 0, 
+			3, 0, random_range(0.8, 1.1))
+			audio_play_sound(snd_burst_ready, 1, 0, 
+			0.5, 0, random_range(1, 1.1))
 		break;
 		
 		
@@ -101,8 +103,8 @@ function inv_use_attachment() {
 			}
 			mi.quickslot[mi.selected_item, QSlot.Barrel] = item.sprite
 			
-			//audio_play_sound(snd_optic, 1, 0, 
-			//3, 0, random_range(0.8, 1.1))
+			audio_play_sound(snd_barrel, 1, 0, 
+			2, 0, random_range(1.3, 1.5))
 		break;	
 	}
 }	

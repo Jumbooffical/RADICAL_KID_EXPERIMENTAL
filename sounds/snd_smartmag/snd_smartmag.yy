@@ -15,7 +15,7 @@
   "name":"snd_smartmag",
   "parent":{
     "name":"Magazine Ready",
-    "path":"folders/Items/Weapon/Reloading/Magazine Ready.yy",
+    "path":"folders/Sounds/Magazine Ready.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

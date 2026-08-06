@@ -1,12 +1,9 @@
-
-
 #macro cam0 view_camera[0]
 #macro cx camera_get_view_x(cam0)
 #macro cy camera_get_view_y(cam0)
 
-#macro cw camera_get_view_width(cam0) * 1.75
-#macro ch camera_get_view_height(cam0) * 1.75
-
+#macro cw camera_get_view_width(cam0)
+#macro ch camera_get_view_height(cam0)
 #macro outside_cam (x < cx || x > cx + cw || y < cy || y > cy + ch)
 
 #macro pride_month current_month = 6

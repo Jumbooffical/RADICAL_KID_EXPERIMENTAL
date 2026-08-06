@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Magazines",
-    "path":"folders/Objects/Dumbass/Innate/Mechanics/Magazines.yy",
+    "path":"folders/Objects/Players/Innate/Mechanics/Magazines.yy",
   },
   "parentObjectId":null,
   "persistent":true,

@@ -18,10 +18,7 @@
     "name":"Failed Experiment",
     "path":"folders/Objects/Enemy/Failed Experiment.yy",
   },
-  "parentObjectId":{
-    "name":"par_pathwall",
-    "path":"objects/par_pathwall/par_pathwall.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

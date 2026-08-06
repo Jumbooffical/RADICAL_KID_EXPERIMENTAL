@@ -1,4 +1,6 @@
 depth = -99
 optic_bonus = 1.5
-damage_bonus = obj_player.base_damage * optic_bonus * obj_player.aiming_damage_mult
+
 bonus_applied = true
+green = 0
+head_applied = false

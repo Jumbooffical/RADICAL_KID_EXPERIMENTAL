@@ -8,7 +8,9 @@ function MagazineModifier() {
 		case spr_marksman_mag:
 			recoil = weapon[wID, GUN.RECOIL] * 0.5
 			deviation = deviation + 0.25
-			aiming_damage_mult = 1.33
+			
+			aiming_damage_mult = 1.25
+			stat.damage_output = stat.damage_output * 0.75
 		break;
 		
 		case spr_overpressure:
@@ -84,14 +86,33 @@ function MagazineModifier() {
 		
 		case spr_smartmag:
 			if !is_reloading {
-				quickslot[selected_item, QSlot.Buff_Smart] = 1
+				quickslot[selected_item, QSlot.Buff_Smart] = 2
 			}
 			velocity = velocity / 1.33
 		break;
 		
 		case spr_heatseekmag:
 			if !is_reloading {
-				quickslot[selected_item, QSlot.Buff_HeatSeek] = 1
+				quickslot[selected_item, QSlot.Buff_HeatSeek] = 2
+			}
+		break;
+		
+		case spr_wishingmag:
+			mag_size = weapon[wID, GUN.MAG_SIZE]
+			reload_mult = 0.5
+			magslot = magslot + 7
+		break;
+		
+		case spr_voidmag:
+			if !is_reloading {
+				quickslot[selected_item, QSlot.Debuff_Void] = 2
+			}
+			mag_size = mag_size + 75
+		break;
+		
+		case spr_powermag:
+			if !is_reloading {
+				quickslot[selected_item, QSlot.Buff_Power] = 2
 			}
 		break;
 		#endregion
@@ -133,6 +154,20 @@ function MagazineModifier() {
 		break;
 	}
 	
+	if quickslot[selected_item, QSlot.Buff_Power] > 0 {
+		stat.damage_output = stat.damage_output * 2
+		velocity = velocity * 1.5
+		firerate = firerate * 1.5
+		noise = 1.5
+		
+		deviation = deviation * 2
+		heat_mult = heat_mult * 2
+	}
+	
+	if quickslot[selected_item, QSlot.Debuff_Void] > 0 {
+	magslot = magslot - 3
+	}
+	
 	if quickslot[selected_item, QSlot.Buff_Overclocked] > 0 {
 	firerate = 0.1
 	mag_size = mag_size * 3
@@ -146,4 +181,6 @@ function MagazineModifier() {
 	have_suppressor = true
 	quickslot[selected_item, QSlot.Heat] = 0
 	}
+	
+	magslot = clamp(magslot, 1, 10)
 }

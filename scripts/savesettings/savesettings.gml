@@ -8,7 +8,6 @@ function savesettings() {
 	tinnitus : 0,
 	muzzleflash : 0
 	};
-
 		with (obj_switch_panel) {
 		    switch(button_id) {
 		        case 0: _options.screenshake = option; break;

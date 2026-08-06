@@ -2,7 +2,7 @@
 
 // Inherit the parent event
 event_inherited();
-WeaponData()
+
 
 // Draw brilho
 gpu_set_blendmode(bm_add);

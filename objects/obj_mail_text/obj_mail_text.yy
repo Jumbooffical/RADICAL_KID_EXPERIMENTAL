@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Controller",
-    "path":"folders/Objects/Dumbass/Controller.yy",
+    "path":"folders/Objects/Players/Controller.yy",
   },
   "parentObjectId":null,
   "persistent":false,

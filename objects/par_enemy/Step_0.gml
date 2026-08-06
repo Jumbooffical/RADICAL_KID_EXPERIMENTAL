@@ -36,10 +36,6 @@ if distance_to_object(obj_m62_unpin) < base_aggro / 2 {
 }
 enemy_knockback()
 
-for (var i = 0; i < dot_received; i++) {
-	damage_taken = 5 * i
-}
-
 if head_alarm > 0 {
 	head_alarm--
 }

@@ -51,7 +51,7 @@ function inv_use_consumable() {
 		break;
 		
 		case spr_stim_UNDY:
-			obj_player.UNDY_stim_timer += duration(0,15)
+			obj_player.UNDY_stim_timer += duration(0,20)
 		break;		
 		
 		case spr_stim_CLAR:
@@ -59,7 +59,7 @@ function inv_use_consumable() {
 		break;		
 		
 		case spr_stim_DRUM:
-			obj_player.DRUM_stim_count += 2
+			obj_player.DRUM_stim_count += 3
 		break;
 		
 		case spr_stim_HEX:
@@ -96,7 +96,7 @@ function inv_use_consumable() {
 		break;
 		
 		case spr_god_mutagen:
-			apply_mutation_ext(pos2, 2)
+			apply_mutation_ext(pos2, 1)
 		break;
 		
 		case spr_forbidden_mutagen:

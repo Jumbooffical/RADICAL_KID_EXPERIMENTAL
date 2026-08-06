@@ -36,8 +36,8 @@ with (obj_player) {
 	name[10] = "all mutations : "
     desc[10] = string(array_length(obj_player.all_mutations))
 	
-	name[11] = ""
-    desc[11] = ""
+	name[11] = "unlocked hard: "
+    desc[11] = string(global.unlocked_hardmode)
 	
 	name[12] = "level : "
     desc[12] = string(global.level)

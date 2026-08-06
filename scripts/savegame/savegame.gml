@@ -17,8 +17,10 @@ function savegame() {
                 Buff_Overclocked : quickslot[i, QSlot.Buff_Overclocked],
                 Buff_Smart : quickslot[i, QSlot.Buff_Smart],
                 Buff_HeatSeek : quickslot[i, QSlot.Buff_HeatSeek],
+				Buff_Power : quickslot[i, QSlot.Buff_Power],
 
                 Debuff_AirMag : quickslot[i, QSlot.Debuff_AirMag],
+				Debuff_Void : quickslot[i, QSlot.Debuff_Void],
 
                 Optic : quickslot[i, QSlot.Optic],
                 Mount : quickslot[i, QSlot.Mount],
@@ -29,7 +31,7 @@ function savegame() {
 		
 		var mags = [];
 
-		with (obj_store_mag)
+		with (obj_pocket_mag)
 		{
 		    array_push(mags, {
 				sprite : sprite_index,

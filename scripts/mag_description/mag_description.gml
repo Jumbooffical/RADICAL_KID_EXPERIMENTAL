@@ -29,12 +29,12 @@ switch (other.sprite_index) {
 		
 		case spr_smartmag:
 			desc = "Smart Magazine"
-			desc2 = "Velocity -33%, Reticle controlled projectile \nprojectile slowly disappear"
+			desc2 = "Velocity -33%, Reticle controlled projectile \nprojectile slowly disappear for 2 reload"
 		break;
 		
 		case spr_heatseekmag:
 			desc = "Heatseeking Magazine"
-			desc2 = "Only targetting nearest enemy"
+			desc2 = "For 2 reload, bullet only targetting nearest enemy"
 		break;
 	
 		case spr_overpressure:
@@ -49,7 +49,7 @@ switch (other.sprite_index) {
 		
 		case spr_marksman_mag:
 			desc = "Marksman Magazine"
-			desc2 = "Convert to semi auto, increase stability & velocity \n-25% hipfire damage, +25% aiming damage"
+			desc2 = "Convert to semi auto \n-25% hipfire damage, +25% aiming damage"
 		break;
 		
 		case spr_extmag:
@@ -79,7 +79,22 @@ switch (other.sprite_index) {
 		
 		case spr_belt_printermag:
 			desc = "Belt Printer"
-			desc2 = "-50% Magsize \nIf this is in pocket slot, increase \nBelt Printer Magsize by 5 per reload \n\nCurrent ammo printed: " + string(obj_player.printed_ammo) + "/75"
+			desc2 = "-50% Magsize \nIf this is in bottom-most pocket slot, increase \nBelt Printer Magsize by 5 per reload \n\nCurrent ammo printed: " + string(obj_player.printed_ammo) + "/75"
+		break;
+		
+		case spr_wishingmag:
+			desc = "Wishing Mag"
+			desc2 = "Next reload is 50% slower \nAnd have 7 additional mags to choose from"
+		break;	
+		
+		case spr_voidmag:
+			desc = "Void Mag"
+			desc2 = "+75 Mag Size \nNext 2 reload have 3 less mag options"
+		break;
+		
+		case spr_powermag:
+			desc = "Power Mag"
+			desc2 = "+100% damage, +50% velocity, -50% firerate \n+100% deviation & heat for 2 reloads"
 		break;
 		
 		case spr_glass_bullet:
@@ -94,7 +109,7 @@ switch (other.sprite_index) {
 		
 		case spr_stasis_mag:
 			draw_text_blend(x + 50, y - 30, "Cursed, Stasis Magazine", c_red)
-			draw_text_blend(x + 50, y, "Firerate +50% \nBullet remain harmless & motionless until reload other mag", c_red)
+			draw_text_blend(x + 50, y, "Firerate -50% \nBullet remain harmless & motionless until reload other mag", c_red)
 		break;
 		
 		case spr_trackless_mag:
@@ -108,7 +123,7 @@ switch (other.sprite_index) {
 		break;
 	}
 	
-	if object_index == obj_store_mag {
+	if object_index == obj_pocket_mag {
 		draw_text(x + 170, y - 30, desc)
 		draw_text(x + 170, y, desc2)
 	} else {

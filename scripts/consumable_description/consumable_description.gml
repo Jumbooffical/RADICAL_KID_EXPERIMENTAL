@@ -32,7 +32,7 @@ break;
 
 case spr_god_mutagen:
 name = "God Mutagen"
-description = "Obtain 2 powerful mutations"
+description = "Obtain a powerful mutation"
 break;
 
 case spr_forbidden_mutagen:
@@ -72,7 +72,7 @@ break;
 
 case spr_stim_EPIK:
 name = "'EPIK' Tinkerer's Stimulant"
-description = "Next 3 reloads only offer rare or epic magazine"
+description = "Next 2 reloads only offer rare or epic magazine"
 break;
 
 case spr_stim_HEX:
@@ -92,7 +92,7 @@ break;
 
 case spr_stim_UNDY:
 name = "'UNDY' Ancient Stimulant"
-description = "Cannot die while HP is at 0 for 15 seconds, applied automatically at 0 HP. \n\nDon't forget to healup afterward!"
+description = "Cannot die while HP is at 0 for 20 seconds, apply automatically at 0 HP. \n\nDon't forget to healup afterward!"
 break;
 	}
 }

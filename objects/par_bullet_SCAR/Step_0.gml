@@ -21,14 +21,6 @@ if !point_in_rectangle(x, y, -_p, -_p, room_width + _p, room_height + _p) {
 	my_state = bullet_state.DESTROYED
 }
 
-if place_meeting(x, y, par_indestructable)
-&& my_state == !bullet_state.SMART 
-&& my_state == !bullet_state.HEATSEEK
-&& my_state == !bullet_state.SOULBINDED
-&& sprite_index != spr_bouncing_bullet {
-	my_state = bullet_state.DESTROYED
-}
-
 if distance_to_object(par_gun) > weaponLength / 8
 && obj_player.selected_item != obj_player.melee_quickslot {
 visible = true	
@@ -175,3 +167,12 @@ if velocity > 55 {
 if is_melee {
 visible = false
 }
+
+if apply_falloff {
+	var mouse_dist = point_distance(obj_player.x, obj_player.y, x, y)	
+	for (var i = 0; i < round(mouse_dist/300); i++) {
+	dmg_falloff = (1 - (i * 0.15))
+	dmg_falloff = clamp(dmg_falloff, 0.25, 1)
+	}
+}
+damage = damage * dmg_falloff

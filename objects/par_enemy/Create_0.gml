@@ -11,7 +11,6 @@ martyr_airstrike = false
 
 overclocked = false
 magnet_imbued = false
-heli_mounted = false
 can_teleport = false
 
 // Immunity
@@ -84,7 +83,6 @@ DEAD
 }
 
 gun_type = weapon[ewID, GUN.TYPE]
-push_dir = point_direction(other.x, other.y, x, y);
 to_me = point_direction(obj_player.x, obj_player.y, x, y);
 to_wall = point_direction(par_indestructable.x, par_indestructable.y, x, y);
 
@@ -114,7 +112,7 @@ smooth_knockback_y = 0
 prev_hp = 0
 
 dot_received = 1
-damage_taken = 0
+damage_taken = 1
 
 base_phase_timer = 150
 phasing_timer = base_phase_timer

@@ -5,8 +5,8 @@ if crate_hp <= 0 {
 	instance_create_depth(x, y, depth-1, obj_item_stable_mutagen)
 	
 	drop_money(obj_stack_of_cash, 5)
-	drop_money(obj_coin, 100)
-	drop_money(obj_cash, 15)
+	drop_money(obj_coin, 50)
+	drop_money(obj_cash, 10)
 	audio_play_sound(snd_coins_spill, 1, 0, 3)
 	
 	switch (loot_index) {
@@ -18,8 +18,18 @@ if crate_hp <= 0 {
 		case BOSS_LOOT.RARE_GUN:
 			amount = 2
 			var rare_gun = pick_items(global.weapon_pool, 99, RARITY.RARE)
+
 			for (var i = 0; i < array_length(rare_gun); i++) {
 				array_push(loot, rare_gun[i].object)
+			}
+		break;
+		
+		case BOSS_LOOT.RARE_MOD:
+			amount = 3
+			var rare_mod = pick_items(global.gun_mod_pool, 99, RARITY.RARE);
+
+			for (var i = 0; i < array_length(rare_mod); i++) {
+				array_push(loot, rare_mod[i].object)
 			}
 		break;
 		

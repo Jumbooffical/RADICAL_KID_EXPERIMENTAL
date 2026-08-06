@@ -7,7 +7,7 @@ function movement_key(_up, _down, _left, _right){
 	    _yinput /= len;
 	}
 
-	move_and_collide(_xinput * current_spd, _yinput * current_spd, par_indestructable, 4, 0, 0,current_spd,current_spd);
+	move_and_collide(_xinput * current_spd, _yinput * current_spd, par_pathwall, 4, 0, 0,current_spd,current_spd);
 	if (_xinput != 0 || _yinput != 0) {
 	    my_state = state.moving;
 	} else {

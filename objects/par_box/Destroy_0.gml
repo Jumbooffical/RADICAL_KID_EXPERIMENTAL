@@ -14,7 +14,7 @@ switch (material) {
 	break;
 	
 	case MAT.BRICK:
-		snd = snd_metal_dead
+		snd = snd_brick_dead
 		part_particles_create(global.sys_brick_splash, x, y, global.pt_brick_splash, irandom_range(15, 20))
 	break;
 }

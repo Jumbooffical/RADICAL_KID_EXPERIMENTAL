@@ -6,7 +6,7 @@
   "name":"next_room",
   "parent":{
     "name":"Controller",
-    "path":"folders/Objects/Dumbass/Controller.yy",
+    "path":"folders/Objects/Players/Controller.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

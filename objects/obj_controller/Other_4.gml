@@ -118,7 +118,6 @@ part_type_alpha2(global.pt_titan_materialize, 0, 0.7);
 part_type_colour3(global.pt_titan_materialize, c_white, c_white, c_aqua)
 part_type_direction(global.pt_titan_materialize, -90, -90, 0, 1)
 
-
 global.pt_wood_splash = part_type_create();
 global.sys_wood_splash = part_system_create();
 

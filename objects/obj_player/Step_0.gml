@@ -119,8 +119,25 @@ if global.level > 1 {
 	if easymode {
 	gamemode = "Easy"
 	}
+	
+	if hardmode {
+	gamemode = "Hard"
+	}
 }
 
-if keyboard_check_pressed(ord("N")) {
-	death = true
+if global.dev_mode {
+	if keyboard_check(vk_shift) {
+		if keyboard_check_pressed(ord("N")) {
+			death = true
+		}
+		
+		if keyboard_check_pressed(ord("L")) {
+			if instance_exists(obj_gmlive) {
+				room_set_live(room, true)
+			}
+		}
+	}
 }
+//if mouse_check_button_pressed(mb_left) {
+//	instance_create_depth(mouse_x, mouse_y, depth, obj_airstrike_zone)
+//}

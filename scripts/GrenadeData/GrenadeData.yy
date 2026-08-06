@@ -6,7 +6,7 @@
   "name":"GrenadeData",
   "parent":{
     "name":"Data",
-    "path":"folders/Objects/Dumbass/Data.yy",
+    "path":"folders/Objects/Players/Data.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

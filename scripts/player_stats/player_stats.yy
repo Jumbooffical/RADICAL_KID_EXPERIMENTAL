@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"player_stats",
   "parent":{
-    "name":"Dumbass",
-    "path":"folders/Objects/Dumbass.yy",
+    "name":"Players",
+    "path":"folders/Objects/Players.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

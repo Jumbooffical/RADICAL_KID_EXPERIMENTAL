@@ -33,6 +33,7 @@ shader_reset()
 smooth_arm_inertia = lerp(smooth_arm_inertia, 0, 0.15);
 // Dynamic gun animation
 var dir_to_mouse = point_direction(x, y, mouse_x, mouse_y);
+var dir_to_reticle = point_direction(x, y, obj_reticle.x, obj_reticle.y);
 var dist = point_distance(x, y, mouse_x, mouse_y);
 var arm_stretch = 300
 
@@ -60,6 +61,7 @@ if !is_shooting {
 
 if is_aiming {
 	flip = (obj_reticle.x > x) ? 1 : -1;
+	gun_dir = dir_to_reticle
 }
 
 // Draw gun

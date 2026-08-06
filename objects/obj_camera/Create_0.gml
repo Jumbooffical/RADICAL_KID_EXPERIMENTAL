@@ -22,7 +22,7 @@ tilt_angle = 0;
 rotation = 0;
 cam_angle = 0;
 
-base_zoom = 0.25
+base_zoom = 0.2
 camera_zoom = base_zoom;
 smooth_dir = 0;
 

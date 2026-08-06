@@ -50,6 +50,11 @@ if sprite_index == spr_titan_death {
 
 if lifesteal {
 	heal_player(maxhp/3)
+	
+	if obj_player.hardmode {
+		obj_player.cancer_timer += 60
+	}
+	
 	lifesteal = false
 }
 
@@ -74,3 +79,4 @@ if obj_player.gun_type == WeaponType.Shotgun
 	x -= smooth_knockback_x
 	y -= smooth_knockback_y
 }
+	

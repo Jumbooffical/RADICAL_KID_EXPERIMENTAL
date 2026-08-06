@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Innate",
-    "path":"folders/Objects/Dumbass/Innate.yy",
+    "path":"folders/Objects/Players/Innate.yy",
   },
   "parentObjectId":{
     "name":"obj_uls_light",

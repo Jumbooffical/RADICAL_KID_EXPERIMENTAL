@@ -17,9 +17,9 @@ function burst_amplifier(){
 		}
 	}
 			
-	stat.damage_output = base_damage * 1.5 + flat_damage_bonus
+	stat.damage_output = base_damage * 1.5 
 	if burst_failure {
-		stat.damage_output = base_damage * 0.8 + flat_damage_bonus
+		stat.damage_output = base_damage * 0.8 
 	}
 			
 	//Hardcode fix when selecting mag while timer end did not run the fucking boolean

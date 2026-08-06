@@ -8,8 +8,7 @@ var nearest = instance_nearest(x, y, obj_ranged_enemy)
 var reset_alarm = true
 
 if my_state != STATE.BLINDED
-&& my_state != STATE.TELEPORT
-&& !heli_mounted {
+&& my_state != STATE.TELEPORT {
 if collision_circle(x, y, aggro_range, mi, false, true) {	
 	if (collision_line(x, y, mi.x, mi.y, par_indestructable, true, true)) {
 		//blocked line of sight

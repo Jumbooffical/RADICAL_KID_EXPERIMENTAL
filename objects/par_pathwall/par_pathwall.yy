@@ -10,8 +10,8 @@
   "name":"par_pathwall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dumbass",
-    "path":"folders/Objects/Dumbass.yy",
+    "name":"Players",
+    "path":"folders/Objects/Players.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,5 +1,3 @@
-
-
 other.crate_hp -= damage
 var aim = point_direction(obj_player.x, obj_player.y, other.x, other.y);
 var knockback = irandom_range(20, 30)
@@ -14,6 +12,10 @@ switch (other.material) {
 	
 	case MAT.METAL:
 	snd = random_array(global.deflect_snd)
+	break;
+			
+	case MAT.BRICK:
+	snd = snd_brick_hurt
 	break;
 }
 

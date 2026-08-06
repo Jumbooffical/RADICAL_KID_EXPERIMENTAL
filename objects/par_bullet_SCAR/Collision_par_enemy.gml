@@ -2,7 +2,6 @@ if my_state == bullet_state.STASIS exit;
 if my_state == bullet_state.SOULBINDED && other.object_index != obj_enemy_titan exit;
 
 var nearest = instance_nearest(x, y, par_enemy)
-
 if nearest.my_state = STATE.DODGE ||
 nearest.my_state = STATE.TELEPORT exit;
 
@@ -14,20 +13,9 @@ nearest.my_state = STATE.TELEPORT exit;
 //	}
 //	exit;
 //}
-
-var dmg_falloff = 1
-if apply_falloff {
-	var mouse_dist = point_distance(obj_player.x, obj_player.y, x, y)	
-	for (var i = 0; i < round(mouse_dist/300); i++) {
-	dmg_falloff = (1 - (i * 0.15))
-	dmg_falloff = clamp(dmg_falloff, 0.25, 1)
-	}
-}
-	damage = damage * (nearest.damage_taken / 100 + 1) * dmg_falloff
 	nearest.enemy_hp -= damage
-
 	with instance_create_depth(x, y, depth, obj_damage_text) {
-		text = other.damage
+		text = round(other.damage)
 	}
 
 	with obj_player {

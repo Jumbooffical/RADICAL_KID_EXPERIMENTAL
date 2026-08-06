@@ -17,8 +17,9 @@ base_react_time = 5
 alarm_interval = 90
 
 event_inherited()
-mask_index = sprite_index
+
 
 // Immunity
 knockback_immune = true
 head_immune = true
+stun_immune = true

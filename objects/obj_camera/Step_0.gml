@@ -1,5 +1,5 @@
-
-
+if live_call() return live_result
+base_zoom = 0.1;
 camW = base_camW * zoom
 camH = base_camH * zoom
 
@@ -49,18 +49,20 @@ if (instance_exists(obj_player)) {
 	if (obj_player.is_aiming) {
 		camera_set_view_pos(cam, x - camW * 0.5, y - camH * 0.5);
 		camera_set_view_angle(cam, (sin(degtorad(smooth_dir)) * 5 * global.tilt_mult) + tilt_angle)
-		obj_reticle.image_angle = (sin(degtorad(smooth_dir)) * 65 * global.tilt_mult) + tilt_angle;
+		obj_reticle.image_angle = (sin(degtorad(smooth_dir)) * 60 * global.tilt_mult) + tilt_angle;
 		
 		ads = obj_player.stat.ads_speed * (1 - global.ringing)
 		camera_zoom = base_zoom * obj_player.magnify
 	}
+	
+	if obj_player.open_inventory {
+		x = lerp(x, px, 0.1);
+		y = lerp(y, py, 0.1);
+		
+		ads = 0
+	}
 }
 
-if outside_cam {
-	instance_deactivate_object(obj_common_enemy_spawn)
-} else {
-	instance_activate_object(obj_common_enemy_spawn)
-}
 
 function angle_lerp(a, b, t) {
     return a + angle_difference(b, a) * t;

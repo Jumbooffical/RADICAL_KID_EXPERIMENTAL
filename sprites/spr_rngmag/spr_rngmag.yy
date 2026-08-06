@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"1Common",
-    "path":"folders/Sprites/Magazines Mechanic/1Common.yy",
+    "name":"2Uncommon",
+    "path":"folders/Sprites/Magazines Mechanic/2Uncommon.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

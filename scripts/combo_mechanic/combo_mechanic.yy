@@ -6,7 +6,7 @@
   "name":"combo_mechanic",
   "parent":{
     "name":"Mechanics",
-    "path":"folders/Objects/Dumbass/Innate/Mechanics.yy",
+    "path":"folders/Objects/Players/Innate/Mechanics.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

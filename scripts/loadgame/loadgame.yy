@@ -6,7 +6,7 @@
   "name":"loadgame",
   "parent":{
     "name":"Serialization",
-    "path":"folders/Objects/Dumbass/Controller/Serialization.yy",
+    "path":"folders/Objects/Players/Controller/Serialization.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

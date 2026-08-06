@@ -23,3 +23,5 @@ if is_shrapnel {
 		}
 	}
 }
+
+has_aimed = false

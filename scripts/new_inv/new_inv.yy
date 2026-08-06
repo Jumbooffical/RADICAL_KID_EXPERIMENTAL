@@ -6,7 +6,7 @@
   "name":"new_inv",
   "parent":{
     "name":"Inventory Behavior",
-    "path":"folders/Objects/Dumbass/Player Scripts/Inventory Behavior.yy",
+    "path":"folders/Objects/Players/Player Scripts/Inventory Behavior.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

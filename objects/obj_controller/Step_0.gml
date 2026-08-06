@@ -37,7 +37,7 @@ global.pathfinding_debug = !global.pathfinding_debug
 
 if mouse_check_button_released(mb_right) 
 && (obj_player.is_dragging)
-&& !position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), obj_store_mag) {
+&& !position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), obj_pocket_mag) {
 	with (obj_player) {
 	rmb_hold_mag = 0
 	is_dragging = false
@@ -54,6 +54,7 @@ if global.earthquake > 0 {
 if room == SniperBossRoomDay
 || room == SniperBossRoomSunset
 || room == SniperBossRoomNight {
+	
 	if global.sniper_revive > -1 && instance_number(obj_sniper_boss) == 0 {
 		global.green_glow = 0.45
 		obj_player.cooldown = 180
@@ -63,6 +64,7 @@ if room == SniperBossRoomDay
 			audio_play_sound(snd_sniper_revive, 1, 0, 5)
 		} else {
 			audio_play_sound(random_array(global.boss_vanquished_snd), 1, 0, 1)
+			heal_player(1)
 		}
 		
 		global.sniper_revive--

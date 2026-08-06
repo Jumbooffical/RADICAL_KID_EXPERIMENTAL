@@ -6,7 +6,7 @@
   "name":"throwing",
   "parent":{
     "name":"Player Scripts",
-    "path":"folders/Objects/Dumbass/Player Scripts.yy",
+    "path":"folders/Objects/Players/Player Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

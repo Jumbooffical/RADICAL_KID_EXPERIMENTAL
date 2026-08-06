@@ -8,8 +8,8 @@
   "name":"debug_gui",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dumbass",
-    "path":"folders/Objects/Dumbass.yy",
+    "name":"Players",
+    "path":"folders/Objects/Players.yy",
   },
   "parentObjectId":null,
   "persistent":true,

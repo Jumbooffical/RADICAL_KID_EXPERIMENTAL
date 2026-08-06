@@ -18,8 +18,10 @@ function drop_weapon(_key, _slot) {
 		gun.taped = quickslot[_slot, QSlot.Buff_Taped]
 		gun.smart = quickslot[_slot, QSlot.Buff_Smart]
 		gun.heatseek = quickslot[_slot, QSlot.Buff_HeatSeek]
+		gun.powermag = quickslot[_slot, QSlot.Buff_Power]
 		
 		gun.airmag = quickslot[_slot, QSlot.Debuff_AirMag]
+		gun.voidmag = quickslot[_slot, QSlot.Debuff_Void]
 		
 		gun.image_xscale = obj_player.image_xscale
 
@@ -32,10 +34,13 @@ function drop_weapon(_key, _slot) {
 		quickslot[_slot, QSlot.Buff_Taped] = 0;
 		quickslot[_slot, QSlot.Buff_Smart] = 0;
 		quickslot[_slot, QSlot.Buff_HeatSeek] = 0;
+		quickslot[_slot, QSlot.Buff_Power] = 0;
 		
 		quickslot[_slot, QSlot.Debuff_AirMag] = 0;
+		quickslot[_slot, QSlot.Debuff_Void] = 0
 		
 		kunai = 0
+		shuriken = 0
     }
 	
 	// Drop melee if slot 2 is occupied

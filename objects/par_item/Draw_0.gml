@@ -1,4 +1,4 @@
-
+if live_call() return live_result
 image_index = 0
 alpha = 1
 
@@ -31,16 +31,18 @@ if show_pickup {
 	
 		draw_set_alpha(random_range(0.8, 1))
 	    draw_set_colour(c_grey);
-	    draw_rectangle(context_x, y + 5, context_x + w * 3, y + h * 3, false);
+	    draw_rectangle(context_x, y + 5, context_x + w * 4, y + h * 4, false);
 
 	    draw_set_colour(c_black);
-	    draw_rectangle(context_x, y, context_x + w * 3, y + 45, false);
+	    draw_rectangle(context_x, y, context_x + w * 4, y + 45, false);
 		draw_set_alpha(1)
+		
+		var txt_scale = 1.5
 
 	    draw_set_colour(c_white);
-	    draw_text_transformed(context_x + 20, y + 8, name, 1.2, 1.2, 0);
+	    draw_text_transformed(context_x + 20, y + 8, name, txt_scale, txt_scale, 0);
 		draw_text_ext_transformed(context_x + 20, y + 55, description,
-		-1, w * 2 - 10, 1.2, 1.2, 0)
+		-1, w * 3 - 50, txt_scale, txt_scale, 0)
 	}
 	
 	draw_text_transformed(context_x - 20, y - 20, "[F]: Pickup", 1.2, 1.2, 0);

@@ -15,6 +15,7 @@ function enemy_dying() {
 	maxhp = other.maxhp
 	minion = other.sniper_minion
 	}
+	
 	path_end()
 	instance_destroy()
 }

@@ -12,7 +12,7 @@ if apply_falloff {
 var dmg = (damage * other.player_stat.damage_taken) * global.damage_mult[gun_type] * dmg_falloff
 other.hp -= dmg
 with instance_create_depth(x, y, depth, obj_damage_text) {
-	text = dmg
+	text = round(dmg)
 }
 
 instance_destroy()

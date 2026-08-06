@@ -11,7 +11,7 @@ instance_create_depth(x, y, depth, obj_retreat_zone)
 
 var spacing = 88;
 for (var i = 0; i < obj_player.max_pocket; i++) {
-instance_create_depth(832, 525 + spacing * i, 0, obj_store_mag)
+instance_create_depth(832, 525 + spacing * i, 0, obj_pocket_mag)
 }
 
 instance_create_depth(940, obj_player.hpbar_y, depth, current_mag_gui)
@@ -26,5 +26,6 @@ instance_create_depth(1330, 80, depth, debuff_gui)
 
 layer_set_visible("SettingsLayer", true)
 loadsettings()
+load_progression()
 
 instance_create_depth(x, y, depth, obj_gmlive)

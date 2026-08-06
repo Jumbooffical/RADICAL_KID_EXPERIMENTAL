@@ -176,7 +176,7 @@ enum GUN {
 	#endregion
 	
 	#region SVD
-	weapon[wp.svd, GUN.DAMAGE] = 70
+	weapon[wp.svd, GUN.DAMAGE] = 50
 	weapon[wp.svd, GUN.VELOCITY] = 70
 	weapon[wp.svd, GUN.BULLET_COUNT] = 1
 	weapon[wp.svd, GUN.FIRE_DELAY] = 14
@@ -224,7 +224,7 @@ enum GUN {
 	#endregion
 	
 	#region R700
-	weapon[wp.r700, GUN.DAMAGE] = 80
+	weapon[wp.r700, GUN.DAMAGE] = 65
 	weapon[wp.r700, GUN.VELOCITY] = 90
 	weapon[wp.r700, GUN.BULLET_COUNT] = 1
 	weapon[wp.r700, GUN.FIRE_DELAY] = 45
@@ -236,7 +236,7 @@ enum GUN {
 	weapon[wp.r700, GUN.MAG_SIZE] = 5
 	weapon[wp.r700, GUN.MAG_SLOT] = 1
 	weapon[wp.r700, GUN.RELOAD_DELAY] = 180
-	weapon[wp.r700, GUN.SPD_MULT_PENALTY] = 0.15
+	weapon[wp.r700, GUN.SPD_MULT_PENALTY] = 0.4
 	#endregion
 	
 	#region m870

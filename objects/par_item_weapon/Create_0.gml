@@ -10,9 +10,11 @@ overclocked = 0;
 taped = 0;
 smart = 0;
 heatseek = 0;
+powermag = 0
 
 // Debuff
 airmag = 0
+voidmag = 0
 
 image_angle = random_range(-30, 30)
 

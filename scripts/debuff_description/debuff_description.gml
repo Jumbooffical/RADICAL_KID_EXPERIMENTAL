@@ -31,6 +31,16 @@ function debuff_description() {
 		});
 	}
 	
+	if (mi.quickslot[mi.selected_item, QSlot.Debuff_Void]) > 0 {
+	array_push(debuff_list, {
+		sprite: void_icon,
+		name: "VOID",
+		desc: "Next " + string(mi.quickslot[mi.selected_item, QSlot.Debuff_Void]) + " reload will offer 2 less magazine",
+		note: "Obtained from void magazine",
+		duration: string(mi.quickslot[mi.selected_item, QSlot.Debuff_Void]) + " rload"
+		});
+	}
+	
 	if (mi.quickslot[mi.selected_item, QSlot.Debuff_AirMag]) > 0 {
 	array_push(debuff_list, {
 		sprite: airmag_icon,

@@ -45,6 +45,13 @@ function is_loading_gun() {
 		
 		if have_belt_printer {
 			obj_player.printed_ammo += 5
+			
+			with instance_create_depth(x, y, depth, obj_damage_text) {
+				text = "+5 magsize (Belt Printer)"
+				col = c_lime
+				float_mult = 2
+			}
+			audio_play_sound(snd_belt_printed, 1, 0, 1)
 		}
 		
         // Reset behavior
@@ -79,5 +86,21 @@ function is_loading_gun() {
 			audio_play_sound(snd_heatseek, 1, 0, 15, 0, 1, 1)
 			obj_controller.glow = 0.5
 		}	
+		
+		if quickslot[selected_item, QSlot.Mag] == spr_voidmag {
+			audio_play_sound(snd_voidmag, 1, 0, 2, 0, 1, 1)
+			obj_controller.glow = 0.5
+		}
+		
+		if quickslot[selected_item, QSlot.Mag] == spr_wishingmag {
+			audio_play_sound(snd_wishingmag, 1, 0, 2, 0, 1, 1)
+			obj_controller.glow = 0.5
+		}
+		
+		if quickslot[selected_item, QSlot.Mag] == spr_powermag
+		|| quickslot[selected_item, QSlot.Buff_Power] > 0 {
+			audio_play_sound(snd_powermag, 1, 0, 1.5, 0, 1, 1)
+			obj_controller.glow = 0.5	
+		}
     }
 }

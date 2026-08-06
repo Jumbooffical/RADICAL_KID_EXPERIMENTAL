@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_goon_idle",
-    "path":"sprites/spr_goon_idle/spr_goon_idle.yy",
+    "name":"spr_assassin_dodgeroll",
+    "path":"sprites/spr_assassin_dodgeroll/spr_assassin_dodgeroll.yy",
   },
   "spriteMaskId":null,
   "visible":true,

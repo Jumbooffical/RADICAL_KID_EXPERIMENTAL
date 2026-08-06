@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"UI Layers",
-    "path":"folders/Objects/Dumbass/UI/UI Layers.yy",
+    "path":"folders/Objects/Players/UI/UI Layers.yy",
   },
   "parentObjectId":null,
   "persistent":true,
